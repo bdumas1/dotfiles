@@ -681,28 +681,26 @@ __git_list_porcelain_commands ()
 		fsck-objects)     : plumbing;;
 		fetch-pack)       : plumbing;;
 		fmt-merge-msg)    : plumbing;;
-		for-er;;
-		cvsexportcommit)  : export;;
-		cvsimport)        : import;;
-		cvsserver)        : daemon;;
-		daemon)           : daemon;;
-		diff-files)       : plumbing;;
-		diff-index)       : plumbing;;
-		diff-tree)        : plumbing;;
-		fast-import)      : import;;
-		fast-export)      : export;;
-		fsck-objects)     : plumbing;;
-		fetch-pack)       : plumbing;;
-		fmt-merge-msg)    : plumbing;;
-		for-er;;
-		cvsexportcommit)  : export;;
-		cvsimport)        : import;;
-		cvsserver)        : daemon;;
-		daemon)           : daemon;;
-		diff-files)       : plumbing;;
-		diff-index)       : plumbing;;
-		diff-tree)        : plumbing;;
-		fasune)            : plumbing;;
+		for-each-ref)     : plumbing;;
+		hash-object)      : plumbing;;
+		http-*)           : transport;;
+		index-pack)       : plumbing;;
+		init-db)          : deprecated;;
+		local-fetch)      : plumbing;;
+		ls-files)         : plumbing;;
+		ls-remote)        : plumbing;;
+		ls-tree)          : plumbing;;
+		mailinfo)         : plumbing;;
+		mailsplit)        : plumbing;;
+		merge-*)          : plumbing;;
+		mktree)           : plumbing;;
+		mktag)            : plumbing;;
+		pack-objects)     : plumbing;;
+		pack-redundant)   : plumbing;;
+		pack-refs)        : plumbing;;
+		parse-remote)     : plumbing;;
+		patch-id)         : plumbing;;
+		prune)            : plumbing;;
 		prune-packed)     : plumbing;;
 		quiltimport)      : import;;
 		read-tree)        : plumbing;;
@@ -714,10 +712,10 @@ __git_list_porcelain_commands ()
 		runstatus)        : plumbing;;
 		sh-setup)         : internal;;
 		shell)            : daemon;;
-		show-ref)         : plumbing;;
-		send-pack)        : plumbing;;
-		show-index)       : plumbing;;
-		ssh-*)            : transport;;
+		show-refote)        : plumbing;;
+		ls-tree)          : plumbing;;
+		mailinfo)         : plumbing;;
+		mailsplit)      : transport;;
 		stripspace)       : plumbing;;
 		symbolic-ref)     : plumbing;;
 		unpack-file)      : plumbing;;
@@ -1213,35 +1211,31 @@ _git_difftool ()
 	--*)
 		__gitcomp "--cached --staged --pickaxe-all --pickaxe-regex
 			--base --ours --theirs
-		x
-			$__git_diff_common_options
-			"
+			--no-renames --diff-filter= --find-copies-harder
+			--relative --ignore-submodules
+			--tool="
 		return
 		;;
 	esac
 	__git_complete_revlist_file
 }
 
-__git_mergetools_common="diffuse diffmerge ecmerge emerge kdiff3 meld opendiff
-			tkdiff vimdiff gvimdiff xxdiff araxis p4merge bc codecompare
+__git_fetch_recurse_submodules="yes on-demand no"
+
+__git_fetch_options="
+	--quiet --verbose --append --upload-pack --force --keep --depth=
+	--tags --no-tags --all --prune --dry-run --recurse-submodules=
 "
 
-_git_difftool ()
+_git_fetch ()
 {
-	__git_has_doubledash && return
-
 	case "$cur" in
-	--tool=*)
-		__gitcomp "$__git_mergetools_common kompare" "" "${cur##--tool=}"
+	--recurse-submodules=*)
+		__gitcomp "$__git_fetch_recurse_submodules" "" "${cur##--recurse-submodules=}"
 		return
 		;;
 	--*)
-		__gitcomp "--cached --staged --pickaxe-all --pickaxe-regex
-			--base --ours --theirs
-		x
-			$__git_diff_common_options
-			"
-		r_fetch_options"
+		__gitcomp "$__git_fetch_options"
 		return
 		;;
 	esac
@@ -1310,29 +1304,48 @@ _git_grep ()
 {
 	__git_has_doubledash && return
 
+	casecomp "
+			deep shallow
+			" "" "${cur##--thread=}"
+		return
+		;;
+	--*)
+		__gitcomp "$__git_format_patch_options"
+		return
+		;;
+	esac
+	__git_complete_revlist
+}
+
+_git_fsck ()
+{
 	case "$cur" in
 	--*)
 		__gitcomp "
-			--cached
-			--text --ignore-case --word-regexp --invert-match
-			--full-name --line-number
-			--extended-regexp --basic-regexp --fixed-strings
-			--perl-regexp
-			--threads
-			--files-with-matches --name-only
-			--files-without-match
-			--max-depth
-			--count
-			--and --or --not --all-match
+			--tags --root --unreachable --cache --no-reflogs --full
+			--strict --verbose --lost-found
 			"
 		return
 		;;
 	esac
+}
 
-	case "$cword,$prev" in
-	2,*|*,-*)
-		if test -r tags; then
-			__gitcomp_nl "$(__git_match_ctag "$cur" tags)"
+_git_gc ()
+{
+	case "$cur" in
+	--*)
+		__gitcomp "--prune --aggressive"
+		return
+		;;
+	esac
+}
+
+_git_gitk ()
+{
+	_gitk
+}
+
+_" tags)"
 			return
 		fi
 		;;
@@ -2043,33 +2056,34 @@ _git_config ()
 		core.bigFileThreshold
 		core.compression
 		core.createObject
-		core.deltaBaseCacheLimit
-		core.editor
-		core.eol
-		core.excludesfile
-		core.fileMode
-		core.fsyncobjectfiles
-		core.gitProxy
-		core.ignoreStat
-		core.ignorecase
-		core.logAllRefUpdates
-		core.loosecompression
-		core.notesRef
-		core.packedGitLimit
-		core.packedGitWindowSize
-		core.pager
-		core.preferSymlinkRefs
-		core.preloadindex
-		core.quotepath
-		core.repositoryFormatVersion
-		core.safecrlf
-		core.sharedRepository
-		core.sparseCheckout
-		core.symlinks
-		core.trustctime
-		core.untrackedCache
-		core.warnAmbiguousRefs
-		core.whitespace
+		core.ve.error
+		color.interactive.header
+		color.interactive.help
+		color.interactive.prompt
+		color.pager
+		color.showbranch
+		color.status
+		color.status.added
+		color.status.changed
+		color.status.header
+		color.status.nobranch
+		color.status.unmerged
+		color.status.untracked
+		color.status.updated
+		color.ui
+		commit.status
+		commit.template
+		core.abbrev
+		core.askpass
+		core.attributesfile
+		core.autocrlf
+		core.bare
+		core.bigFileThreshold
+		core.compression
+		core.createObject
+		core.ve.error
+		color.interactive.header
+		espace
 		core.worktree
 		diff.autorefreshindex
 		diff.external
