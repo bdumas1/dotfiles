@@ -392,23 +392,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName rgpd-cookie-banner.localhost
-    ServerAlias rgpd-cookie-banner.localhost
-    DocumentRoot "/Users/Benoit/Sites/rgpd-cookie-banner"
-    ErrorLog "/usr/local/var/log/httpd/rgpd-cookie-banner-error_log"
-    CustomLog "/usr/local/var/log/httpd/rgpd-cookie-banner-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/rgpd-cookie-banner">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName globe.localhost
     ServerAlias globe.localhost
     DocumentRoot "/Users/Benoit/Sites/globe"
@@ -445,4 +428,3 @@
       Require all granted
     </Directory>
 </VirtualHost>
-

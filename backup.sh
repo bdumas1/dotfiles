@@ -12,6 +12,9 @@ echo Backup .gitconfig - OK
 cp ~/.git-completion.bash ./.git-completion.bash
 echo Backup .git-completion.bash - OK
 
+cp /usr/local/etc/httpd/extra/httpd-vhosts.conf ./vhosts
+echo Backup vhosts - OK
+
 git add .
 git commit -m "Backup"
 git push
