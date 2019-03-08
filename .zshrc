@@ -112,7 +112,7 @@ alias gulps='gulp styleguide'
 alias gulpss='gulp styleguide:sass'
 alias gpul='git pull'
 alias gpus='git push'
-alias gci='f() { git ci -m $1 };f'
+alias gci='git ci -m'
 alias hf='f() { git co -b hotfix-$1 };f'
 
 # DOCKER ALIAS
