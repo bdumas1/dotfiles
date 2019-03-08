@@ -1,4 +1,5 @@
 # Functions Autoloading
+alias gulpsa='gulp sass'
 fpath=(~/.zsh $fpath)
 
 # Completion
@@ -110,6 +111,7 @@ alias grep='grep --color=auto'
 alias gulps='gulp styleguide'
 alias gulpss='gulp styleguide:sass'
 alias co='git co'
+alias hf='f() { git co -b hotfix-$1 };f'
 
 # DOCKER ALIAS
 
@@ -138,10 +140,10 @@ export PATH="$PATH:/Users/Benoit/.composer/vendor/bin"
 
 # NVM
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export PATH="$PATH:$HOME/.rvm/bin"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 bindkey "[D" backward-word
 bindkey "[C" forward-word
