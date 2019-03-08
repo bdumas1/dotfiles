@@ -110,7 +110,8 @@ alias ..="cd .."
 alias grep='grep --color=auto'
 alias gulps='gulp styleguide'
 alias gulpss='gulp styleguide:sass'
-alias co='git co'
+alias gpul='git pull'
+alias gpus='git push'
 alias hf='f() { git co -b hotfix-$1 };f'
 
 # DOCKER ALIAS
