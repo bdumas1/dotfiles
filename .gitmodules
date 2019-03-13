@@ -1,0 +1,9 @@
+[submodule "vim-solarized8"]
+	path = ~/.vim/pack/themes/opt/solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "vim-airline-themes"]
+	path = ~/.vim/pack/airline/start/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim-airline"]
+	path = ~/.vim/pack/dist/start/vim-airline
+	url = https://github.com/bling/vim-airline.git

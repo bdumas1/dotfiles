@@ -7,36 +7,79 @@ colorscheme solarized8
 
 set title
 
-set showcmd                         " Display incomplete commands
+" Hide buffer instead of abandoning when unloading
+set hidden
 
-set number                          " Show line numbers
-set ruler                           " Show cursor position
+" Enhanced command line completion
+set wildmenu
+" Complete files like a shell
+set wildmode=list:longest
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xpm,*.pyc,*.pyo,*.log
 
-set incsearch                       " Highlight matches as you type
-set hlsearch                        " Highlight matches
-set ignorecase                      " set case insensitivity
-set smartcase                       " unless there's a capital letter
-set wrap                            " Turn on line wrapping
-set scrolloff=3                     " Show 3 lines of context around the cursor
+" Show line numbers
+set number
+" Show cursor position
+set ruler
 
-set visualbell                      " No beeping
-set shortmess+=filmnrxoOtT          " abbrev. of messages (avoids 'hit enter')
+" Highlight matches as you type
+set incsearch
+" Highlight matches
+set hlsearch
+" set case insensitivity
+set ignorecase
+" unless there's a capital letter
+set smartcase
+" Turn on line wrapping
+set wrap
+" Show 3 lines of context around the cursor
+set scrolloff=3
 
-set nobackup                        " Don't make a backup before overwriting a file
-set nowritebackup                   " And again
-set noswapfile                      " Use an SCM instead of swap files
+" No beeping
+set visualbell
+" abbrev. of messages (avoids 'hit enter')
+set shortmess+=filmnrxoOtT
 
-set laststatus=2                    " Show the status line all the time
+" Don't make a backup before overwriting a file
+set nobackup
+" And again
+set nowritebackup
+" Use an SCM instead of swap files
+set noswapfile
 
-set copyindent                      " copy the previous indentation on autoindenting
-set shiftround                      " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch                       " set show matching parenthesis
+" Show the status line all the time
+set laststatus=2
 
-set backspace=indent,eol,start      " http://vim.wikia.com/wiki/Backspace_and_delete_problems
+" http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=indent,eol,start
 
-set undolevels=1000                 " use many levels of undo
+set expandtab
 
-set lazyredraw                      " Make plugin smoother
+set autoindent
+" copy the previous indentation on autoindenting
+set copyindent
+" use multiple of shiftwidth when indenting with '<' and '>'
+set shiftround
+" set show matching parenthesis
+set showmatch
+
+" Read vim config defined in files
+set modeline
+set modelines=1
+
+" command and search pattern history
+set history=10000
+
+" make plugins smoother
+set lazyredraw
+
+" always replace all occurences of a line
+set gdefault
+
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+set pastetoggle=<F2>
+
+" disable folding
+set nofoldenable
 
 " Tabs and indentation
 set autoindent
