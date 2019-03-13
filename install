@@ -4,20 +4,44 @@ success () {
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
 }
 
+link_files() {
+    if [ -L "$2" ] ; then
+        rm -f "$2"
+    fi
+
+    ln -s "$(pwd)/$1" "$2"
+    success "linked $1 to $2"
+}
+
 git submodule update --init
 
+# solarized8
+solarized8_path=~/.vim/pack/base/start
+mkdir -p "$solarized8_path"
+link_files submodules/vim-solarized8 "$solarized8_path/solarized8"
+
+# vim airline
+airline_path=~/.vim/pack/dist/start
+mkdir -p "$airline_path"
+link_files submodules/vim-airline "$airline_path/vim-airline"
+
+# airline themes
+airline_themes_path=~/.vim/pack/airline/start
+mkdir -p "$airline_themes_path"
+link_files submodules/vim-airline-themes "$airline_themes_path/airline-themes"
+
 # zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+link_files submodules/zsh-syntax-highlighting ~/zsh-syntax-highlighting
 
 # zsh
-cp .zshrc ~/.zshrc
+link_files zshrc ~/.zshrc
 
 # vim
-cp .vimrc ~/.vimrc
+link_files vimrc ~/.vimrc
 
 # git
-cp .gitconfig ~/.gitconfig
-cp .git-completion.bash ~/.git-completion.bash
+link_files gitconfig ~/.gitconfig
+link_files git-completion.bash ~/.git-completion.bash
 
 echo ''
 success 'All installed!'

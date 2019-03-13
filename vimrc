@@ -139,7 +139,6 @@ endif
 "" Plugins
 
 " airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'minimalist'
-let g:airline_extensions = ['ctrlp', 'hunks', 'branch', 'whitespace']
+let g:airline_theme = 'luna'
+let g:airline_extensions = ['branch', 'whitespace']
 set noshowmode

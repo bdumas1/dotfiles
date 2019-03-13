@@ -24,7 +24,7 @@ HISTSIZE=100000
 SAVEHIST="$HISTSIZE"
 
 # zsh-syntax-highlighting
-source /Users/Benoit/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
