@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
+solarized_folder=~/.vim/pack/themes/opt/solarized8
+
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
+}
+
 # solarized8
-git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
+if [ ! -d $solarized_folder ]
+    git clone https://github.com/lifepillar/vim-solarized8.git $solarized_folder
+fi
 
 # zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 # zsh
 cp .zshrc ~/.zshrc
@@ -18,4 +25,4 @@ cp .gitconfig ~/.gitconfig
 cp .git-completion.bash ~/.git-completion.bash
 
 echo ''
-echo '  All installed!'
+success 'All installed!'
