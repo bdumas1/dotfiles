@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# solarized8
+git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
+
+# zsh
+cp .zshrc ~/.zshrc
+
+# vim
+cp .vimrc ~/.vimrc
+
+# git
+cp .gitconfig ~/.gitconfig
+cp .git-completion.bash ~/.git-completion.bash
+
+echo ''
+echo '  All installed!'
