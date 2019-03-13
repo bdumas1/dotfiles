@@ -1,5 +1,4 @@
 # Functions Autoloading
-alias gulpsa='gulp sass'
 fpath=(~/.zsh $fpath)
 
 # Completion
@@ -10,7 +9,7 @@ autoload -U compinit compdef && compinit
 prompt pure
 
 # # Variables
-export EDITOR='code'
+export EDITOR='vim'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 export GREP_COLOR=31
@@ -124,6 +123,13 @@ alias hf='f() { git co -b hotfix-$1 };f'
 # alias docker-restart='cd ~/lab/docker-preferences && docker-compose down && docker-compose up -d && cd -'
 # alias docker-start='cd ~/lab/docker-preferences && docker-compose up -d && cd -'
 # alias docker-stop='cd ~/lab/docker-preferences && docker-compose down && cd -'
+
+# You can hit C-X C-E to open your $EDITOR
+# with the command typed in the buffer and quickly edit your error
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey 'x^e' edit-command-line
 
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"

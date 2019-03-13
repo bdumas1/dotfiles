@@ -712,10 +712,10 @@ __git_list_porcelain_commands ()
 		runstatus)        : plumbing;;
 		sh-setup)         : internal;;
 		shell)            : daemon;;
-		show-refote)        : plumbing;;
-		ls-tree)          : plumbing;;
-		mailinfo)         : plumbing;;
-		mailsplit)      : transport;;
+		show-ref)         : plumbing;;
+		send-pack)        : plumbing;;
+		show-index)       : plumbing;;
+		ssh-*)            : transport;;
 		stripspace)       : plumbing;;
 		symbolic-ref)     : plumbing;;
 		unpack-file)      : plumbing;;
@@ -1304,48 +1304,29 @@ _git_grep ()
 {
 	__git_has_doubledash && return
 
-	casecomp "
-			deep shallow
-			" "" "${cur##--thread=}"
-		return
-		;;
-	--*)
-		__gitcomp "$__git_format_patch_options"
-		return
-		;;
-	esac
-	__git_complete_revlist
-}
-
-_git_fsck ()
-{
 	case "$cur" in
 	--*)
 		__gitcomp "
-			--tags --root --unreachable --cache --no-reflogs --full
-			--strict --verbose --lost-found
+			--cached
+			--text --ignore-case --word-regexp --invert-match
+			--full-name --line-number
+			--extended-regexp --basic-regexp --fixed-strings
+			--perl-regexp
+			--threads
+			--files-with-matches --name-only
+			--files-without-match
+			--max-depth
+			--count
+			--and --or --not --all-match
 			"
 		return
 		;;
 	esac
-}
 
-_git_gc ()
-{
-	case "$cur" in
-	--*)
-		__gitcomp "--prune --aggressive"
-		return
-		;;
-	esac
-}
-
-_git_gitk ()
-{
-	_gitk
-}
-
-_" tags)"
+	case "$cword,$prev" in
+	2,*|*,-*)
+		if test -r tags; then
+			__gitcomp_nl "$(__git_match_ctag "$cur" tags)"
 			return
 		fi
 		;;
@@ -2056,34 +2037,33 @@ _git_config ()
 		core.bigFileThreshold
 		core.compression
 		core.createObject
-		core.ve.error
-		color.interactive.header
-		color.interactive.help
-		color.interactive.prompt
-		color.pager
-		color.showbranch
-		color.status
-		color.status.added
-		color.status.changed
-		color.status.header
-		color.status.nobranch
-		color.status.unmerged
-		color.status.untracked
-		color.status.updated
-		color.ui
-		commit.status
-		commit.template
-		core.abbrev
-		core.askpass
-		core.attributesfile
-		core.autocrlf
-		core.bare
-		core.bigFileThreshold
-		core.compression
-		core.createObject
-		core.ve.error
-		color.interactive.header
-		espace
+		core.deltaBaseCacheLimit
+		core.editor
+		core.eol
+		core.excludesfile
+		core.fileMode
+		core.fsyncobjectfiles
+		core.gitProxy
+		core.ignoreStat
+		core.ignorecase
+		core.logAllRefUpdates
+		core.loosecompression
+		core.notesRef
+		core.packedGitLimit
+		core.packedGitWindowSize
+		core.pager
+		core.preferSymlinkRefs
+		core.preloadindex
+		core.quotepath
+		core.repositoryFormatVersion
+		core.safecrlf
+		core.sharedRepository
+		core.sparseCheckout
+		core.symlinks
+		core.trustctime
+		core.untrackedCache
+		core.warnAmbiguousRefs
+		core.whitespace
 		core.worktree
 		diff.autorefreshindex
 		diff.external

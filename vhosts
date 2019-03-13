@@ -428,3 +428,20 @@
       Require all granted
     </Directory>
 </VirtualHost>
+
+<VirtualHost *:80>
+    ServerName webqam
+    ServerAlias webqam.localhost
+    DocumentRoot "/Users/Benoit/Sites/site-studio-webqam/public"
+    ErrorLog "/usr/local/var/log/httpd/webqam-error_log"
+    CustomLog "/usr/local/var/log/httpd/webqam-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/site-studio-webqam">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>

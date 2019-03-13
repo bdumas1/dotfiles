@@ -1,18 +1,10 @@
-execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
 
-" set background=dark
-" colorscheme solarized
+set background=dark
 
-" airline
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme = 'solarized'
-"let g:airline_solarized_bg = 'dark'
-set noshowmode
+colorscheme solarized8
 
-" Set title on X window
 set title
 
 set showcmd                         " Display incomplete commands
@@ -41,12 +33,17 @@ set shiftround                      " use multiple of shiftwidth when indenting 
 set showmatch                       " set show matching parenthesis
 
 set backspace=indent,eol,start      " http://vim.wikia.com/wiki/Backspace_and_delete_problems
-set autoindent
-set smartindent
-set shiftwidth=2
-set tabstop=2
 
 set undolevels=1000                 " use many levels of undo
+
+set lazyredraw                      " Make plugin smoother
+
+" Tabs and indentation
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
@@ -73,6 +70,11 @@ nnoremap <C-z> u
 vnoremap <C-z> u
 inoremap <C-z> <C-O>u
 
+" Make the view port scroll faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+nnoremap <C-p> 3<C-p>
+
 " Text selection
 nmap <S-Up> V
 nmap <S-Down> V
@@ -91,3 +93,10 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+"" Plugins
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'minimalist'
+let g:airline_extensions = ['ctrlp', 'hunks', 'branch', 'whitespace']
+set noshowmode
