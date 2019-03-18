@@ -9,7 +9,7 @@ autoload -U compinit compdef && compinit
 prompt pure
 
 # # Variables
-export EDITOR='vim'
+export EDITOR='code'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 export GREP_COLOR=31
