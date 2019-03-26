@@ -113,6 +113,7 @@ alias gpul='git pull'
 alias gpus='git push'
 alias gci='git ci -m'
 alias hf='f() { git co -b hotfix-$1 };f'
+alias ngrok='~/ngrok'
 
 # DOCKER ALIAS
 
