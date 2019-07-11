@@ -31,5 +31,8 @@ link_files vimrc ~/.vimrc
 link_files gitconfig ~/.gitconfig
 link_files git-completion.bash ~/.git-completion.bash
 
+# git config
+link_files .ssh/config ~/.ssh/config
+
 echo ''
 success 'All installed!'

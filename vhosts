@@ -62,6 +62,21 @@
 </VirtualHost>
 
 <VirtualHost *:80>
+    ServerName serverinfo.local
+    ServerAlias serverinfo.local
+    DocumentRoot "/Users/Benoit/Sites/local.localhost/phpinfo"
+    ErrorLog "/usr/local/var/log/httpd/serverinfo-error_log"
+    CustomLog "/usr/local/var/log/httpd/serverinfo-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/local.localhost/phpinfo">
+      Options Indexes FollowSymLinks Includes
+      AllowOverride all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
     ServerName myalienproduction.localhost
     ServerAlias myalienproduction.localhost
     DocumentRoot "/Users/Benoit/Sites/myalienproduction.localhost"
@@ -290,23 +305,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName bot-ibis.localhost
-    ServerAlias bot-ibis.localhost
-    DocumentRoot "/Users/Benoit/Sites/bot-ibis-budget/public"
-    ErrorLog "/usr/local/var/log/httpd/bot-ibis-error_log"
-    CustomLog "/usr/local/var/log/httpd/bot-ibis-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/bot-ibis-budget">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName cmax-drupal.localhost
     ServerAlias cmax-drupal.localhost
     DocumentRoot "/Users/Benoit/Sites/site-casino-max-drupal/drupal/web"
@@ -332,40 +330,6 @@
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/casinodrive-maquette-mirror">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName zactifs.localhost
-    ServerAlias zactifs.localhost
-    DocumentRoot "/Users/Benoit/Sites/site-bouge-avec-les-zactifs"
-    ErrorLog "/usr/local/var/log/httpd/zactifs-error_log"
-    CustomLog "/usr/local/var/log/httpd/zactifs-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/site-bouge-avec-les-zactifs">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName digirisk.localhost
-    ServerAlias digirisk.localhost
-    DocumentRoot "/Users/Benoit/Sites/digirisk"
-    ErrorLog "/usr/local/var/log/httpd/digirisk-error_log"
-    CustomLog "/usr/local/var/log/httpd/digirisk-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/digirisk">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny
@@ -430,14 +394,48 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName webqam
-    ServerAlias webqam.localhost
+    ServerName inex.localhost
+    ServerAlias inex.localhost
+    DocumentRoot "/Users/Benoit/Sites/site-inex"
+    ErrorLog "/usr/local/var/log/httpd/inex-error_log"
+    CustomLog "/usr/local/var/log/httpd/inex-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/site-inex">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName studio-webqam.localhost
+    ServerAlias studio-webqam.localhost
     DocumentRoot "/Users/Benoit/Sites/site-studio-webqam/public"
-    ErrorLog "/usr/local/var/log/httpd/webqam-error_log"
-    CustomLog "/usr/local/var/log/httpd/webqam-access_log" common
+    ErrorLog "/usr/local/var/log/httpd/studio-webqam-error_log"
+    CustomLog "/usr/local/var/log/httpd/studio-webqam-access_log" common
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/site-studio-webqam">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName cooler-esport.localhost
+    ServerAlias cooler-esport.localhost
+    DocumentRoot "/Users/Benoit/Sites/cooler-esport/public"
+    ErrorLog "/usr/local/var/log/httpd/cooler-esport-error_log"
+    CustomLog "/usr/local/var/log/httpd/cooler-esport-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/cooler-esport">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny

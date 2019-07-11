@@ -15,6 +15,9 @@ echo Backup .git-completion.bash - OK
 cp /usr/local/etc/httpd/extra/httpd-vhosts.conf ./vhosts
 echo Backup vhosts - OK
 
+cp ~/.ssh/config ./.ssh/config
+echo Backup ssh config - OK
+
 git add .
 git commit -m "Backup"
 git push
