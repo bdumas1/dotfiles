@@ -1,12 +1,3 @@
-host traiteurpp
-	Hostname 80.247.226.166
-	Port 221
-	User bdumas
-
-host webqam-cmax-framework.nfrance.net
-	Port 2222
-	User bdumas
-
 host gbr-auto-framework.nfrance.net
     Port 2222
     User bdumas
