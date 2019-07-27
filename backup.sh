@@ -1,21 +1,21 @@
 #!/bin/bash
 
-cp ~/.zshrc ./.zshrc
+cp ~/.zshrc ./zshrc
 echo Backup .zshrc - OK
 
-cp ~/.vimrc ./.vimrc
+cp ~/.vimrc ./vimrc
 echo Backup .vimrc - OK
 
-cp ~/.gitconfig ./.gitconfig
+cp ~/.gitconfig ./gitconfig
 echo Backup .gitconfig - OK
 
-cp ~/.git-completion.bash ./.git-completion.bash
+cp ~/.git-completion.bash ./git-completion.bash
 echo Backup .git-completion.bash - OK
 
 cp /usr/local/etc/httpd/extra/httpd-vhosts.conf ./vhosts
 echo Backup vhosts - OK
 
-cp ~/.ssh/config ./.ssh/config
+cp ~/.ssh/config ./ssh/config
 echo Backup ssh config - OK
 
 git add .
