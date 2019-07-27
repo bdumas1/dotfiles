@@ -62,21 +62,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName serverinfo.local
-    ServerAlias serverinfo.local
-    DocumentRoot "/Users/Benoit/Sites/local.localhost/phpinfo"
-    ErrorLog "/usr/local/var/log/httpd/serverinfo-error_log"
-    CustomLog "/usr/local/var/log/httpd/serverinfo-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/local.localhost/phpinfo">
-      Options Indexes FollowSymLinks Includes
-      AllowOverride all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName myalienproduction.localhost
     ServerAlias myalienproduction.localhost
     DocumentRoot "/Users/Benoit/Sites/myalienproduction.localhost"
@@ -92,21 +77,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName havas.localhost
-    ServerAlias havas.localhost
-    DocumentRoot "/Users/Benoit/Sites/havas.localhost/public"
-    ErrorLog "/usr/local/var/log/httpd/havas-error_log"
-    CustomLog "/usr/local/var/log/httpd/havas-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/havas.localhost">
-      Options Indexes FollowSymLinks Includes
-      AllowOverride all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName intranet.localhost
     ServerAlias intranet.localhost
     DocumentRoot "/Users/Benoit/Sites/intranet.localhost/public"
@@ -115,36 +85,6 @@
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/intranet.localhost">
-      Options Indexes FollowSymLinks Includes
-      AllowOverride all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName oxeo.localhost
-    ServerAlias oxeo.localhost
-    DocumentRoot "/Users/Benoit/Sites/oxeo.localhost/public"
-    ErrorLog "/usr/local/var/log/httpd/oxeo-error_log"
-    CustomLog "/usr/local/var/log/httpd/oxeo-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/oxeo.localhost">
-      Options Indexes FollowSymLinks Includes
-      AllowOverride all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName casino-traiteur.localhost
-    ServerAlias casino-traiteur.localhost
-    DocumentRoot "/Users/Benoit/Sites/casino-traiteur.localhost/pub"
-    ErrorLog "/usr/local/var/log/httpd/casino-traiteur-error_log"
-    CustomLog "/usr/local/var/log/httpd/casino-traiteur-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/casino-traiteur.localhost">
       Options Indexes FollowSymLinks Includes
       AllowOverride all
       Require all granted
@@ -169,23 +109,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName adapei69.localhost
-    ServerAlias adapei69.localhost
-    DocumentRoot "/Users/Benoit/Sites/adapei69.localhost/web"
-    ErrorLog "/usr/local/var/log/httpd/adapei-error_log"
-    CustomLog "/usr/local/var/log/httpd/adapei-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/adapei69.localhost">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName rgpd-cookie-banner.localhost
     ServerAlias rgpd-cookie-banner.localhost
     DocumentRoot "/Users/Benoit/Sites/rgpd-cookie-banner.localhost"
@@ -194,40 +117,6 @@
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/rgpd-cookie-banner.localhost">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName laposte.localhost
-    ServerAlias laposte.localhost
-    DocumentRoot "/Users/Benoit/Sites/la-poste-composants-front/styleguide"
-    ErrorLog "/usr/local/var/log/httpd/laposte-error_log"
-    CustomLog "/usr/local/var/log/httpd/laposte-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/la-poste-composants-front/styleguide">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName laposte-lot2.localhost
-    ServerAlias laposte-lot2.localhost
-    DocumentRoot "/Users/Benoit/Sites/la-poste-composants-front-lot-2/styleguide"
-    ErrorLog "/usr/local/var/log/httpd/laposte-lot2-error_log"
-    CustomLog "/usr/local/var/log/httpd/lapostelot2-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/la-poste-composants-front-lot-2/styleguide">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny
@@ -305,23 +194,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName cmax-drupal.localhost
-    ServerAlias cmax-drupal.localhost
-    DocumentRoot "/Users/Benoit/Sites/site-casino-max-drupal/drupal/web"
-    ErrorLog "/usr/local/var/log/httpd/cmax-drupal-error_log"
-    CustomLog "/usr/local/var/log/httpd/cmax-drupal-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/site-casino-max-drupal">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName casinodrive-maquette-mirror.localhost
     ServerAlias casinodrive-maquette-mirror.localhost
     DocumentRoot "/Users/Benoit/Sites/casinodrive-maquette-mirror"
@@ -330,23 +202,6 @@
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/casinodrive-maquette-mirror">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName goodfrance.localhost
-    ServerAlias goodfrance.localhost
-    DocumentRoot "/Users/Benoit/Sites/restaurateurs-good-france/web"
-    ErrorLog "/usr/local/var/log/httpd/good-france-error_log"
-    CustomLog "/usr/local/var/log/httpd/good-france-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/restaurateurs-good-france">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny
@@ -385,23 +240,6 @@
     SSLCertificateKeyFile "/etc/apache2/ssl/biomerieux.key"
 
     <Directory "/Users/Benoit/Sites/biomerieux-industry">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
-    ServerName inex.localhost
-    ServerAlias inex.localhost
-    DocumentRoot "/Users/Benoit/Sites/site-inex"
-    ErrorLog "/usr/local/var/log/httpd/inex-error_log"
-    CustomLog "/usr/local/var/log/httpd/inex-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/site-inex">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny
