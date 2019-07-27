@@ -32,7 +32,7 @@ link_files gitconfig ~/.gitconfig
 link_files git-completion.bash ~/.git-completion.bash
 
 # git config
-link_files .ssh/config ~/.ssh/config
+link_files sshconfig ~/.ssh/config
 
 echo ''
 success 'All installed!'
