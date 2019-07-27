@@ -1,22 +1,26 @@
 #!/bin/bash
 
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
+}
+
 cp ~/.zshrc ./zshrc
-echo Backup .zshrc - OK
+success "Backup .zshrc"
 
 cp ~/.vimrc ./vimrc
-echo Backup .vimrc - OK
+success "Backup .vimrc"
 
 cp ~/.gitconfig ./gitconfig
-echo Backup .gitconfig - OK
+success "Backup .gitconfig"
 
 cp ~/.git-completion.bash ./git-completion.bash
-echo Backup .git-completion.bash - OK
+success "Backup .git-completion.bash"
 
 cp /usr/local/etc/httpd/extra/httpd-vhosts.conf ./vhosts
-echo Backup vhosts - OK
+success "Backup vhosts"
 
 cp ~/.ssh/config ./ssh/config
-echo Backup ssh config - OK
+success "Backup ssh config"
 
 git add .
 git commit -m "Backup"
