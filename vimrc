@@ -120,10 +120,14 @@ nnoremap <C-y> 3<C-y>
 nnoremap <C-p> 3<C-p>
 
 " Text selection
-nmap <S-Up> V
-nmap <S-Down> V
+nmap <S-Up> v
+nmap <S-Down> v
 nmap <S-Left> v
 nmap <S-Right> v
+imap <S-Up> <esc>v
+imap <S-Down> <esc>v
+imap <S-Left> <esc>v
+imap <S-Right> <esc>v
 vmap <S-Up> k
 vmap <S-Down> j
 vmap <S-Left> h
