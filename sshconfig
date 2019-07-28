@@ -2,10 +2,6 @@ host gbr-auto-framework.nfrance.net
     Port 2222
     User bdumas
 
-host 80.247.226.79
-    Port 222
-    User bdumas
-
 host bdumas
     User root
 
