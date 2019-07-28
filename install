@@ -29,7 +29,7 @@ link_files vimrc ~/.vimrc
 
 # git
 link_files gitconfig ~/.gitconfig
-link_files git-completion.bash ~/.git-completion.bash
+link_files git-completion.zsh ~/.git-completion.zsh
 
 # git config
 link_files sshconfig ~/.ssh/config
