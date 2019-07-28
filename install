@@ -35,7 +35,7 @@ link_files git-completion.bash ~/.git-completion.bash
 link_files sshconfig ~/.ssh/config
 
 # vhosts
-link_files vhost /usr/local/etc/httpd/extra/httpd-vhosts.conf
+link_files vhosts /usr/local/etc/httpd/extra/httpd-vhosts.conf
 
 echo ''
 success 'All installed!'
