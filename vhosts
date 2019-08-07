@@ -281,3 +281,20 @@
       Require all granted
     </Directory>
 </VirtualHost>
+
+<VirtualHost *:80>
+    ServerName novim.localhost
+    ServerAlias novim.localhost
+    DocumentRoot "/Users/Benoit/Sites/novim"
+    ErrorLog "/usr/local/var/log/httpd/novim-error_log"
+    CustomLog "/usr/local/var/log/httpd/novim-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/novim">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
