@@ -92,23 +92,6 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName ckfd.localhost
-    ServerAlias ckfd.localhost
-    DocumentRoot "/Users/Benoit/Sites/site-vitrine-ckfd/"
-    ErrorLog "/usr/local/var/log/httpd/ckfd-error_log"
-    CustomLog "/usr/local/var/log/httpd/ckfd-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    <Directory "/Users/Benoit/Sites/site-vitrine-ckfd">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
     ServerName rgpd-cookie-banner.localhost
     ServerAlias rgpd-cookie-banner.localhost
     DocumentRoot "/Users/Benoit/Sites/rgpd-cookie-banner.localhost"
