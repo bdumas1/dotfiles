@@ -2,11 +2,13 @@
     ServerName localhost
     ServerAlias localhost
     DocumentRoot "/Users/Benoit/Sites/local.localhost"
+    ErrorLog "/usr/local/var/log/httpd/localhost-error_log"
 
     <Directory /Users/Benoit/Sites/local.localhost>
       Options Indexes FollowSymLinks Includes
       AllowOverride all
       Require all granted
+    
     </Directory>
 </VirtualHost>
 
@@ -274,6 +276,75 @@
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/novim">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName landing-paiement-sans-contact.localhost
+    ServerAlias landing-paiement-sans-contact.localhost
+    DocumentRoot "/Users/Benoit/Sites/landing-paiement-sans-contact/public"
+    ErrorLog "/usr/local/var/log/httpd/landing-paiement-sans-contact-error_log"
+    CustomLog "/usr/local/var/log/httpd/landing-paiement-sans-contact-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/landing-paiement-sans-contact">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName portail-vox.localhost
+    ServerAlias portail-vox.localhost
+    DocumentRoot "/Users/Benoit/Sites/portail-vox/drupal/web"
+    ErrorLog "/usr/local/var/log/httpd/portail-vox-error_log"
+    CustomLog "/usr/local/var/log/httpd/portail-vox-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/portail-vox">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+    ServerName biom.localhost
+    ServerAlias biom.localhost
+    DocumentRoot "/Users/Benoit/Sites/brand-center-biomerieux/web"
+    ErrorLog "/usr/local/var/log/httpd/branc-center-biomerieux-error_log"
+    CustomLog "/usr/local/var/log/httpd/branc-center-biomerieux-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/brand-center-biomerieux">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName cmax.localhost
+    ServerAlias cmax.localhost
+    DocumentRoot "/Users/Benoit/Sites/site-casino-max-drupal/drupal/web"
+    ErrorLog "/usr/local/var/log/httpd/cmax-drupal-error_log"
+    CustomLog "/usr/local/var/log/httpd/cmax-drupal-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    <Directory "/Users/Benoit/Sites/site-casino-max-drupal">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny

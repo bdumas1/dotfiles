@@ -5,9 +5,15 @@ host gbr-auto-framework.nfrance.net
 host bdumas
     User root
 
-host cooler
-    User u94243893
+host lgf
+    User lgf-pp
 
 host nas
     User Geetix
+
+host superviseme-pp
+    User appvise-me-pp
+
+host superviseme
+    User appvise-me
 
