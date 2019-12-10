@@ -21,6 +21,9 @@ link_files vim ~/.vim
 # zsh-syntax-highlighting
 link_files submodules/zsh-syntax-highlighting ~/zsh-syntax-highlighting
 
+# zsh-autosuggestions
+link_files submodules/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
 # zsh
 link_files zshrc ~/.zshrc
 
