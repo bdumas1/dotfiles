@@ -212,27 +212,6 @@
     </Directory>
 </VirtualHost>
 
-<VirtualHost *:443>
-    ServerName biomerieux
-    ServerAlias biomerieux.localhost
-    DocumentRoot "/Users/Benoit/Sites/biomerieux-industry/web"
-    ErrorLog "/usr/local/var/log/httpd/biomerieux-error_log"
-    CustomLog "/usr/local/var/log/httpd/biomerieux-access_log" common
-    SetEnv APPLICATION_ENV development
-
-    SSLEngine on
-    SSLCertificateFile "/etc/apache2/ssl/biomerieux.crt"
-    SSLCertificateKeyFile "/etc/apache2/ssl/biomerieux.key"
-
-    <Directory "/Users/Benoit/Sites/biomerieux-industry">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      Allow from all
-      Require all granted
-    </Directory>
-</VirtualHost>
-
 <VirtualHost *:80>
     ServerName studio-webqam.localhost
     ServerAlias studio-webqam.localhost
@@ -345,6 +324,27 @@
     SetEnv APPLICATION_ENV development
 
     <Directory "/Users/Benoit/Sites/site-casino-max-drupal">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName eramet.localhost
+    ServerAlias eramet.localhost
+    DocumentRoot "/Users/Benoit/Sites/eramet/web"
+    ErrorLog "/usr/local/var/log/httpd/eramet-error_log"
+    CustomLog "/usr/local/var/log/httpd/eramet-access_log" common
+    SetEnv APPLICATION_ENV development
+
+    SSLEngine on
+    SSLCertificateFile "/etc/apache2/ssl/eramet.localhost.crt"
+    SSLCertificateKeyFile "/etc/apache2/ssl/eramet.localhost.key"
+
+    <Directory "/Users/Benoit/Sites/eramet">
       Options Indexes FollowSymLinks
       AllowOverride All
       Order allow,deny
