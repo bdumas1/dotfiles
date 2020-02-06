@@ -115,6 +115,7 @@ alias gci='git ci -m'
 alias hf='f() { git co -b hotfix-$1 };f'
 alias ngrok='~/ngrok'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 
 # add support for ctrl+o to open selected file in VS Code
 FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
