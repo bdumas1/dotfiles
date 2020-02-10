@@ -5,11 +5,12 @@ host gbr-auto-framework.nfrance.net
 host bdumas
     User root
 
-host lgf
+host lgf-pp
     User lgf-pp
 
 host nas
-    User Geetix
+    Port 1001
+    User bdumas
 
 host superviseme-pp
     User appvise-me-pp
