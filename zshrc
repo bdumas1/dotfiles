@@ -1,5 +1,6 @@
 # Functions Autoloading
 fpath=(~/.zsh $fpath)
+fpath+=$HOME/.zsh/pure
 
 # Completion
 autoload -U promptinit && promptinit
@@ -99,7 +100,6 @@ bindkey -e
 alias ls='ls -G'
 alias ll='ls -lhG'
 alias la='ls -lahG'
-alias cat='bat'
 alias s='cd ~/Sites'
 alias vhosts-open="$EDITOR /usr/local/etc/httpd/extra/httpd-vhosts.conf"
 alias httpdconf-open="$EDITOR /usr/local/etc/httpd/httpd.conf"
@@ -114,7 +114,8 @@ alias gpus='git push'
 alias gci='git ci -m'
 alias hf='f() { git co -b hotfix-$1 };f'
 alias ngrok='~/ngrok'
-alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias preview="fzf --preview 'cat --color \"always\" {}'"
+alias pbcopy="xclip -selection clipboard"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 
 # add support for ctrl+o to open selected file in VS Code
@@ -164,3 +165,7 @@ bindkey "[C" forward-word
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+
+# phpbrew
+# export PHPBREW_SET_PROMPT=1
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
