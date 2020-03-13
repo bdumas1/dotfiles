@@ -98,7 +98,7 @@ bindkey -e
 
 # ALIAS
 alias ls='ls -G'
-alias ll='ls -lhG'
+alias ll='ls -lhG --color=auto'
 alias la='ls -lahG'
 alias s='cd ~/Sites'
 alias vhosts-open="$EDITOR /usr/local/etc/httpd/extra/httpd-vhosts.conf"
@@ -168,4 +168,4 @@ export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 
 # phpbrew
 # export PHPBREW_SET_PROMPT=1
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
