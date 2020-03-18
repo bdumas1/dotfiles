@@ -117,6 +117,7 @@ alias ngrok='~/ngrok'
 alias preview="fzf --preview 'cat --color \"always\" {}'"
 alias pbcopy="xclip -selection clipboard"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
+alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 
 # add support for ctrl+o to open selected file in VS Code
 FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
