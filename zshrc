@@ -111,6 +111,7 @@ alias gpul='git pull'
 alias gpus='git push'
 alias gco='git co'
 alias gci='git ci -m'
+alias gst="git st"
 alias hf='f() { git co -b hotfix-$1 };f'
 alias ngrok='~/ngrok'
 alias preview="fzf --preview 'cat --color \"always\" {}'"
