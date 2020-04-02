@@ -10,7 +10,7 @@ autoload -U compinit compdef && compinit
 prompt pure
 
 # # Variables
-export EDITOR='code'
+export EDITOR='vim'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 export GREP_COLOR=31
@@ -99,7 +99,7 @@ bindkey -e
 # ALIAS
 alias ls='ls -G'
 alias ll='ls -lhG --color=auto'
-alias la='ls -lahG'
+alias la='ls -lahG --color=auto'
 alias s='cd ~/Sites'
 alias vhosts-open="$EDITOR /usr/local/etc/httpd/extra/httpd-vhosts.conf"
 alias httpdconf-open="$EDITOR /usr/local/etc/httpd/httpd.conf"
@@ -107,10 +107,9 @@ alias nmap='nmap -T4 -A -v $1'
 alias cd..="cd .."
 alias ..="cd .."
 alias grep='grep --color=auto'
-alias gulps='gulp styleguide'
-alias gulpss='gulp styleguide:sass'
 alias gpul='git pull'
 alias gpus='git push'
+alias gco='git co'
 alias gci='git ci -m'
 alias hf='f() { git co -b hotfix-$1 };f'
 alias ngrok='~/ngrok'
