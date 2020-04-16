@@ -109,10 +109,11 @@ alias gpus='git push'
 alias gco='git co'
 alias gci='git ci -m'
 alias gst="git st"
-alias preview="fzf --preview 'cat --color \"always\" {}'"
+alias preview="fzf --preview 'cat {}'"
 alias pbcopy="xclip -selection clipboard"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
+alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
 
 # add support for ctrl+o to open selected file in VS Code
 FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
