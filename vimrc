@@ -147,3 +147,5 @@ endif
 let g:airline_theme = 'luna'
 let g:airline_extensions = ['branch', 'whitespace']
 set noshowmode
+
+autocmd vimenter * NERDTree
