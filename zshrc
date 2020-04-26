@@ -93,9 +93,6 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
-# Reverse search
-bindkey -e
-
 # ALIAS
 alias ls='ls -G'
 alias ll='ls -lhG --color=auto'
@@ -114,9 +111,7 @@ alias pbcopy="xclip -selection clipboard"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
-
-# add support for ctrl+o to open selected file in VS Code
-FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+alias publicip='curl ifconfig.me' 
 
 # DOCKER ALIAS
 
@@ -130,10 +125,10 @@ FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
 # You can hit C-X C-E to open your $EDITOR
 # with the command typed in the buffer and quickly edit your error
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey 'x^e' edit-command-line
+# autoload -U edit-command-line
+# zle -N edit-command-line
+# bindkey '^xe' edit-command-line
+# bindkey 'x^e' edit-command-line
 
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
@@ -146,20 +141,23 @@ export PATH="$PATH:./node_modules/.bin"
 # Composer
 export PATH="$PATH:/Users/Benoit/.composer/vendor/bin"
 
-# PATH PHP 7.1
-#export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-#export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
-
 # NVM
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+## Bindkeys
+
+# fzf - ^R - Search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Other bindkeys
 bindkey "[D" backward-word
 bindkey "[C" forward-word
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 

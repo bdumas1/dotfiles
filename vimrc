@@ -148,4 +148,6 @@ let g:airline_theme = 'luna'
 let g:airline_extensions = ['branch', 'whitespace']
 set noshowmode
 
-autocmd vimenter * NERDTree
+" NERDTree
+" autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
