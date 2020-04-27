@@ -16,7 +16,9 @@ link_files() {
 git submodule update --init
 
 mkdir -p ~/.zsh
-git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
+
+# pure
+link_files submodules/pure ~/.zsh/pure
 
 # vim
 link_files vim ~/.vim
