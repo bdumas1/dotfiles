@@ -15,14 +15,16 @@ link_files() {
 
 git submodule update --init
 
+mkdir -p ~/.zsh
+git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
+
 # vim
 link_files vim ~/.vim
 
 # zsh-syntax-highlighting
 link_files submodules/zsh-syntax-highlighting ~/zsh-syntax-highlighting
 
-# zsh-autosuggestions
-mkdir -p ~/.zsh
+# zsh-autosuggestion
 link_files submodules/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 # zsh
