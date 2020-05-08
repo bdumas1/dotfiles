@@ -17,20 +17,14 @@ git submodule update --init
 
 mkdir -p ~/.zsh
 
-# pure
-link_files submodules/pure ~/.zsh/pure
-
 # vim
 link_files vim ~/.vim
 
-# zsh-syntax-highlighting
-link_files submodules/zsh-syntax-highlighting ~/zsh-syntax-highlighting
-
-# zsh-autosuggestion
-link_files submodules/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-
 # zsh
 link_files zshrc ~/.zshrc
+link_files zsh/zsh-syntax-highlighting ~/zsh-syntax-highlighting
+link_files zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+link_files zsh/pure ~/.zsh/pure
 
 # vim
 link_files vimrc ~/.vimrc

@@ -1,9 +1,12 @@
-[submodule "submodules/zsh-syntax-highlighting"]
-	path = submodules/zsh-syntax-highlighting
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "submodules/zsh-autosuggestions"]
-	path = submodules/zsh-autosuggestions
+[submodule "zsh/zsh-autosuggestions"]
+	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/pure"]
+	path = zsh/pure
+	url = https://github.com/sindresorhus/pure.git
 [submodule "vim/pack/airline/start/airline"]
 	path = vim/pack/airline/start/airline
 	url = https://github.com/vim-airline/vim-airline.git
@@ -16,6 +19,3 @@
 [submodule "vim/pack/vendor/start/nerdtree"]
 	path = vim/pack/vendor/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "submodules/pure"]
-	path = submodules/pure
-	url = https://github.com/sindresorhus/pure.git
