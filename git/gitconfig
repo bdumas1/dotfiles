@@ -14,7 +14,7 @@
 [status]
 	showUntrackedFiles = all
 [diff]
-    # When using --word-diff, assume --word-diff-regex=.
+	# When using --word-diff, assume --word-diff-regex=.
 	wordRegex = .
 	# Use VSCode as default diff tool when running `git diff-tool`
 	tool = vscode
