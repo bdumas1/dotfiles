@@ -3,13 +3,12 @@
 	name = Benoit DUMAS
 [core]
 	autocrlf = input
-	excludesfile = /Users/Benoit/.gitignore
 [alias]
 	co = checkout
 	st = status
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  	ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
-  	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s   %Cgreen(%an %ar)%Creset'
 	ci = commit
 [status]
@@ -22,4 +21,4 @@
 [pull]
 	rebase = true
 [rebase]
-    autoStash = true
+	autoStash = true
