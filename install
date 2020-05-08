@@ -29,8 +29,8 @@ link_files zsh/pure ~/.zsh/pure
 link_files vim/vimrc ~/.vimrc
 
 # git
-link_files gitconfig ~/.gitconfig
-link_files git-completion.zsh ~/.git-completion.zsh
+link_files git/gitconfig ~/.gitconfig
+link_files git/git-completion.zsh ~/.git-completion.zsh
 
 echo ''
 success 'All installed!'
