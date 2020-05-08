@@ -32,8 +32,5 @@ link_files vim/vimrc ~/.vimrc
 link_files gitconfig ~/.gitconfig
 link_files git-completion.zsh ~/.git-completion.zsh
 
-# vhosts
-# link_files vhosts /usr/local/etc/httpd/extra/httpd-vhosts.conf
-
 echo ''
 success 'All installed!'
