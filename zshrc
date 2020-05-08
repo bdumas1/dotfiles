@@ -94,7 +94,7 @@ zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
 # ALIAS
-alias ls='ls -G'
+alias ls='ls -G --color'
 alias ll='ls -lhG --color=auto'
 alias la='ls -lahG --color=auto'
 alias nmap='nmap -T4 -A -v $1'
