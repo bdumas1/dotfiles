@@ -130,16 +130,10 @@ alias publicip='curl ifconfig.me'
 # bindkey '^xe' edit-command-line
 # bindkey 'x^e' edit-command-line
 
-# Homebrew
-export PATH="/usr/local/sbin:$PATH"
-
 export PATH="/usr/local/bin:$PATH"
 
 # Node
 export PATH="$PATH:./node_modules/.bin"
-
-# Composer
-export PATH="$PATH:/Users/Benoit/.composer/vendor/bin"
 
 # NVM
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -158,8 +152,8 @@ bindkey "[C" forward-word
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # phpbrew
 # export PHPBREW_SET_PROMPT=1
