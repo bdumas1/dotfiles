@@ -21,7 +21,8 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xp
 set number
 " Show cursor position
 set ruler
-
+" Show current line
+set cursorline
 " Highlight matches as you type
 set incsearch
 " Highlight matches
@@ -133,7 +134,12 @@ vmap <S-Down> j
 vmap <S-Left> h
 vmap <S-Right> l
 
+" Select all
 map <C-a> <esc>ggVG<CR>
+
+" Backspace
+nnoremap <BS> xi
+vnoremap <BS> xi
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
