@@ -168,8 +168,10 @@ map <C-a> <esc>ggVG<CR>
 
 " Find
 nnoremap <C-f> <esc>/
+inoremap <C-f> <esc>/
 " Find and replace
 nnoremap <C-h> <esc>:%s///g
+inoremap <C-h> <esc>:%s///g
 
 " Backspace
 nnoremap <BS> xi
