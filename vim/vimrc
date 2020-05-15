@@ -173,6 +173,10 @@ inoremap <C-f> <esc>/
 nnoremap <C-h> <esc>:%s///g
 inoremap <C-h> <esc>:%s///g
 
+" Duplicate line
+nnoremap <C-d> <esc>:t.<CR>
+inoremap <C-d> <esc>:t.<CR>
+
 " Backspace
 nnoremap <BS> xi
 vnoremap <BS> xi
