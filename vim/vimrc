@@ -96,16 +96,15 @@ inoremap {{     {
 inoremap {}     {}
 
 " Copy
-vnoremap <C-c> y
+vnoremap <C-c> yi
 
 " Paste
-nnoremap <C-v> p
+nnoremap <C-v> pi
 inoremap <C-v> <ESC>pi
 
 " Cut
-vnoremap <C-x> x
+vnoremap <C-x> xi
 
-" Copy/Paste/Undo
 " Undo
 nnoremap <C-z> <nop>
 vnoremap <C-z> <nop>
