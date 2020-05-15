@@ -140,7 +140,6 @@ vnoremap <C-x> xi
 nnoremap <C-z> <nop>
 vnoremap <C-z> <nop>
 inoremap <C-z> <nop>
-
 nnoremap <C-z> u
 vnoremap <C-z> u
 inoremap <C-z> <C-O>u
@@ -166,6 +165,11 @@ vmap <S-Right> l
 
 " Select all
 map <C-a> <esc>ggVG<CR>
+
+" Find
+nnoremap <C-f> <esc>/
+" Find and replace
+nnoremap <C-h> <esc>:%s///g
 
 " Backspace
 nnoremap <BS> xi
