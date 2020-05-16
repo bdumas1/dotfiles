@@ -16,6 +16,3 @@
 [submodule "vim/pack/base/start/solarized8"]
 	path = vim/pack/base/start/solarized8
 	url = https://github.com/lifepillar/vim-solarized8.git
-[submodule "vim/pack/vendor/start/nerdtree"]
-	path = vim/pack/vendor/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
