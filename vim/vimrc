@@ -12,6 +12,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
+Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -194,4 +195,4 @@ endif
 
 " NERDTree
 " autocmd vimenter * NERDTree
-map <C-b> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
