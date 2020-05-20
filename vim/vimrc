@@ -198,8 +198,8 @@ vnoremap <C-d> <esc>:t.<CR>i
 inoremap <C-d> <esc>:t.<CR>i
 
 " Backspace
-nnoremap <BS> xi
-vnoremap <BS> xi
+nnoremap <BS> i<BS>
+vnoremap <BS> i<BS>
 
 " Move up/down
 nnoremap <A-Down> :m .+1<CR>==
