@@ -127,6 +127,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+set splitbelow
+
 " Enable Alt key for terminal emulator
 " https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim#answer-10216459
 let c='a'
