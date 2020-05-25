@@ -209,6 +209,10 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 vnoremap <A-Down> :m '>+1<CR>gv=gv
 vnoremap <A-Up> :m '<-2<CR>gv=gv
 
+nnoremap <C-w> :q<CR>
+inoremap <C-w> <Esc>:q<CR>
+vnoremap <C-w> :q<CR>
+
 "" Plugins
 
 " NERDTree
