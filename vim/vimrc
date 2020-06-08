@@ -32,7 +32,7 @@ set background=dark
 "colorscheme solarized8
 "let g:airline_theme = 'material'
 colorscheme material
-let g:material_theme_style = 'default'
+let g:material_theme_style = 'palenight'
 let g:airline_theme = 'material'
 let g:airline_extensions = ['branch', 'whitespace']
 set noshowmode
@@ -218,3 +218,13 @@ vnoremap <C-w> :q<CR>
 " NERDTree
 " autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" Change cursor in Insert/Normal mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
