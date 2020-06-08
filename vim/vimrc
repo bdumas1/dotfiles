@@ -199,7 +199,7 @@ inoremap <C-d> <esc>:t.<CR>i
 
 " Backspace
 nnoremap <BS> i<BS>
-vnoremap <BS> i<BS>
+vnoremap <BS> xi
 
 " Move up/down
 nnoremap <A-Down> :m .+1<CR>==
