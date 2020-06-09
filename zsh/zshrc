@@ -95,8 +95,9 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
 # ALIAS
 alias ls='ls --color'
-alias ll='ls -lh | grep "^d" && ls -lh | grep -v "^d"'
-alias la='ls -lah | grep "^d" && ls -lha | grep -v "^d"'
+alias ll='ls -lht | grep "^d" && ls -lht | grep -v "^d"'
+alias la='ls -lath | grep "^d" && ls -lhta | grep -v "^d"'
+alias open='xdg-open'
 alias nmap='nmap -T4 -A -v $1'
 alias cd..="cd .."
 alias ..="cd .."
