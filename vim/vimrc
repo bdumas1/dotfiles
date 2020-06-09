@@ -32,7 +32,7 @@ set background=dark
 "colorscheme solarized8
 "let g:airline_theme = 'material'
 colorscheme material
-let g:material_theme_style = 'palenight'
+let g:material_theme_style = 'default'
 let g:airline_theme = 'material'
 let g:airline_extensions = ['branch', 'whitespace']
 set noshowmode
