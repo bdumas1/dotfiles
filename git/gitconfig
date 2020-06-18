@@ -3,6 +3,7 @@
 	name = Benoit DUMAS
 [core]
 	autocrlf = input
+	excludesfile = /home/bdumas/.gitignore_global
 [alias]
 	co = checkout
 	st = status
