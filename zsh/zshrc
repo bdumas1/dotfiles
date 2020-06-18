@@ -9,13 +9,13 @@ autoload -U compinit compdef && compinit
 # Prompt
 prompt pure
 
-# # Variables
+# Variables
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 export GREP_COLOR=31
-
-# Locale
+export PROJECTS_FOLDER=/home/bdumas/Lab/Sites/cisco
+export GOPATH=${PROJECTS_FOLDER}/golang
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -24,13 +24,15 @@ HISTFILE="$HOME/.history"
 HISTSIZE=100000
 SAVEHIST="$HISTSIZE"
 
-# zsh-syntax-highlighting
+# -----------
+# - Plugins -
+# -----------
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# User configuration
+# ----------------------
+# - User configuration -
+# ----------------------
 
 # Correction des commandes
 setopt histignorealldups sharehistory
@@ -93,9 +95,11 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
-# ALIAS
+# -----------
+# - ALIASES -
+# -----------
 alias ls='ls --color'
-alias ll='ls -lht | grep "^d" && ls -lht | grep -v "^d"'
+alias ll='ls -lth | grep "^d" && ls -lth | grep -v "^d"'
 alias la='ls -lath | grep "^d" && ls -lhta | grep -v "^d"'
 alias open='xdg-open'
 alias nmap='nmap -T4 -A -v $1'
@@ -112,10 +116,62 @@ alias pbcopy="xclip -selection clipboard"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
-alias publicip='curl ifconfig.me' 
+alias publicip='curl ifconfig.me'
+
+## CISCO aliases
+alias cisco='cd ~/Lab/Sites/cisco'
+alias webapp-v3='cd ~/Lab/Sites/cisco/webapp-v3'
+alias sbs-syncd='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/sbs-syncd'
+function startv3-lc {
+  v3
+  sudo rm -f build/v2
+  sudo rm -f public/v2
+  sudo ln -sf ../../webapp-v2/dist public/v2
+  sudo rm -Rf build/
+  REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_lc_1 8080) yarn start
+}
+function startv3-gc {
+  v3
+  sudo rm -f build/v2
+  sudo rm -f public/v2
+  sudo ln -sf ../../webapp-v2/dist public/v2
+  sudo rm -Rf build/
+  REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_gc_1 8080) yarn start
+}
+
+# -----------
+# - Exports -
+# -----------
+export PATH="/usr/local/bin:$PATH"
+export PATH="/home/bdumas/go/bin:$PATH"
+export PATH="$PATH:./node_modules/.bin"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# ------------
+# - Bindkeys -
+# ------------
+
+## fzf - ^R - Search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+## phpbrew
+# export PHPBREW_SET_PROMPT=1
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 # DOCKER ALIAS
-
 # alias docker-drush='docker run --rm --link local.dev -v $(pwd):/app drush/drush:8 $1'
 # alias docker-apache='docker exec -it web-apache-7 bash'
 # alias docker-into-mysql='docker exec -it local.localhost mysql -h local.localhost -u root -proot'
@@ -123,39 +179,3 @@ alias publicip='curl ifconfig.me'
 # alias docker-restart='cd ~/lab/docker-preferences && docker-compose down && docker-compose up -d && cd -'
 # alias docker-start='cd ~/lab/docker-preferences && docker-compose up -d && cd -'
 # alias docker-stop='cd ~/lab/docker-preferences && docker-compose down && cd -'
-
-# You can hit C-X C-E to open your $EDITOR
-# with the command typed in the buffer and quickly edit your error
-# autoload -U edit-command-line
-# zle -N edit-command-line
-# bindkey '^xe' edit-command-line
-# bindkey 'x^e' edit-command-line
-
-export PATH="/usr/local/bin:$PATH"
-
-# Node
-export PATH="$PATH:./node_modules/.bin"
-
-# NVM
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-## Bindkeys
-
-# fzf - ^R - Search
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Other bindkeys
-bindkey "[D" backward-word
-bindkey "[C" forward-word
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
-# phpbrew
-# export PHPBREW_SET_PROMPT=1
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
