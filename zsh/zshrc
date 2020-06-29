@@ -98,7 +98,12 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 # -----------
 # - ALIASES -
 # -----------
-alias ls='ls --color'
+
+if [ "$TERM_PROGRAM" != "iTerm.app" ]
+then
+  alias ls='ls --color'
+fi
+
 alias ll='ls -lth | grep "^d" && ls -lth | grep -v "^d"'
 alias la='ls -lath | grep "^d" && ls -lhta | grep -v "^d"'
 alias open='xdg-open'
@@ -123,7 +128,7 @@ alias cisco='cd ~/Lab/Sites/cisco'
 alias webapp-v3='cd ~/Lab/Sites/cisco/webapp-v3'
 alias sbs-syncd='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/sbs-syncd'
 function startv3-lc {
-  v3
+  webapp-v3
   sudo rm -f build/v2
   sudo rm -f public/v2
   sudo ln -sf ../../webapp-v2/dist public/v2
@@ -131,7 +136,7 @@ function startv3-lc {
   REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_lc_1 8080) yarn start
 }
 function startv3-gc {
-  v3
+  webapp-v3
   sudo rm -f build/v2
   sudo rm -f public/v2
   sudo ln -sf ../../webapp-v2/dist public/v2
