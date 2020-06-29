@@ -102,10 +102,12 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 if [ "$TERM_PROGRAM" != "iTerm.app" ]
 then
   alias ls='ls --color'
+else
+  alias ls='ls -G'
 fi
 
-alias ll='ls -lthG | grep "^d" && ls -lthG | grep -v "^d"'
-alias la='ls -lathG | grep "^d" && ls -lhtaG | grep -v "^d"'
+alias ll='ls -lth | grep "^d" && ls -lth | grep -v "^d"'
+alias la='ls -lath | grep "^d" && ls -lhta | grep -v "^d"'
 alias open='xdg-open'
 alias nmap='nmap -T4 -A -v $1'
 alias cd..="cd .."
