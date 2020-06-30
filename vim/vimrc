@@ -147,8 +147,6 @@ set timeout ttimeoutlen=50
 "inoremap {{     {
 "inoremap {}     {}
 
-inoremap " ""<left>
-inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
