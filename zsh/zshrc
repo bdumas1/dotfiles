@@ -99,7 +99,7 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 # - ALIASES -
 # -----------
 
-if [ "$TERM_PROGRAM" != "iTerm.app" ]
+if [[ "$TERM_PROGRAM" != "" && "$TERM_PROGRAM" != "iTerm.app" ]]
 then
   alias ls='ls --color'
 else
