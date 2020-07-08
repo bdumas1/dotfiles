@@ -124,6 +124,7 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
 alias publicip='curl ifconfig.me'
+alias dotfiles='cd ~/Lab/dotfiles'
 
 ## CISCO aliases
 alias cisco='cd ~/Lab/Sites/cisco'
