@@ -99,15 +99,14 @@ zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 # - ALIASES -
 # -----------
 
-if [[ "$TERM_PROGRAM" != "" && "$TERM_PROGRAM" != "iTerm.app" ]]
-then
-  alias ls='ls --color'
-else
+if [ "$OSTYPE" = linux-gnu ]; then
   alias ls='ls -G'
+  alias ll='ls -Flh --group-directories-first'
+else
+  alias ls='ls --color'
+  alias ll='gls -Flh --group-directories-first --color'
 fi
 
-alias ll='ls -lth | grep "^d" && ls -lth | grep -v "^d"'
-alias la='ls -lath | grep "^d" && ls -lhta | grep -v "^d"'
 alias open='xdg-open'
 alias nmap='nmap -T4 -A -v $1'
 alias cd..="cd .."
