@@ -32,5 +32,8 @@ link_files vim/vimrc ~/.vimrc
 link_files git/gitconfig ~/.gitconfig
 link_files git/git-completion.zsh ~/.git-completion.zsh
 
+# tmux
+link_files tmux.conf ~/.tmux.conf
+
 echo ''
 success 'All installed!'
