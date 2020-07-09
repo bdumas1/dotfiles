@@ -131,6 +131,7 @@ alias cisco='cd ~/Lab/Sites/cisco'
 alias webapp-v3='cd ~/Lab/Sites/cisco/webapp-v3'
 alias sbs-syncd='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/sbs-syncd'
 alias backend='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/backend'
+alias db='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/db'
 function startv3-lc {
   webapp-v3
   sudo rm -f build/v2
