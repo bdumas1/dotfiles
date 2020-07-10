@@ -19,6 +19,7 @@ Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
