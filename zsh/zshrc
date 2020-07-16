@@ -171,14 +171,15 @@ function initnvm {
 ## fzf - ^R - Search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-bindkey "[D" backward-word
-bindkey "[C" forward-word
+## For OSX
+bindkey -e
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
 
+## For Ubuntu
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
 
 ## phpbrew
 # export PHPBREW_SET_PROMPT=1
