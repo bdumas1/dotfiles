@@ -135,6 +135,9 @@ set pastetoggle=<F2>
 " disable folding
 set nofoldenable
 
+" Using clipboard as the default register
+set clipboard=unnamed
+
 " Tabs and indentation
 set autoindent
 set smartindent
