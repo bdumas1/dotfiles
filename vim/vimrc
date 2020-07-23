@@ -21,6 +21,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'mhinz/vim-grepper'  
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -228,6 +229,11 @@ vnoremap <C-S-Up> :m '<-2<CR>gv=gv
 nnoremap <C-w> :q<CR>
 inoremap <C-w> <Esc>:q<CR>
 vnoremap <C-w> :q<CR>
+
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
+
+nmap <C-R>r :NERDTreeFind<CR>
 
 "" Plugins
 
