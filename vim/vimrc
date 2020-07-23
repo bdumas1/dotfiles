@@ -13,6 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
