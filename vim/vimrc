@@ -206,8 +206,8 @@ vnoremap <S-Right> l
 map <C-a> <esc>ggVG<CR>
 
 " Find
-nnoremap <C-f> <esc>/
-inoremap <C-f> <esc>/
+"nnoremap <C-f> <esc>/
+"inoremap <C-f> <esc>/
 " Find and replace
 nnoremap <C-h> <esc>:%s///g
 inoremap <C-h> <esc>:%s///g
@@ -243,6 +243,7 @@ nmap <C-R>r :NERDTreeFind<CR>
 
 " FZF
 nmap <C-p> :Files<CR>
+nmap <C-f> :BLines<CR>
 
 "" Plugins
 
