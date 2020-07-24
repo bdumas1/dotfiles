@@ -16,12 +16,13 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'mhinz/vim-grepper'  
+Plug 'mhinz/vim-grepper'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -32,6 +33,8 @@ call plug#end()
 if (has('termguicolors'))
   set termguicolors
 endif
+
+set rtp+=/usr/local/opt/fzf
 
 " ----- SET VIM THEME -----
 
@@ -226,14 +229,20 @@ inoremap <C-S-Up> <Esc>:m .-2<CR>==gi
 vnoremap <C-S-Down> :m '>+1<CR>gv=gv
 vnoremap <C-S-Up> :m '<-2<CR>gv=gv
 
+" Quit
 nnoremap <C-w> :q<CR>
 inoremap <C-w> <Esc>:q<CR>
 vnoremap <C-w> :q<CR>
 
+" Grepper
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 
+" NERDTreeFind
 nmap <C-R>r :NERDTreeFind<CR>
+
+" FZF
+nmap <C-p> :Files<CR>
 
 "" Plugins
 
