@@ -154,16 +154,10 @@ set splitbelow
 
 set timeout ttimeoutlen=50
 
-"inoremap {      {}<Left>
-"inoremap {<CR>  {<CR>}<Esc>O
-"inoremap {{     {
-"inoremap {}     {}
-
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " Copy
 vnoremap <C-c> yi
@@ -205,12 +199,9 @@ vnoremap <S-Right> l
 " Select all
 map <C-a> <esc>ggVG<CR>
 
-" Find
-"nnoremap <C-f> <esc>/
-"inoremap <C-f> <esc>/
-" Find and replace
-nnoremap <C-h> <esc>:%s///g
-inoremap <C-h> <esc>:%s///g
+" Find and replaceOB
+nnoremap <C-r> <esc>:%s///g
+inoremap <C-r> <esc>:%s///g
 
 " Duplicate line
 nnoremap <C-d> <esc>:t.<CR>i
