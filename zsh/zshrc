@@ -103,6 +103,7 @@ if [ "$OSTYPE" = linux-gnu ]; then
   alias ls='ls -G'
   alias ll='ls -Flh --group-directories-first'
   alias la='ls -Flah --group-directories-first'
+  alias pbcopy="xclip -selection clipboard"
 else
   alias ls='ls --color'
   alias ll='gls -Flh --group-directories-first --color'
@@ -120,7 +121,6 @@ alias gco='git co'
 alias gci='git ci -m'
 alias gst="git st"
 alias preview="fzf --preview 'cat {}'"
-alias pbcopy="xclip -selection clipboard"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
