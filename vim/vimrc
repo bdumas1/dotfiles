@@ -60,7 +60,12 @@ set noshowmode
 " ----- END SET VIM THEME -----
 
 syntax on
+
 set mouse=a
+
+" tmux knows the extended mouse mode
+set ttymouse=xterm2
+
 filetype plugin indent on
 
 set title
