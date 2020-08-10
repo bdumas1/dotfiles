@@ -188,6 +188,10 @@ bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
 
 ## For Ubuntu
+bindkey ";3D" backward-word
+bindkey ";3C" forward-word
+
+## For Ubuntu
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
