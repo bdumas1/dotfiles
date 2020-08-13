@@ -179,11 +179,9 @@ function initnvm {
 # - Bindkeys -
 # ------------
 
-## fzf - ^R - Search
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## For OSX
-bindkey -e
+#bindkey -e
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
 
@@ -195,6 +193,8 @@ bindkey ";3C" forward-word
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
+## fzf - ^R - Search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## phpbrew
 # export PHPBREW_SET_PROMPT=1
