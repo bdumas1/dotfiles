@@ -31,6 +31,7 @@ link_files vim/vimrc ~/.vimrc
 # git
 link_files git/gitconfig ~/.gitconfig
 link_files git/git-completion.zsh ~/.git-completion.zsh
+link_files git/gitignore_global ~/.gitignore_global
 
 # tmux
 link_files tmux.conf ~/.tmux.conf
