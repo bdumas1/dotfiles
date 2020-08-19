@@ -1,14 +1,3 @@
-# Functions Autoloading
-fpath=(~/.zsh $fpath)
-fpath+=$HOME/.zsh/pure
-
-# Completion
-autoload -U promptinit && promptinit
-autoload -U compinit compdef && compinit
-
-# Prompt
-prompt pure
-
 # Variables
 export EDITOR='vim'
 export GIT_EDITOR='vim'
@@ -18,6 +7,9 @@ export PROJECTS_FOLDER=~/Lab/Sites/cisco
 export GOPATH=${PROJECTS_FOLDER}/golang
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME=""
 
 # History
 HISTFILE="$HOME/.history"
@@ -27,8 +19,15 @@ SAVEHIST="$HISTSIZE"
 # -----------
 # - Plugins -
 # -----------
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Pure prompt
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
 
 # ----------------------
 # - User configuration -
@@ -38,7 +37,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 setopt histignorealldups sharehistory
 unsetopt correctall
 setopt autocd
-
 # Remove superfluous blanks from each command line being added to the history
 # list
 setopt histreduceblanks
@@ -80,87 +78,10 @@ setopt alwaystoend
 # Try to correct the spelling of commands
 setopt correct
 
-# case-insensitive (uppercase from lowercase) completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# process completion
-zstyle ':completion:*:processes' command 'ps -au$USER'
-zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
-
-# zstyle
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' menu select=2
-zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
-zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
-
 # -----------
 # - ALIASES -
 # -----------
-
-if [ "$OSTYPE" = linux-gnu ]; then
-  alias ls='ls --color'
-  alias ll='ls -Flh --group-directories-first'
-  alias la='ls -Flah --group-directories-first'
-  alias pbcopy="xclip -selection clipboard"
-else
-  alias ls='ls -G'
-  alias ll='gls -Flh --group-directories-first --color'
-  alias la='gls -Flah --group-directories-first --color'
-fi
-
-alias open='xdg-open'
-alias nmap='nmap -T4 -A -v $1'
-alias cd..="cd .."
-alias ..="cd .."
-alias grep='grep --color=auto'
-alias gpul='git pull'
-alias gpus='git push'
-alias gco='git co'
-alias gci='git ci -m'
-alias gst="git st"
-alias preview="fzf --preview 'cat {}'"
-alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
-alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
-alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
-alias publicip='curl ifconfig.me'
-alias dotfiles='cd ~/Lab/dotfiles'
-alias gulp='nocorrect gulp'
-
-## CISCO aliases
-alias cisco='cd ~/Lab/Sites/cisco'
-alias webapp-v3='cd ~/Lab/Sites/cisco/webapp-v3'
-alias sbs-syncd='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/sbs-syncd'
-alias backend='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/backend'
-alias db='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/db'
-alias sentryo-vpn-down='sudo ipsec stop'
-function sentryo-vpn-up {
-  sudo ifconfig en0 -alias 10.233.254.50
-  sudo ipsec restart
-  sudo ifconfig en0 alias 10.233.254.50/16
-  sudo ipsec restart
-  sleep 10
-  sudo ipsec up diamond
-}
-function startv3-lc {
-  initnvm && nvm use 13.10.1
-  webapp-v3
-  sudo rm -f build/v2
-  sudo rm -f public/v2
-  sudo ln -sf ../../webapp-v2/dist public/v2
-  sudo rm -Rf build/
-  REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_lc_1 8080) yarn start
-}
-function startv3-gc {
-  initnvm && nvm use 13.10.1
-  webapp-v3
-  sudo rm -f build/v2
-  sudo rm -f public/v2
-  sudo ln -sf ../../webapp-v2/dist public/v2
-  sudo rm -Rf build/
-  REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_gc_1 8080) yarn start
-}
+source $HOME/.aliases
 
 # -----------
 # - Exports -
@@ -169,43 +90,16 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/home/bdumas/go/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
 
-# NVM
-function initnvm {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-}
-
 # ------------
 # - Bindkeys -
 # ------------
-
-
-## For OSX
-#bindkey -e
 bindkey "\e\e[D" backward-word
-bindkey "\e\e[C" forward-word
-
-## For Ubuntu
 bindkey ";3D" backward-word
+bindkey "\e\e[C" forward-word
 bindkey ";3C" forward-word
 
-## For Ubuntu
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
 ## fzf - ^R - Search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## phpbrew
-# export PHPBREW_SET_PROMPT=1
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
-# DOCKER ALIAS
-# alias docker-drush='docker run --rm --link local.dev -v $(pwd):/app drush/drush:8 $1'
-# alias docker-apache='docker exec -it web-apache-7 bash'
-# alias docker-into-mysql='docker exec -it local.localhost mysql -h local.localhost -u root -proot'
-# alias docker-mysql='docker exec local.localhost mysql $1'
-# alias docker-restart='cd ~/lab/docker-preferences && docker-compose down && docker-compose up -d && cd -'
-# alias docker-start='cd ~/lab/docker-preferences && docker-compose up -d && cd -'
-# alias docker-stop='cd ~/lab/docker-preferences && docker-compose down && cd -'

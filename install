@@ -18,8 +18,12 @@ git submodule update --init
 # vim
 link_files vim ~/.vim
 
+# Oh My Zsh
+[ ! -d "$HOME/.oh-my-zsh" ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # zsh
 mkdir -p ~/.zsh
+link_files zsh/aliases ~/.aliases
 link_files zsh/zshrc ~/.zshrc
 link_files zsh/zsh-syntax-highlighting ~/zsh-syntax-highlighting
 link_files zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
@@ -30,7 +34,6 @@ link_files vim/vimrc ~/.vimrc
 
 # git
 link_files git/gitconfig ~/.gitconfig
-link_files git/git-completion.zsh ~/.git-completion.zsh
 link_files git/gitignore_global ~/.gitignore_global
 
 # tmux

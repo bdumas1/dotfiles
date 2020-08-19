@@ -1,0 +1,63 @@
+if [ "$OSTYPE" = linux-gnu ]; then
+  alias ls='ls --color'
+  alias ll='ls -Flh --group-directories-first'
+  alias la='ls -Flah --group-directories-first'
+  alias pbcopy="xclip -selection clipboard"
+else
+  alias ls='ls -G'
+  alias ll='gls -Flh --group-directories-first --color'
+  alias la='gls -Flah --group-directories-first --color'
+fi
+
+alias open='xdg-open'
+alias nmap='nmap -T4 -A -v $1'
+alias cd..="cd .."
+alias ..="cd .."
+alias grep='grep --color=auto'
+alias preview="fzf --preview 'cat {}'"
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
+alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
+alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
+alias publicip='curl ifconfig.me'
+alias dotfiles='cd ~/Lab/dotfiles'
+alias gulp='nocorrect gulp'
+
+function initnvm {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+}
+
+## CISCO aliases
+alias cisco='cd ~/Lab/Sites/cisco'
+alias webapp-v3='cd ~/Lab/Sites/cisco/webapp-v3'
+alias sbs-syncd='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/sbs-syncd'
+alias backend='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/backend'
+alias db='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/db'
+alias sentryo-vpn-down='sudo ipsec stop'
+function sentryo-vpn-up {
+  sudo ifconfig en0 -alias 10.233.254.50
+  sudo ipsec restart
+  sudo ifconfig en0 alias 10.233.254.50/16
+  sudo ipsec restart
+  sleep 10
+  sudo ipsec up diamond
+}
+function startv3-lc {
+  initnvm && nvm use 13.10.1
+  webapp-v3
+  sudo rm -f build/v2
+  sudo rm -f public/v2
+  sudo ln -sf ../../webapp-v2/dist public/v2
+  sudo rm -Rf build/
+  REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_lc_1 8080) yarn start
+}
+function startv3-gc {
+  initnvm && nvm use 13.10.1
+  webapp-v3
+  sudo rm -f build/v2
+  sudo rm -f public/v2
+  sudo ln -sf ../../webapp-v2/dist public/v2
+  sudo rm -Rf build/
+  REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_gc_1 8080) yarn start
+}
