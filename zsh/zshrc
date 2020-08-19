@@ -134,6 +134,7 @@ alias webapp-v3='cd ~/Lab/Sites/cisco/webapp-v3'
 alias sbs-syncd='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/sbs-syncd'
 alias backend='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/backend'
 alias db='cd ~/Lab/Sites/cisco/golang/src/sentryo.net/db'
+alias sentryo-vpn-down='sudo ipsec stop'
 function sentryo-vpn-up {
   sudo ifconfig en0 -alias 10.233.254.50
   sudo ipsec restart
