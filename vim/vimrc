@@ -241,10 +241,10 @@ xmap gs  <plug>(GrepperOperator)
 nmap <C-R>r :NERDTreeFind<CR>
 
 " --- FZF ---
-nmap <C-p> :Files<CR>
-nmap <C-f> :BLines<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :BLines<CR>
 " Find in path/files
-nmap <S-C-f> :Ag<CR>
+"nnoremap <C-S-f> :Ag<CR>
 
 " GoDef in new tab
 autocmd FileType go nmap <silent> gt <Plug>(go-def-tab)
