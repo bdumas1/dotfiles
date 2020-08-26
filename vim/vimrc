@@ -40,10 +40,10 @@ set rtp+=/usr/local/opt/fzf
 " ----- SET VIM THEME -----
 
 set background=dark
-colorscheme solarized8
-"colorscheme material
-let g:airline_theme = 'simple'
-"let g:material_theme_style = 'default'
+"colorscheme solarized8
+colorscheme material
+"let g:airline_theme = 'simple'
+let g:material_theme_style = 'default'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
