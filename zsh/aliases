@@ -44,7 +44,6 @@ function sentryo-vpn-up {
   sudo ipsec up diamond
 }
 function startv3-lc {
-  initnvm && nvm use 13.10.1
   webapp-v3
   sudo rm -f build/v2
   sudo rm -f public/v2
@@ -53,7 +52,6 @@ function startv3-lc {
   REACT_APP_BACKEND_PROXY=$(docker container port sbs-syncd_lc_1 8080) yarn start
 }
 function startv3-gc {
-  initnvm && nvm use 13.10.1
   webapp-v3
   sudo rm -f build/v2
   sudo rm -f public/v2
