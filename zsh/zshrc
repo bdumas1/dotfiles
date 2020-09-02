@@ -93,13 +93,21 @@ export PATH="$PATH:./node_modules/.bin"
 # ------------
 # - Bindkeys -
 # ------------
-bindkey "\e\e[D" backward-word
+bindkey "[D" backward-word
+bindkey "OD" backward-word
 bindkey ";3D" backward-word
-bindkey "\e\e[C" forward-word
+bindkey "^[^[[D" backward-word
+bindkey "^[b" backward-word
+
+bindkey "OC" forward-word
+bindkey "[C" forward-word
 bindkey ";3C" forward-word
+bindkey "^[^[[C" forward-word
+bindkey "^[f" forward-word
 
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
 ## fzf - ^R - Search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
