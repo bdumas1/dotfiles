@@ -24,7 +24,7 @@ link_files vim ~/.vim
 # zsh
 mkdir -p ~/.zsh
 link_files zsh/aliases ~/.aliases
-link_files zsh/zshrc ~/.zshrc
+rm -rf ~/.zshrc && link_files zsh/zshrc ~/.zshrc
 link_files zsh/zsh-syntax-highlighting ~/zsh-syntax-highlighting
 link_files zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 link_files zsh/pure ~/.zsh/pure
