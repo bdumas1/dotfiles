@@ -3,7 +3,8 @@ export EDITOR='vim'
 export GIT_EDITOR='vim'
 export SHELL='/bin/zsh'
 export GREP_COLOR=31
-export PROJECTS_FOLDER=~/Lab/Sites/cisco
+#export PROJECTS_FOLDER=~/Lab/Sites/cisco
+export PROJECTS_FOLDER=~/projects
 export GOPATH=${PROJECTS_FOLDER}/golang
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -111,4 +112,4 @@ bindkey "^[f" forward-word
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
-
+source ~/.hadesrc
