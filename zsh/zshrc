@@ -97,6 +97,7 @@ export PATH="$PATH:./node_modules/.bin"
 ## fzf - ^R - Search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+bindkey -v
 bindkey "[D" backward-word
 bindkey "OD" backward-word
 bindkey ";3D" backward-word
@@ -112,4 +113,4 @@ bindkey "^[f" forward-word
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
-source ~/.hadesrc
+[ -f ~/.hadesrc ] && source ~/.hadesrc
