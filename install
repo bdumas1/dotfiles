@@ -15,6 +15,10 @@ link_files() {
 
 git submodule update --init
 
+# i3
+link_files config/i3/config ~/.config/i3/config
+link_files config/polybar/config ~/.config/polybar/config 
+
 # vim
 link_files vim ~/.vim
 
