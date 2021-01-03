@@ -16,7 +16,7 @@ alias ..="cd .."
 alias grep='grep --color=auto'
 alias preview="fzf --preview 'cat {}'"
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
-alias mackb="xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
+alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
 alias publicip='curl ifconfig.me'
 alias dotfiles='cd ~/Lab/dotfiles'
