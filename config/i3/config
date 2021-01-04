@@ -147,9 +147,14 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $monitorRight eDP1
 set $monitorLeft HDMI1
 
 # Workspaces associated to monitors
+workspace $ws1 output $monitorRight
+workspace $ws2 output $monitorRight
+workspace $ws3 output $monitorRight
+workspace $ws4 output $monitorRight
 workspace $ws5 output $monitorLeft
 
 # switch to workspace
