@@ -34,6 +34,7 @@ offset-y = O
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
+padding-right = 3
 
 line-size = 3
 line-color = #f00
@@ -42,8 +43,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:size=10
-font-1 = Font Awesome:size=8
-font-2 = siji:pixelsize=10;1
+font-1 = Font Awesome:size=10
+font-2 = siji:pixelsize=10
 
 modules-left = i3
 modules-center = xwindow
@@ -51,7 +52,6 @@ modules-right = xbacklight pulseaudio xkeyboard cpu wlan eth battery date powerm
 
 tray-position = right
 tray-detached = false
-tray-padding = 0
 tray-background = ${colors.background}
 tray-scale = 1.0
 tray-maxsize = 16
@@ -160,7 +160,7 @@ ws-icon-0= 1; 
 ws-icon-1= 2; 
 ws-icon-2= 3; 
 ws-icon-3= 4; 
-ws-icon-4= 5; 
+ws-icon-4= 5; 
 
 [module/mpd]
 type = internal/mpd
@@ -335,12 +335,12 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging =  <label-charging>
+format-charging =   <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full-prefix = " "
 
 ramp-capacity-0 = " "
-ramp-capacity-1 = ""
+ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
