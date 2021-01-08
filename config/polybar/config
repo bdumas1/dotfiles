@@ -110,18 +110,9 @@ ws-icon-4= 5; 
 
 [module/xbacklight]
 type = internal/xbacklight
-format = <label> <bar>
-label = " "
-bar-width = 5
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.secondary}
+format = <label>
+label = " %percentage%%"
+enable-scroll = true
 
 [module/pulseaudio]
 type = internal/pulseaudio
