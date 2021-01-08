@@ -188,7 +188,7 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 
 assign [class="Code|Spotify"] $ws1
 for_window [class="Spotify"] move to workspace $ws1
-assign [class="Firefox"] $ws2
+assign [class="Firefox|Navigator"] $ws2
 assign [class="Slack|discord|zoom"] $ws3
 assign [class="Terminator|X-terminal-emulator"] $ws4
 
