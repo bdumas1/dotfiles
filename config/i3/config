@@ -198,6 +198,7 @@ exec --no-startup-id firefox
 exec --no-startup-id slack
 exec --no-startup-id terminator
 exec --no-startup-id nextcloud
+exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1
 
 ###############################
 #            MISC             #
