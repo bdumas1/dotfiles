@@ -48,7 +48,7 @@ font-2 = siji:pixelsize=10
 
 modules-left = i3
 modules-center = music-previous music-play music-pause music-next
-modules-right = xbacklight pulseaudio cpu wlan eth battery date xkeyboard bluetooth powermenu
+modules-right = xbacklight pulseaudio cpu wlan eth battery date xkeyboard bluetooth settings powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -239,6 +239,11 @@ menu-0-0-exec = reboot
 menu-0-1 = Éteindre
 menu-0-1-foreground = ${colors.foreground}
 menu-0-1-exec = poweroff
+
+[module/settings]
+type = custom/script
+exec = "echo "
+click-left = gnome-control-center
 
 [settings]
 screenchange-reload = true
