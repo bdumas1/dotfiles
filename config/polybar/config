@@ -47,7 +47,7 @@ font-1 = FontAwesome:pixelsize=12;1
 font-2 = siji:pixelsize=10
 
 modules-left = i3
-modules-center = xwindow music-previous music-play music-pause music-next
+modules-center = music-previous music-play music-pause music-next
 modules-right = xbacklight pulseaudio cpu wlan eth battery date xkeyboard bluetooth powermenu
 
 cursor-click = pointer
