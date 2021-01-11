@@ -13,7 +13,7 @@ set $mod Mod4
 focus_follows_mouse no
 
 # Font
-font pango:monospace 8
+font pango:monospace 8§
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -28,6 +28,9 @@ exec --no-startup-id nm-applet
 
 # Hiding borders adjacent to the screen edges
 hide_edge_borders vertical
+
+# Fond d'écran
+exec_always --no-startup-id feh --bg-fill https://source.unsplash.com/1920x1080/?nature
 
 ###############################
 #         KEYBINDING          #
