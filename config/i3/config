@@ -16,7 +16,7 @@ focus_follows_mouse no
 font pango:monospace 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
+# they are includned here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -196,6 +196,7 @@ assign [class="Slack|discord|zoom"] $ws3
 assign [class="Terminator|X-terminal-emulator"] $ws4
 assign [class="Spotify"] $ws5
 for_window [class="Spotify"] move to workspace $ws5
+for_window [class="Nautilus|Gnome-calculator"] floating enable
 
 # Startup apps
 exec --no-startup-id code
