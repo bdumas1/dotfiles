@@ -62,10 +62,12 @@ tray-scale = 1.0
 tray-maxsize = 16
 tray-offset-x = 0
 tray-offset-y = 0
+tray-padding = 10
 
 [bar/left]
 inherit = bar/default
 monitor = HDMI1
+tray-position =
 
 [module/xwindow]
 type = internal/xwindow
