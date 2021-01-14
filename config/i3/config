@@ -100,7 +100,7 @@ bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 
 # i3lock
-bindsym $mod+Shift+l exec "i3lock -t -i ~/.i3/wallpaper.png"
+bindsym $mod+Shift+l exec "systemctl suspend && i3lock-fancy"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
