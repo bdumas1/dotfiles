@@ -173,6 +173,7 @@ ramp-volume-5 = " "
 ramp-volume-6 = " "
 label-muted =  
 click-right = pavucontrol
+use-ui-max = false
 
 [module/cpu]
 type = internal/cpu
