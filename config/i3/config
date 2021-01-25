@@ -155,8 +155,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $monitorRight eDP1
-set $monitorLeft HDMI1
+set $monitorRight eDP-1
+set $monitorLeft HDMI-1
 
 # Workspaces associated to monitors
 workspace $ws1 output $monitorRight
@@ -204,7 +204,7 @@ exec --no-startup-id firefox
 exec --no-startup-id slack
 exec --no-startup-id terminator
 exec --no-startup-id nextcloud
-exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1
+exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
 
 ###############################
 #            MISC             #
