@@ -46,23 +46,23 @@ font-0 = fixed:pixelsize=10
 font-1 = FontAwesome:pixelsize=12;1
 font-2 = siji:pixelsize=10
 
-modules-left = i3
-modules-center = music-previous music-play music-pause music-next
-modules-right = backlight pulseaudio cpu wlan eth battery date xkeyboard bluetooth settings powermenu
+modules-left = i3 
+modules-center = 
+modules-right = music-previous music-play music-pause music-next backlight pulseaudio cpu wlan eth battery date xkeyboard bluetooth settings powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
 
-tray-position = left
+tray-position = right
 tray-detached = false
 tray-background = ${colors.background}
 tray-scale = 1.0
 tray-maxsize = 16
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 10
+tray-padding = 0
 
 [bar/left]
 inherit = bar/default
@@ -76,30 +76,33 @@ label = %title:0:20:...%
 [module/music]
 type = custom/script
 interval = 1
+exec = "echo 1"
+format = <label>
+format-foreground = ${colors.secondary}
 
 [module/music-previous]
 inherit = module/music
-exec = "echo "
 exec-if = [ $(playerctl status) = "Playing" ]
 click-left = playerctl previous
+label = ""
 
 [module/music-play]
 inherit = module/music
 exec-if = [ $(playerctl status) = "Paused" ]
-exec = "echo "
 click-left = playerctl play-pause
+label = ""
 
 [module/music-pause]
 inherit = module/music
 exec-if = [ $(playerctl status) = "Playing" ]
-exec = "echo "
 click-left = playerctl play-pause
+label = ""
 
 [module/music-next]
 inherit = module/music
-exec = "echo "
 exec-if = [ $(playerctl status) = "Playing" ]
 click-left = playerctl next
+label = ""
 
 [module/xkeyboard]
 type = internal/xkeyboard
