@@ -21,7 +21,6 @@ alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec ra
 alias publicip='curl ifconfig.me'
 alias dotfiles='cd ~/Lab/dotfiles'
 alias gulp='nocorrect gulp'
-alias go='grc go'
 
 function initnvm {
   export NVM_DIR="$HOME/.nvm"

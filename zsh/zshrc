@@ -88,7 +88,7 @@ source $HOME/.aliases
 # - Exports -
 # -----------
 export PATH="/usr/local/bin:$PATH"
-export PATH="/home/bdumas/go/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
 
 # ------------
