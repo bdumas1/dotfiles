@@ -89,6 +89,7 @@ source $HOME/.aliases
 # -----------
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
 
 # ------------
