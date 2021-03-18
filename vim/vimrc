@@ -24,6 +24,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'tmsvg/pear-tree'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -160,11 +161,6 @@ set splitbelow
 
 set timeout ttimeoutlen=50
 
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-
 " Change cursor in Insert/Normal mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
@@ -221,8 +217,8 @@ nnoremap <C-a> <esc>ggVG<CR>
 inoremap <C-a> <esc>ggVG<CR>
 
 " Find and replaceOB
-nnoremap <C-r> <esc>:%s///g
-inoremap <C-r> <esc>:%s///g
+nnoremap <C-h> <esc>:%s///g
+inoremap <C-h> <esc>:%s///g
 
 " Duplicate line
 nnoremap <C-d> <esc>:t.<CR>i
@@ -231,7 +227,7 @@ inoremap <C-d> <esc>:t.<CR>i
 
 " Backspace
 nnoremap <BS> i<BS>
-vnoremap <BS> xi
+vnoremap <BS> xi<RIGHT>
 
 " Move up/down
 nnoremap <C-S-Down> :m .+1<CR>==
@@ -269,4 +265,4 @@ autocmd FileType go nmap <silent> gt <Plug>(go-def-tab)
 map <C-b> :NERDTreeToggle<CR>
 
 " Enter
-nnoremap <CR> i<RIGHT><CR>
+nnoremap <CR> i<CR>
