@@ -164,6 +164,10 @@ workspace $ws2 output $monitorRight
 workspace $ws3 output $monitorRight
 workspace $ws4 output $monitorRight
 workspace $ws5 output $monitorRight
+workspace $ws6 output $monitorRight
+workspace $ws7 output $monitorRight
+workspace $ws8 output $monitorRight
+workspace $ws9 output $monitorRight
 workspace $ws10 output $monitorLeft
 
 # switch to workspace
@@ -202,6 +206,7 @@ for_window [class="Nautilus|Gnome-calculator"] floating enable
 exec --no-startup-id code
 exec --no-startup-id firefox
 exec --no-startup-id slack
+exec --no-startup-id discord
 exec --no-startup-id nextcloud
 exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
 
