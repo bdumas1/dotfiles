@@ -19,6 +19,7 @@ git submodule update --init
 link_files config/i3/config ~/.config/i3/config
 link_files config/polybar/config ~/.config/polybar/config
 link_files config/rofi/config ~/.config/rofi/config 
+link_files config/dunst/dunstrc ~/.config/dunst/dunstrc 
 
 # vim
 link_files vim ~/.vim
