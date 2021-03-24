@@ -21,33 +21,10 @@ alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec ra
 alias publicip='curl ifconfig.me'
 alias dotfiles='cd ~/Lab/dotfiles'
 alias gulp='nocorrect gulp'
+alias makeswap='sudo mkswap /swap && sudo swapon /swap'
 
 function initnvm {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-}
-
-## CISCO aliases
-alias cisco='cd ~/Lab/Sites/cisco'
-alias webapp-v3='cd $PROJECTS_FOLDER/webapp-v3'
-alias sbs-syncd='cd $PROJECTS_FOLDER/go/src/sentryo.net/sbs-syncd'
-alias backend='cd $PROJECTS_FOLDER/go/src/sentryo.net/backend'
-alias db='cd $PROJECTS_FOLDER/go/src/sentryo.net/db'
-alias sentryo-vpn-down='sudo ipsec stop'
-function sentryo-vpn-up {
-  sudo ifconfig en0 -alias 10.233.254.50
-  sudo ipsec restart
-  sudo ifconfig en0 alias 10.233.254.50/16
-  sudo ipsec restart
-  sleep 10
-  sudo ipsec up diamond
-}
-function startv3 {
-  webapp-v3
-  sudo rm -f build/v2
-  sudo rm -f public/v2
-  sudo ln -sf ../../webapp-v2/dist public/v2
-  sudo rm -Rf build/
-  REACT_APP_BACKEND_PROXY="http://localhost:8080" yarn start
 }
