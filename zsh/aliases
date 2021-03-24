@@ -19,9 +19,12 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias rails='f() { docker-compose -p web-test exec -T sqsc sh -c "bundle exec rails $1 $2 $3" };f'
 alias publicip='curl ifconfig.me'
-alias dotfiles='cd ~/Lab/dotfiles'
 alias gulp='nocorrect gulp'
 alias makeswap='sudo mkswap /swap && sudo swapon /swap'
+
+alias dotfiles='cd ~/Lab/dotfiles'
+alias sogilis='cd ~/Lab/Sogilis'
+alias sqsc='cd ~/Lab/SquareScale'
 
 function initnvm {
   export NVM_DIR="$HOME/.nvm"
