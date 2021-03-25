@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$OSTYPE" = linux-gnu ]; then
   alias ls='ls --color'
   alias ll='ls -Flh --group-directories-first'
