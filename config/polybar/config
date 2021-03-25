@@ -227,8 +227,8 @@ battery = BAT0
 adapter = AC
 full-at = 98
 format-charging =   <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full-prefix = " "
+format-discharging = <label-discharging> <ramp-capacity> 
+format-full-suffix = "   "
 ramp-capacity-0 = " "
 ramp-capacity-1-foreground = #de0037
 ramp-capacity-1 = " "
@@ -243,7 +243,7 @@ date = "%d %b %Y"
 date-alt = "%d %b %Y"
 time = - %H:%M
 time-alt = - %H:%M:%S
-label =   %date% %time%
+label = %date% %time%
 
 [module/bluetooth]
 type = custom/script
