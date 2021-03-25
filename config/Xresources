@@ -1,0 +1,11 @@
+! ============
+!   Couleurs
+! ============
+*secondary:  #444B6A
+*active:     #C0CAF5
+
+*.foreground:      #dfdfdf
+*.background:      #1A1B26
+*.background-alt:  #2F3344
+*.urgent:          #DB4B4B
+*.underline:       #F8CD7A

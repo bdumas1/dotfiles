@@ -16,10 +16,12 @@ link_files() {
 git submodule update --init
 
 # i3
+link_files config/Xresources ~/.Xresources
 link_files config/i3/config ~/.config/i3/config
 link_files config/polybar/config ~/.config/polybar/config
 link_files config/rofi/config ~/.config/rofi/config 
 link_files config/dunst/dunstrc ~/.config/dunst/dunstrc 
+xrdb ~/.Xresources
 
 # vim
 link_files vim ~/.vim
