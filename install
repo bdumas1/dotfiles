@@ -23,6 +23,9 @@ link_files config/rofi/config ~/.config/rofi/config
 link_files config/dunst/dunstrc ~/.config/dunst/dunstrc 
 xrdb ~/.Xresources
 
+# ranger
+link_files config/ranger ~/.config/ranger
+
 # vim
 link_files vim ~/.vim
 
