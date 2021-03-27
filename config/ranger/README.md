@@ -5,3 +5,4 @@
 - `<C-c>` : Copy
 - `<C-x>` : Cut
 - `<C-v>` : Paste
+- `ctrash` : `cd ~/.local/share/Trash/files`
