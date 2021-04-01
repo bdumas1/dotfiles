@@ -1,7 +1,5 @@
-# My dotfiles configuration
+# My dotfiles
 
-Inspired by [https://github.com/willdurand/dotfiles](https://github.com/willdurand/dotfiles)
-
-## Install
+## Installation
 
 `./install`
