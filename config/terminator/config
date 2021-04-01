@@ -1,0 +1,21 @@
+[global_config]
+  sticky = True
+  title_transmit_fg_color = "#2e3436"
+  title_transmit_bg_color = "#eeeeec"
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#1a1b26"
+    background_darkness = 0.81
+    cursor_color = "#aaaaaa"
+    foreground_color = "#eeeeec"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

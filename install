@@ -26,6 +26,10 @@ xrdb ~/.Xresources
 # ranger
 link_files config/ranger ~/.config/ranger
 
+# terminal
+link_files config/terminator/config ~/.config/terminator/config
+link_files config/terminator/gtk.css ~/.config/gtk-3.0/gtk.css
+
 # vim
 link_files vim ~/.vim
 
