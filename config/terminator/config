@@ -9,6 +9,7 @@
     background_darkness = 0.81
     cursor_color = "#aaaaaa"
     foreground_color = "#eeeeec"
+    scrollback_lines = 100000
 [layouts]
   [[default]]
     [[[window0]]]
