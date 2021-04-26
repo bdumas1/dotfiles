@@ -201,11 +201,11 @@ label-connected = "    %downspeed%    %upspeed%  "
 label-disconnected = disconnected
 label-connected-background = ${colors.background-alt}
 format-disconnected =
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 =
+ramp-signal-1 =
+ramp-signal-2 =
+ramp-signal-3 =
+ramp-signal-4 =
 
 [module/eth]
 type = internal/network
@@ -217,11 +217,11 @@ label-connected = "    %downspeed%    %upspeed%  "
 label-disconnected = disconnected
 label-connected-background = ${colors.background-alt}
 format-disconnected =
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 =
+ramp-signal-1 =
+ramp-signal-2 =
+ramp-signal-3 =
+ramp-signal-4 =
 
 [module/battery]
 type = internal/battery
