@@ -269,3 +269,6 @@ nnoremap <CR> i<CR>
 
 " Change leader key
 let mapleader = ","
+
+" start insert
+au BufRead,BufNewFile * startinsert
