@@ -36,26 +36,26 @@ fi
 
 git submodule update --init
 
+CONFIG_DIR=~/.config
+mkdir -p "${CONFIG_DIR}"
+
 if ! ${SERVER}; then
   # i3
   link_files config/Xresources ~/.Xresources
-  link_files config/i3/config ~/.config/i3/config
-  link_files config/polybar/config ~/.config/polybar/config
-  link_files config/rofi/config ~/.config/rofi/config 
-  link_files config/rofi/nord.rasi ~/.config/rofi/nord.rasi 
-  link_files config/dunst/dunstrc ~/.config/dunst/dunstrc 
+  link_files config/i3/config "${CONFIG_DIR}"/i3/config
+  link_files config/polybar/config "${CONFIG_DIR}"/polybar/config
+  link_files config/rofi/config "${CONFIG_DIR}"/rofi/config 
+  link_files config/rofi/nord.rasi "${CONFIG_DIR}"/rofi/nord.rasi 
+  link_files config/dunst/dunstrc "${CONFIG_DIR}"/dunst/dunstrc 
   xrdb ~/.Xresources
 
   # terminal
-  link_files config/terminator/config ~/.config/terminator/config
-  link_files config/terminator/gtk.css ~/.config/gtk-3.0/gtk.css
+  link_files config/terminator/config "${CONFIG_DIR}"/terminator/config
+  link_files config/terminator/gtk.css "${CONFIG_DIR}"/gtk-3.0/gtk.css
 fi
 
 # ranger
-RANGER_CONFIG_DIR="~/.config/ranger"
-mkdir -p "${RANGER_CONFIG_DIR}"
-link_files config/ranger "${RANGER_CONFIG_DIR}"
-
+link_files config/ranger "${CONFIG_DIR}"/ranger
 
 # vim
 link_files vim ~/.vim
