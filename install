@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+SERVER=false
+
 success () {
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
 }
@@ -13,23 +15,47 @@ link_files() {
     success "linked $1 to $2"
 }
 
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+    -s|--server)
+    SERVER=true
+    ;;
+
+    *)
+    ;;
+  esac
+  shift
+done
+
+if ${SERVER}; then
+  success "SERVER mode enabled!"
+  echo ''
+fi
+
 git submodule update --init
 
-# i3
-link_files config/Xresources ~/.Xresources
-link_files config/i3/config ~/.config/i3/config
-link_files config/polybar/config ~/.config/polybar/config
-link_files config/rofi/config ~/.config/rofi/config 
-link_files config/rofi/nord.rasi ~/.config/rofi/nord.rasi 
-link_files config/dunst/dunstrc ~/.config/dunst/dunstrc 
-xrdb ~/.Xresources
+if ! ${SERVER}; then
+  # i3
+  link_files config/Xresources ~/.Xresources
+  link_files config/i3/config ~/.config/i3/config
+  link_files config/polybar/config ~/.config/polybar/config
+  link_files config/rofi/config ~/.config/rofi/config 
+  link_files config/rofi/nord.rasi ~/.config/rofi/nord.rasi 
+  link_files config/dunst/dunstrc ~/.config/dunst/dunstrc 
+  xrdb ~/.Xresources
+
+  # terminal
+  link_files config/terminator/config ~/.config/terminator/config
+  link_files config/terminator/gtk.css ~/.config/gtk-3.0/gtk.css
+fi
 
 # ranger
-link_files config/ranger ~/.config/ranger
+RANGER_CONFIG_DIR="~/.config/ranger"
+mkdir -p "${RANGER_CONFIG_DIR}"
+link_files config/ranger "${RANGER_CONFIG_DIR}"
 
-# terminal
-link_files config/terminator/config ~/.config/terminator/config
-link_files config/terminator/gtk.css ~/.config/gtk-3.0/gtk.css
 
 # vim
 link_files vim ~/.vim
