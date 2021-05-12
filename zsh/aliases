@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$OSTYPE" = linux-gnu ]; then
+if [ ${OSTYPE} = "linux-gnu" ] || [ ${OSTYPE} = "linux-gnueabi" ]; then
   alias ls='ls --color'
   alias ll='ls -Flh --group-directories-first'
   alias la='ls -Flah --group-directories-first'
