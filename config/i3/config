@@ -218,7 +218,7 @@ assign [class="Slack|discord|zoom"] $ws3
 assign [class="Spotify"] $ws5
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Steam|Lutris"] move to workspace $ws6
-for_window [class="Eog|Gnome-calculator|Cheese"] floating enable
+for_window [class="Eog|Gnome-calculator|Cheese|Gnome-control-center"] floating enable
 for_window [class="X-terminal-emulator"] floating disable
 
 # Startup apps
