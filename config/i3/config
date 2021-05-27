@@ -174,8 +174,8 @@ set $monitorRight eDP-1
 set $monitorLeft HDMI-1
 
 # Workspaces associated to monitors
-workspace $ws1 output $monitorRight
-workspace $ws2 output $monitorRight
+workspace $ws1 output $monitorLeft
+workspace $ws2 output $monitorLeft
 workspace $ws3 output $monitorRight
 workspace $ws4 output $monitorRight
 workspace $ws5 output $monitorRight
