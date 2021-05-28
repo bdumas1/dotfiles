@@ -220,6 +220,7 @@ for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Steam|Lutris"] move to workspace $ws6
 for_window [class="Eog|Gnome-calculator|Cheese|Gnome-control-center"] floating enable
 for_window [class="X-terminal-emulator"] floating disable
+for_window [class = "Slack|discord|zoom"] layout tabbed
 
 # Startup apps
 exec --no-startup-id code
