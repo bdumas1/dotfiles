@@ -26,6 +26,7 @@ alias vim="vim +startinsert"
 alias dotfiles='cd ~/Lab/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
 alias sqsc='cd ~/Lab/SquareScale'
+alias planbot='cd ~/Lab/Sogilis/planbot'
 
 function initnvm {
   export NVM_DIR="$HOME/.nvm"
