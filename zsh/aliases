@@ -22,6 +22,7 @@ alias publicip='curl ifconfig.me'
 alias makeswap='sudo mkswap /swap && sudo swapon /swap'
 alias r="ranger"
 alias vim="vim +startinsert"
+alias update="sudo apt update && apt list --upgradable"
 
 alias dotfiles='cd ~/Lab/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
