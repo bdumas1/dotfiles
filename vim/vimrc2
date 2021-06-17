@@ -1,0 +1,177 @@
+syntax enable
+set mouse=a
+
+" Plugins {{{
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'kaicataldo/material.vim'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+" }}}
+
+" Colors {{{
+set background=dark
+colorscheme material
+
+let g:material_theme_style = 'default'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline
+let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
+let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)
+let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the right
+let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline
+let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline
+let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
+let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab
+
+" }}}
+
+" Spaces & Tabs {{{
+set tabstop=2           " number of visual spaces per TAB
+set softtabstop=2       " number of spaces in tab when editing
+set expandtab           " tabs are spaces
+" }}}
+
+" UI Config {{{
+set number              " show line numbers
+set cursorline          " highlight current line
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
+set splitbelow          " split to bottom
+" }}}
+
+" Searching {{{
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" }}}
+
+" Folding {{{
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=indent   " fold based on indent level
+nnoremap <space> za     " space open/closes folds
+" }}}
+
+" Leader shortcuts {{{
+let mapleader=","       " leader is comma
+inoremap jk <esc>       " jk is escape
+vnoremap jk <esc>       " jk is escape
+" }}}
+
+" Backups {{{
+set nobackup            " Don't make a backup before overwriting a file
+set nowritebackup       " And again
+set noswapfile          " Use an SCM instead of swap files
+" }}}
+
+
+" Key bindings {{{
+
+" FZF {{{
+nnoremap <C-p> :Files<CR>
+inoremap <C-p> <Esc>:Files<CR>
+nnoremap <C-f> :BLines<CR>
+inoremap <C-f> <Esc>:BLines<CR>
+" }}}
+
+" Nerdtree {{{
+nnoremap <C-b> :NERDTreeToggle<CR>
+inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
+vnoremap <C-b> :NERDTreeToggle<CR>
+" }}}
+
+" Copy {{{
+vnoremap <C-c> "+yi
+" }}}
+
+" Cut {{{
+nnoremap <C-x> "+ddi
+inoremap <C-x> <Esc>"+ddi
+vnoremap <C-x> "+di
+" }}}
+
+" Paste {{{
+nnoremap <C-v> "+p$i<Right>
+inoremap <C-v> <esc>"+p$i<Right>
+" }}}
+
+" Text selection {{{
+nnoremap <S-Up> v<UP>
+nnoremap <S-Down> v<DOWN>
+nnoremap <S-Left> v<LEFT>
+nnoremap <S-Right> v<RIGHT>
+inoremap <S-Up> <Esc>v<UP>
+inoremap <S-Down> <Esc>v<DOWN>
+inoremap <S-Left> <Esc>v<LEFT>
+inoremap <S-Right> <Esc>v<RIGHT>
+vnoremap <S-Up> k
+vnoremap <S-Down> j
+vnoremap <S-Left> h
+vnoremap <S-Right> l
+" }}}
+
+" Backspace {{{
+set backspace=indent,eol,start
+nnoremap <BS> i<BS>
+vnoremap <BS> <Del>
+" }}}
+
+" Undo {{{
+nnoremap <C-z> u
+vnoremap <C-z> u
+inoremap <C-z> <C-O>u
+" }}}
+
+" Find and replace {{{
+nnoremap <C-h> <esc>:%s///g
+inoremap <C-h> <esc>:%s///g
+" }}}
+
+" Duplicate line {{{ 
+nnoremap <C-d> <Esc>mayyp`a<Down>i
+inoremap <C-d> <Esc>mayyp`a<Down>i
+vnoremap <C-d> y'>pi
+" }}}
+
+" Save {{{
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>i
+" }}}
+
+" Enter {{{
+nnoremap <CR> i<CR>
+" }}}
+
+" Quit {{{
+nnoremap <C-w> :q<CR>
+inoremap <C-w> <Esc>:q<CR>
+vnoremap <C-w> :q<CR>
+" }}}
+
+" }}}
+
+" Change cursor in Insert/Normal mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+set modeline
+set modelines=1
+" vim:foldmethod=marker:foldlevel=0
