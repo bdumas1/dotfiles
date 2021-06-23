@@ -131,7 +131,7 @@ vnoremap <S-Right> l
 " Backspace {{{
 set backspace=indent,eol,start
 nnoremap <BS> i<BS>
-vnoremap <BS> <Del>
+vnoremap <BS> <Del>i
 " }}}
 
 " Undo {{{
@@ -146,8 +146,8 @@ inoremap <C-h> <esc>:%s///g
 " }}}
 
 " Duplicate line {{{ 
-nnoremap <C-d> <Esc>mayyp`a<Down>i
-inoremap <C-d> <Esc>mayyp`a<Down>i
+nnoremap <C-d> <Esc>mayyp`a<Down>i<Right>
+inoremap <C-d> <Esc>mayyp`a<Down>i<Right>
 vnoremap <C-d> y'>pi
 " }}}
 
