@@ -129,6 +129,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Capture d'écran
 bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
+# Mac keyboard
+bindsym $mod+k exec "setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -236,7 +239,7 @@ exec_always --no-startup-id "killall polybar;polybar -r default & polybar -r lef
 
 # Set default keyboard layouts
 # exec_always --no-startup-id "setxkbmap -layout fr,us"
-exec_always --no-startup-id "setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
+# exec_always --no-startup-id "setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 
 # Disable screen saver feature
 exec --no-startup-id "xset s off && xset -dpms"
