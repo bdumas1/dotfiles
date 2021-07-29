@@ -226,10 +226,9 @@ for_window [class="X-terminal-emulator"] floating disable
 for_window [class = "Slack|discord|zoom"] layout tabbed
 
 # Startup apps
-exec --no-startup-id code
 exec --no-startup-id firefox
 exec --no-startup-id slack
-exec --no-startup-id discord
+exec --no-startup-id discord --start-minimized
 exec --no-startup-id nextcloud
 exec --no-startup-id 1Password
 exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
