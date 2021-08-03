@@ -1,49 +1,31 @@
+syntax enable
+set mouse=a
+
+" Plugins {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
-" Declare the list of plugins.
 Plug 'kaicataldo/material.vim'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'mxw/vim-jsx'
-Plug 'mattn/emmet-vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdcommenter'
-Plug 'tmsvg/pear-tree'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-" List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+" }}}
 
-" For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
-" Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
-" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
-if (has('termguicolors'))
-  set termguicolors
-endif
-
-set rtp+=/usr/local/opt/fzf
-
-" ----- SET VIM THEME -----
-
+" Colors {{{
 set background=dark
-"colorscheme solarized8
 colorscheme material
-"let g:airline_theme = 'simple'
+
 let g:material_theme_style = 'default'
 
 let g:airline#extensions#tabline#enabled = 1
@@ -57,148 +39,84 @@ let g:airline#extensions#tabline#show_splits = 0       " disables the buffer nam
 let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
 let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab
 
-set noshowmode
+" }}}
 
-" ----- END SET VIM THEME -----
+" Spaces & Tabs {{{
+set tabstop=2           " number of visual spaces per TAB
+set softtabstop=2       " number of spaces in tab when editing
+set expandtab           " tabs are spaces
+" }}}
 
-syntax on
+" UI Config {{{
+set number              " show line numbers
+set cursorline          " highlight current line
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
+set splitbelow          " split to bottom
+" }}}
 
-set mouse=a
+" Searching {{{
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" }}}
 
-" tmux knows the extended mouse mode
-set ttymouse=xterm2
+" Folding {{{
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=indent   " fold based on indent level
+nnoremap <space> za     " space open/closes folds
+" }}}
 
-filetype plugin indent on
+" Leader shortcuts {{{
+let mapleader=","       " leader is comma
+inoremap jk <esc>       " jk is escape
+vnoremap jk <esc>       " jk is escape
+" }}}
 
-set title
+" Backups {{{
+set nobackup            " Don't make a backup before overwriting a file
+set nowritebackup       " And again
+set noswapfile          " Use an SCM instead of swap files
+" }}}
 
-" Hide buffer instead of abandoning when unloading
-set hidden
-
-" Enhanced command line completion
-set wildmenu
-" Complete files like a shell
-set wildmode=list:longest
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xpm,*.pyc,*.pyo,*.log
-
-" Show line numbers
-set number
-" Show cursor position
-set ruler
-" Show current line
-set cursorline
-" Highlight matches as you type
-set incsearch
-" Highlight matches
-set hlsearch
-" set case insensitivity
-set ignorecase
-" unless there's a capital letter
-set smartcase
-" Turn on line wrapping
-set wrap
-" Show 3 lines of context around the cursor
-set scrolloff=3
-
-" No beeping
-set visualbell
-" abbrev. of messages (avoids 'hit enter')
-set shortmess+=filmnrxoOtT
-
-" Don't make a backup before overwriting a file
-set nobackup
-" And again
-set nowritebackup
-" Use an SCM instead of swap files
-set noswapfile
-
-" Show the status line all the time
-set laststatus=2
-
-" http://vim.wikia.com/wiki/Backspace_and_delete_problems
-set backspace=indent,eol,start
-
-set expandtab
-
+" Other {{{
 set autoindent
-" copy the previous indentation on autoindenting
-set copyindent
-" use multiple of shiftwidth when indenting with '<' and '>'
-set shiftround
-" set show matching parenthesis
-set showmatch
+" }}}
 
-" Read vim config defined in files
-set modeline
-set modelines=1
+" Key bindings {{{
 
-" command and search pattern history
-set history=10000
+" FZF {{{
+nnoremap <C-p> :Files<CR>
+inoremap <C-p> <Esc>:Files<CR>
+nnoremap <C-f> :BLines<CR>
+inoremap <C-f> <Esc>:BLines<CR>
+" }}}
 
-" make plugins smoother
-set lazyredraw
+" Nerdtree {{{
+nnoremap <C-b> :NERDTreeToggle<CR>
+inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
+vnoremap <C-b> :NERDTreeToggle<CR>
+" }}}
 
-" always replace all occurences of a line
-set gdefault
+" Copy {{{
+vnoremap <C-c> "+yi
+" }}}
 
-" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
-set pastetoggle=<F2>
+" Cut {{{
+nnoremap <C-x> "+ddi
+inoremap <C-x> <Esc>"+ddi
+vnoremap <C-x> "+di
+" }}}
 
-" disable folding
-set nofoldenable
+" Paste {{{
+nnoremap <C-v> "+p$i<Right>
+inoremap <C-v> <esc>"+p$i<Right>
+" }}}
 
-" Using clipboard as the default register
-set clipboard=unnamed
-
-" Tabs and indentation
-set autoindent
-set smartindent
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-
-set splitbelow
-
-set timeout ttimeoutlen=50
-
-" Change cursor in Insert/Normal mode
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-
-" optional reset cursor on start:
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
-
-" ------------------------
-" ----- KEY BINDINGS -----
-" ------------------------
-
-" Copy
-vnoremap <C-c> "*yi
-
-" Paste
-nnoremap <C-v> pi
-inoremap <C-v> <ESC>pi
-
-" Cut
-vnoremap <C-x> "*xi
-
-" Undo
-nnoremap <C-z> <nop>
-vnoremap <C-z> <nop>
-inoremap <C-z> <nop>
-nnoremap <C-z> u
-vnoremap <C-z> u
-inoremap <C-z> <C-O>u
-
-" Make the view port scroll faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-nnoremap <C-p> 3<C-p>
-
-" Text selection
+" Text selection {{{
 nnoremap <S-Up> v<UP>
 nnoremap <S-Down> v<DOWN>
 nnoremap <S-Left> v<LEFT>
@@ -211,64 +129,52 @@ vnoremap <S-Up> k
 vnoremap <S-Down> j
 vnoremap <S-Left> h
 vnoremap <S-Right> l
+" }}}
 
-" Select all
-nnoremap <C-a> <esc>ggVG<CR>
-inoremap <C-a> <esc>ggVG<CR>
+" Backspace {{{
+set backspace=indent,eol,start
+nnoremap <BS> i<BS>
+vnoremap <BS> <Del>i
+" }}}
 
-" Find and replaceOB
+" Undo {{{
+nnoremap <C-z> u
+vnoremap <C-z> u
+inoremap <C-z> <C-O>u
+" }}}
+
+" Find and replace {{{
 nnoremap <C-h> <esc>:%s///g
 inoremap <C-h> <esc>:%s///g
+" }}}
 
-" Duplicate line
-nnoremap <C-d> <esc>:t.<CR>i
-vnoremap <C-d> <esc>:t.<CR>i
-inoremap <C-d> <esc>:t.<CR>i
+" Duplicate line {{{ 
+nnoremap <C-d> <Esc>mayyp`a<Down>i<Right>
+inoremap <C-d> <Esc>mayyp`a<Down>i<Right>
+vnoremap <C-d> y'>pi
+" }}}
 
-" Backspace
-nnoremap <BS> i<BS>
-vnoremap <BS> xi<RIGHT>
+" Save {{{
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>i
+" }}}
 
-" Move up/down
-nnoremap <C-S-Down> :m .+1<CR>==
-nnoremap <C-S-Up> :m .-2<CR>==
-inoremap <C-S-Down> <Esc>:m .+1<CR>==gi
-inoremap <C-S-Up> <Esc>:m .-2<CR>==gi
-vnoremap <C-S-Down> :m '>+1<CR>gv=gv
-vnoremap <C-S-Up> :m '<-2<CR>gv=gv
+" Enter {{{
+nnoremap <CR> i<CR>
+" }}}
 
-" Quit
+" Quit {{{
 nnoremap <C-w> :q<CR>
 inoremap <C-w> <Esc>:q<CR>
 vnoremap <C-w> :q<CR>
+" }}}
 
-" Grepper
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+" }}}
 
-" NERDTreeFind
-nmap <C-R>r :NERDTreeFind<CR>
+" Change cursor in Insert/Normal mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
-" --- FZF ---
-nnoremap <C-p> :Files<CR>
-inoremap <C-p> <Esc>:Files<CR>
-nnoremap <C-f> :BLines<CR>
-inoremap <C-f> <Esc>:BLines<CR>
-" Find in path/files
-"nnoremap <C-S-f> :Ag<CR>
-
-" GoDef in new tab
-autocmd FileType go nmap <silent> gt <Plug>(go-def-tab)
-
-" NERDTree
-" autocmd vimenter * NERDTree
-map <C-b> :NERDTreeToggle<CR>
-
-" Enter
-nnoremap <CR> i<CR>
-
-" Change leader key
-let mapleader = ","
-
-" start insert
-au BufRead,BufNewFile * startinsert
+set modeline
+set modelines=1
+" vim:foldmethod=marker:foldlevel=0
