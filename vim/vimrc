@@ -167,7 +167,11 @@ nnoremap <CR> i<CR>
 nnoremap <C-w> :q<CR>
 inoremap <C-w> <Esc>:q<CR>
 vnoremap <C-w> :q<CR>
-" }}}
+"}}}
+
+" Visual Block {{{
+nnoremap q <c-v>
+"}}}
 
 " }}}
 
