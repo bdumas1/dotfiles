@@ -10,7 +10,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'kaicataldo/material.vim'
+"Plug 'kaicataldo/material.vim'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -20,13 +20,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 " }}}
 
 " Colors {{{
 set background=dark
-colorscheme material
+"colorscheme material
+
+let g:lightline = { 'colorscheme': 'one' }
+let g:airline_theme = 'one'
+let g:one_allow_italics = 1
+colorscheme one
 
 let g:material_theme_style = 'default'
 let g:airline_powerline_fonts = 1
