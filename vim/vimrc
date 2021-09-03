@@ -18,6 +18,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 " }}}
@@ -158,7 +160,7 @@ vnoremap <C-d> y'>pi
 " Save {{{
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
-inoremap <C-s> <C-o>:w<CR>
+inoremap <C-s> <C-o>:w<CR><Esc>
 " }}} 
 
 " Enter {{{
