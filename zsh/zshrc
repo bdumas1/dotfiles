@@ -9,6 +9,7 @@ export GOPATH=${PROJECTS_FOLDER}/golang
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ZSH="$HOME/.oh-my-zsh"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 ZSH_THEME=""
 
