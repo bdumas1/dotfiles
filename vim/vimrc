@@ -199,6 +199,10 @@ vnoremap <C-w> :q<CR>
 nnoremap q <c-v>
 "}}}
 
+" GoDef tab {{{
+au FileType go nmap gt <Plug>(go-def-tab)
+" }}}
+
 " }}}
 
 " Change cursor in Insert/Normal mode
