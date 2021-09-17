@@ -117,19 +117,19 @@ inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
 vnoremap <C-b> :NERDTreeToggle<CR>
 " }}}
 
-" Copy {{{
-vnoremap <C-c> "+yi
+" Copy -- disabled {{{
+"vnoremap <C-c> "+yi
 " }}}
 
-" Cut {{{
-nnoremap <C-x> "+ddi
-inoremap <C-x> <Esc>"+ddi
-vnoremap <C-x> "+di
+" Cut -- disabled {{{
+"nnoremap <C-x> "+ddi
+"inoremap <C-x> <Esc>"+ddi
+"vnoremap <C-x> "+di
 " }}}
 
-" Paste {{{
-nnoremap <C-v> "+p$i<Right>
-inoremap <C-v> <esc>"+p$i<Right>
+" Paste -- disabled {{{
+"nnoremap <C-v> "+p$i<Right>
+"inoremap <C-v> <esc>"+p$i<Right>
 " }}}
 
 " Text selection {{{
@@ -165,7 +165,7 @@ inoremap <C-h> <esc>:%s///g
 " }}}
 
 " Duplicate line {{{ 
-nnoremap <C-d> <Esc>mayyp`a<Down>i<Right>
+nnoremap <C-d> <Esc>mayyp`a<Down>
 inoremap <C-d> <Esc>mayyp`a<Down>i<Right>
 vnoremap <C-d> y'>pi
 " }}}
@@ -186,17 +186,13 @@ inoremap <C-s> <C-o>:w<CR><Esc>
 " }}} 
 
 " Enter {{{
-nnoremap <CR> i<CR>
+nnoremap <CR> i<CR><Esc>
 " }}}
 
 " Quit {{{
 nnoremap <C-w> :q<CR>
 inoremap <C-w> <Esc>:q<CR>
 vnoremap <C-w> :q<CR>
-"}}}
-
-" Visual Block {{{
-nnoremap q <c-v>
 "}}}
 
 " GoDef tab {{{
