@@ -132,19 +132,19 @@ vnoremap <C-b> :NERDTreeToggle<CR>
 "inoremap <C-v> <esc>"+p$i<Right>
 " }}}
 
-" Text selection {{{
-nnoremap <S-Up> v<UP>
-nnoremap <S-Down> v<DOWN>
-nnoremap <S-Left> v<LEFT>
-nnoremap <S-Right> v<RIGHT>
-inoremap <S-Up> <Esc>v<UP>
-inoremap <S-Down> <Esc>v<DOWN>
-inoremap <S-Left> <Esc>v<LEFT>
-inoremap <S-Right> <Esc>v<RIGHT>
-vnoremap <S-Up> k
-vnoremap <S-Down> j
-vnoremap <S-Left> h
-vnoremap <S-Right> l
+" Text selection -- disabled {{{
+" nnoremap <S-Up> v<UP>
+" nnoremap <S-Down> v<DOWN>
+" nnoremap <S-Left> v<LEFT>
+" nnoremap <S-Right> v<RIGHT>
+" inoremap <S-Up> <Esc>v<UP>
+" inoremap <S-Down> <Esc>v<DOWN>
+" inoremap <S-Left> <Esc>v<LEFT>
+" inoremap <S-Right> <Esc>v<RIGHT>
+" vnoremap <S-Up> k
+" vnoremap <S-Down> j
+" vnoremap <S-Left> h
+" vnoremap <S-Right> l
 " }}}
 
 " Backspace {{{
