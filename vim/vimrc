@@ -205,6 +205,10 @@ au FileType go nmap gt <Plug>(go-def-tab)
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Hide ~
+"set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
+let &fcs='eob: '
+
 set modeline
 set modelines=1
 " vim:foldmethod=marker:foldlevel=0
