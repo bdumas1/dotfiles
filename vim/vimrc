@@ -160,8 +160,8 @@ inoremap <C-z> <C-O>u
 " }}}
 
 " Find and replace {{{
-nnoremap <C-r> <esc>:%s///g
-inoremap <C-r> <esc>:%s///g
+nnoremap <C-h> <esc>:%s///g
+inoremap <C-h> <esc>:%s///g
 " }}}
 
 " Duplicate line {{{ 
