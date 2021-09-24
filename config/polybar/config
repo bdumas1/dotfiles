@@ -28,6 +28,7 @@ power = ${xrdb:power-icon-foreground}
 underline = ${xrdb:underline}
 
 [bar/default]
+locale = fr_FR.UTF-8
 width = 100%
 height = 32
 offset-y = O
@@ -243,11 +244,12 @@ ramp-capacity-4 = " "
 [module/date]
 type = internal/date
 interval = 1
-date = "%d %b %Y"
-date-alt = "%d %b %Y"
-time = - %H:%M
-time-alt = - %H:%M:%S
-label = %date% %time%
+date = "- %d %B %Y   "
+date-alt = "- %d %B %Y   "
+time = "   %H:%M"
+time-alt = "   %H:%M:%S"
+label = "%time% %date%"
+format-background = ${colors.background-alt}
 
 [module/bluetooth]
 type = custom/script
