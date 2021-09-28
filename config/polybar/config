@@ -49,7 +49,7 @@ font-2 = siji:pixelsize=10
 
 modules-left = i3 
 modules-center = 
-modules-right = music-previous music-play music-pause music-next backlight pulseaudio cpu memory wlan eth battery date xkeyboard bluetooth settings powermenu
+modules-right = music-title music-previous music-play music-pause music-next backlight pulseaudio cpu memory wlan eth battery date xkeyboard bluetooth settings powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -80,6 +80,11 @@ interval = 1
 exec = "echo 1"
 format = <label>
 format-foreground = ${colors.secondary}
+
+[module/music-title]
+inherit = module/music
+exec-if = [ $(playerctl status) = "Playing" ]
+exec = "echo [$(playerctl metadata artist)] $(playerctl metadata title)"
 
 [module/music-previous]
 inherit = module/music
