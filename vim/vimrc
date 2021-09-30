@@ -199,9 +199,9 @@ vnoremap <C-w> :q<CR>
 au FileType go nmap gt <Plug>(go-def-tab)
 " }}}
 
-" Select all {{{
-nnoremap <C-a> <esc>ggVG<CR>
-inoremap <C-a> <esc>ggVG<CR>
+" Select all -- disabled {{{
+"nnoremap <C-a> <esc>ggVG<CR>
+"inoremap <C-a> <esc>ggVG<CR>
 " }}}
 
 " }}}
