@@ -149,7 +149,7 @@ vnoremap <S-Right> l
 
 " Backspace {{{
 set backspace=indent,eol,start
-nnoremap <BS> i<BS>
+nnoremap <BS> X
 vnoremap <BS> <Del>i
 " }}}
 
