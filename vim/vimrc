@@ -196,7 +196,7 @@ vnoremap <C-w> :q<CR>
 "}}}
 
 " GoDef tab {{{
-au FileType go nmap gt <Plug>(go-def-tab)
+au FileType go nmap gd <Plug>(go-def-tab)
 " }}}
 
 " Select all -- disabled {{{
