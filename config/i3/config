@@ -180,7 +180,7 @@ set $monitorLeft HDMI-1
 workspace $ws1 output $monitorLeft
 workspace $ws2 output $monitorLeft
 workspace $ws3 output $monitorRight
-workspace $ws4 output $monitorRight
+workspace $ws4 output $monitorLeft
 workspace $ws5 output $monitorRight
 workspace $ws6 output $monitorRight
 workspace $ws7 output $monitorRight
