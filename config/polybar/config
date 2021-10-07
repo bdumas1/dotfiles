@@ -84,7 +84,7 @@ format-foreground = ${colors.secondary}
 [module/music-title]
 inherit = module/music
 exec-if = [ $(playerctl status) = "Playing" ]
-exec = "echo [$(playerctl metadata artist)] $(playerctl metadata title)"
+exec = "echo [$(playerctl metadata artist)] $(playerctl metadata title) | head -c 70 && echo ..."
 
 [module/music-previous]
 inherit = module/music
