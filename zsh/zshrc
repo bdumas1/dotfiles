@@ -120,3 +120,6 @@ bindkey "^E" end-of-line
 # Disable Software Flow Control (Ctrl-S)
 # https://superuser.com/questions/1390977/pressing-ctrl-s-by-mistake-while-using-vim
 stty stop ""
+
+initnvm
+nvm use stable
