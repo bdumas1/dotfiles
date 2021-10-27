@@ -117,9 +117,25 @@ bindkey "^E" end-of-line
 
 [ -f ~/.hadesrc ] && source ~/.hadesrc
 
+# -----------------------------------
+# - Speed up pasting w/ autosuggest -
+# -----------------------------------
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
 # Disable Software Flow Control (Ctrl-S)
 # https://superuser.com/questions/1390977/pressing-ctrl-s-by-mistake-while-using-vim
 stty stop ""
 
+# NVM
 initnvm
 nvm use stable
