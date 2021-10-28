@@ -1,7 +1,7 @@
 syntax enable
 set mouse=a
 
-" True color support for rakr/vim-one {{{
+" True color support {{{
 
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -31,7 +31,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'kaicataldo/material.vim'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -42,7 +41,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'fabi1cazenave/termopen.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -51,15 +50,9 @@ call plug#end()
 " }}}
 
 " Colors {{{
-set background=dark
-"colorscheme material
-
-let g:lightline = { 'colorscheme': 'one' }
-let g:airline_theme = 'one'
-let g:one_allow_italics = 1
-colorscheme one
-
-"let g:material_theme_style = 'default'
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
