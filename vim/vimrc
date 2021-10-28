@@ -137,6 +137,7 @@ inoremap <C-f> <Esc>:BLines<CR>
 nnoremap <C-b> :NERDTreeToggle<CR>
 inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
 vnoremap <C-b> :NERDTreeToggle<CR>
+map <leader>b :NERDTreeFind<CR>
 " }}}
 
 " Copy {{{
