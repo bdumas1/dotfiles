@@ -148,6 +148,8 @@ vnoremap d "0d
 " Paste {{{
 "nnoremap <C-v> "+p$i<Right>
 "inoremap <C-v> <esc>"+p$i<Right>
+nnoremap p "0p
+nnoremap P "0P
 vnoremap p "0p
 vnoremap P "0P
 " }}}
