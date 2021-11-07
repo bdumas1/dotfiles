@@ -135,6 +135,7 @@ map <leader>b :NERDTreeFind<CR>
 
 " Copy {{{
 vnoremap <C-c> "+y
+nnoremap y "0y
 vnoremap y "0y
 " }}}
 
@@ -142,6 +143,7 @@ vnoremap y "0y
 "nnoremap <C-x> "+ddi
 "inoremap <C-x> <Esc>"+ddi
 "vnoremap <C-x> "+di
+nnoremap d "0d
 vnoremap d "0d
 " }}}
 
