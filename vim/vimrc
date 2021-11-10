@@ -135,25 +135,17 @@ map <leader>b :NERDTreeFind<CR>
 
 " Copy {{{
 vnoremap <C-c> "+y
-nnoremap y "0y
-vnoremap y "0y
 " }}}
 
-" Cut {{{
+" Cut - disabled {{{
 "nnoremap <C-x> "+ddi
 "inoremap <C-x> <Esc>"+ddi
 "vnoremap <C-x> "+di
-nnoremap d "0d
-vnoremap d "0d
 " }}}
 
-" Paste {{{
+" Paste - disabled {{{
 "nnoremap <C-v> "+p$i<Right>
 "inoremap <C-v> <esc>"+p$i<Right>
-nnoremap p "0p
-nnoremap P "0P
-vnoremap p "0p
-vnoremap P "0P
 " }}}
 
 " Text selection {{{
