@@ -23,6 +23,7 @@ alias makeswap='sudo mkswap /swap && sudo swapon /swap'
 alias r="ranger"
 alias update="sudo apt update && apt list --upgradable"
 alias port="netstat -ntpl | grep $1"
+alias dc="docker-compose $1"
 
 alias dotfiles='cd ~/Lab/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
