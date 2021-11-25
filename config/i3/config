@@ -132,6 +132,10 @@ bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 # Mac keyboard
 bindsym $mod+k exec "setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 
+# Change audio profile
+bindsym $mod+b exec "pacmd set-card-profile bluez_card.2C_41_A1_C8_C6_F0 headset_head_unit"
+bindsym $mod+n exec "pacmd set-card-profile bluez_card.2C_41_A1_C8_C6_F0 a2dp_sink"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
