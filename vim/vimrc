@@ -132,6 +132,12 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
 vnoremap <C-b> :NERDTreeToggle<CR>
 map <leader>b :NERDTreeFind<CR>
+
+" Open in new tab when double clicking on file in Nerdtree
+autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "FileNode", 'callback': "OpenInTab", 'override':1 })
+function! OpenInTab(node)
+    call a:node.activate({'reuse': 'all', 'where': 't'})
+endfunction
 " }}}
 
 " Copy {{{
