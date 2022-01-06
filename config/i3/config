@@ -221,7 +221,7 @@ bindsym $mod+Shift+10 move container to workspace number $ws10
 
 assign [class="Code|jetbrains-idea|jetbrains-code-with-me-guest"] $ws1
 assign [class="Firefox|Navigator"] $ws2
-assign [class="Slack|discord|zoom"] $ws3
+assign [class="Slack|discord|zoom|microsoft teams - preview"] $ws3
 assign [class="Spotify"] $ws5
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Steam|Lutris"] move to workspace $ws6
