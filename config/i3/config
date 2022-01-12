@@ -38,12 +38,12 @@ set_from_resource       $inactive     secondary
 set_from_resource       $background   background
 set_from_resource       $foreground   foreground
 
-# class			border	    backgr.   	text	       indicat   child_border
-client.focused          $background $background $active        #F8CD7A   $active
-client.focused_inactive $background $background inactive       #5A638C   $inactive
-client.unfocused        $background #16161E     $inactive      #34384D   $inactive
-client.urgent           $active     $active    	$background    #DB4B4B   $active
-client.placeholder      $background $background $foreground    #000000   $inactive
+# class			            border	    backgr.   	text            indicat   child_border
+client.focused          #42414d     $background $active         #F8CD7A   $active
+client.focused_inactive $background $background $inactive       #5A638C   $inactive
+client.unfocused        $background #16161E     $inactive       #34384D   $inactive
+client.urgent           $active     $active    	$background     #DB4B4B   $active
+client.placeholder      $background $background $foreground     #000000   $inactive
 client.background       $background
 
 ###############################
@@ -227,7 +227,7 @@ for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Steam|Lutris"] move to workspace $ws6
 for_window [class="Eog|Gnome-calculator|Cheese|Gnome-control-center"] floating enable
 for_window [class="X-terminal-emulator"] floating disable
-for_window [class = "Slack|discord|zoom"] layout tabbed
+for_window [class = "Slack|discord|zoom|microsoft teams - preview"] layout tabbed
 
 # Startup apps
 exec --no-startup-id firefox
@@ -269,5 +269,5 @@ smart_gaps on
 # Automatic back-and-forth when switching to the current workspace
 # workspace_auto_back_and_forth yes
 
-# Switch to urgent workspace (only for Firefox and vscode)
-for_window [urgent="latest" class="Firefox|Code"] focus
+# Switch to urgent workspace
+for_window [urgent="latest" class="Firefox|Slack"] focus
