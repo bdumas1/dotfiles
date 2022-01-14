@@ -45,6 +45,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'fabi1cazenave/termopen.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pechorin/any-jump.vim'
 
 call plug#end()
 " }}}
