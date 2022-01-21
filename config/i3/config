@@ -179,6 +179,7 @@ set $ws9 "9"
 set $ws10 "10"
 set $monitorRight eDP-1
 set $monitorLeft HDMI-1
+#set $monitorLeft DP-1-3
 
 # Workspaces associated to monitors
 workspace $ws1 output $monitorLeft
@@ -221,8 +222,9 @@ bindsym $mod+Shift+10 move container to workspace number $ws10
 
 assign [class="Code|jetbrains-idea|jetbrains-code-with-me-guest"] $ws1
 assign [class="Firefox|Navigator"] $ws2
-assign [class="Slack|discord|zoom|microsoft teams - preview"] $ws3
+assign [class="Slack|discord|zoom"] $ws3
 assign [class="Spotify"] $ws5
+for_window [class="microsoft teams - preview"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Steam|Lutris"] move to workspace $ws6
 for_window [class="Eog|Gnome-calculator|Cheese|Gnome-control-center"] floating enable

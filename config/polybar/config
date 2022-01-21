@@ -68,6 +68,7 @@ tray-padding = 0
 [bar/left]
 inherit = bar/default
 monitor = HDMI-1
+#monitor = DP-1-3
 tray-position =
 
 [module/xwindow]
