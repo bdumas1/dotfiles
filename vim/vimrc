@@ -46,6 +46,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'fabi1cazenave/termopen.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pechorin/any-jump.vim'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 call plug#end()
 " }}}
