@@ -115,6 +115,7 @@ set noswapfile          " Use an SCM instead of swap files
 
 " Other {{{
 set autoindent
+set idearefactormode=keep
 " }}}
 
 " Key bindings {{{
