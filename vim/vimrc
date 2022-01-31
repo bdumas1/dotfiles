@@ -129,6 +129,8 @@ nnoremap <C-p> :Files<CR>
 inoremap <C-p> <Esc>:Files<CR>
 nnoremap <C-f> :BLines<CR>
 inoremap <C-f> <Esc>:BLines<CR>
+nnoremap <Leader>f :Rg<CR>
+inoremap <Leader>f <Esc>:Rg<CR>
 
 let g:fzf_buffers_jump = 1
 let g:fzf_action = {
