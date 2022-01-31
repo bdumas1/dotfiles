@@ -133,8 +133,10 @@ bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 bindsym $mod+k exec "setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 
 # Change audio profile
-bindsym $mod+b exec "pacmd set-card-profile bluez_card.2C_41_A1_C8_C6_F0 headset_head_unit"
-bindsym $mod+n exec "pacmd set-card-profile bluez_card.2C_41_A1_C8_C6_F0 a2dp_sink"
+#bindsym $mod+b exec "pacmd set-card-profile bluez_card.2C_41_A1_C8_C6_F0 headset_head_unit"
+#bindsym $mod+n exec "pacmd set-card-profile bluez_card.2C_41_A1_C8_C6_F0 a2dp_sink"
+bindsym $mod+b exec "pactl set-card-profile bluez_card.2C_41_A1_C8_C6_F0 headset-head-unit-msbc"
+bindsym $mod+n exec "pactl set-card-profile bluez_card.2C_41_A1_C8_C6_F0 a2dp-sink"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -178,8 +180,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 set $monitorRight eDP-1
-set $monitorLeft HDMI-1
-#set $monitorLeft DP-1-3
+#set $monitorLeft HDMI-1
+set $monitorLeft DP-1-3
 
 # Workspaces associated to monitors
 workspace $ws1 output $monitorLeft
