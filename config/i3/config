@@ -33,17 +33,18 @@ hide_edge_borders vertical
 exec_always --no-startup-id feh --bg-fill https://source.unsplash.com/1920x1080/?nature
 
 # Couleurs
-set_from_resource       $active       active
-set_from_resource       $inactive     secondary
-set_from_resource       $background   background
-set_from_resource       $foreground   foreground
+set_from_resource       $active           active
+set_from_resource       $inactive         secondary
+set_from_resource       $background       background
+set_from_resource       $background-alt   background-alt
+set_from_resource       $foreground       foreground
 
-# class			            border	    backgr.   	text            indicat   child_border
-client.focused          #42414d     $background $active         #F8CD7A   $active
-client.focused_inactive $background $background $inactive       #5A638C   $inactive
-client.unfocused        $background #16161E     $inactive       #34384D   $inactive
-client.urgent           $active     $active    	$background     #DB4B4B   $active
-client.placeholder      $background $background $foreground     #000000   $inactive
+# class			            border	    backgr.   	    text            indicat   child_border
+client.focused          #42414d     $background-alt $active         #F8CD7A   $active
+client.focused_inactive $background $background     $inactive       #5A638C   $inactive
+client.unfocused        $background #16161E         $inactive       #34384D   $inactive
+client.urgent           $active     $active    	    $background     #DB4B4B   $active
+client.placeholder      $background $background     $foreground     #000000   $inactive
 client.background       $background
 
 ###############################
@@ -180,8 +181,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 set $monitorRight eDP-1
-#set $monitorLeft HDMI-1
-set $monitorLeft DP-1-3
+set $monitorLeft HDMI-1
+#set $monitorLeft DP-1-3
 
 # Workspaces associated to monitors
 workspace $ws1 output $monitorLeft
@@ -238,7 +239,7 @@ exec --no-startup-id firefox
 exec --no-startup-id slack
 exec --no-startup-id nextcloud
 exec --no-startup-id 1Password
-exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
+#exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
 exec --no-startup-id sudo mkswap /swap && sudo swapon /swap
 
 # Redémarre polybar quand on redémarre i3
@@ -266,7 +267,7 @@ exec --no-startup-id ~/Lab/dotfiles/config/i3/i3-battery-popup/i3-battery-popup 
 # I3 Gaps
 for_window [class="^.*"] border pixel 2
 for_window [class=".*"] title_format "  %title"
-gaps inner 0
+gaps inner 10
 smart_borders on
 smart_gaps on
 
