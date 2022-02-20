@@ -188,9 +188,9 @@ vnoremap <BS> <Del>i
 " }}}
 
 " Undo {{{
-nnoremap <C-z> u
-vnoremap <C-z> u
-inoremap <C-z> <C-O>u
+"nnoremap <C-z> u
+"vnoremap <C-z> u
+"inoremap <C-z> <C-O>u
 " }}}
 
 " Find and replace {{{
