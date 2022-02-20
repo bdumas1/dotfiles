@@ -84,8 +84,8 @@ filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
-"set splitbelow          " split to bottom
-set splitright         " split to right
+set splitbelow          " split to bottom
+"set splitright         " split to right
 " }}}
 
 " Searching {{{
