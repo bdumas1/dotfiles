@@ -152,7 +152,8 @@ ws-icon-default= 
 [module/notifications]
 type = custom/script
 exec = "echo "
-click-left = "dunstctl history-pop"
+click-left = "dunstctl set-paused toggle"
+click-right = "dunstctl history-pop"
 
 [module/backlight]
 type = internal/backlight
@@ -192,20 +193,30 @@ use-ui-max = false
 
 [module/cpu]
 type = internal/cpu
-interval = 2
-label = CPU: %percentage:2%%
+interval = 1
+format = "<label> <ramp-coreload>   |"
+label = "CPU  "  
+ramp-coreload-spacing = 1
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
 
 [module/memory]
 type = internal/memory
-interval = 2
-label = RAM: %percentage_used:2%%
+interval = 1
+format = "RAM  <label>   |"
+label = %gb_used%/%gb_total%
 
 [module/wlan]
 type = internal/network
 interface = wlo1
 interval = 3.0
 format-connected = <ramp-signal> <label-connected>
-;label-connected = %essid%
 label-connected = "    %downspeed%    %upspeed%  "
 label-disconnected = disconnected
 label-connected-background = ${colors.background-alt}
