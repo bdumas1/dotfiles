@@ -237,6 +237,10 @@ for_window [class="Eog|Gnome-calculator|Cheese|Gnome-control-center"] floating e
 for_window [class="X-terminal-emulator"] floating disable
 for_window [class = "Slack|discord|zoom|microsoft teams - preview"] layout tabbed
 
+# Floating windows size
+floating_minimum_size 75 x 75
+floating_maximum_size -1 x -1
+
 # Startup apps
 exec --no-startup-id firefox
 exec --no-startup-id slack
