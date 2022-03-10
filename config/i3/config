@@ -103,7 +103,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 # bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+x layout toggle split
 bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
@@ -114,6 +114,9 @@ bindsym $mod+q focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# open Fichiers
+bindsym $mod+e exec nautilus "Téléchargements"
 
 # i3lock
 bindsym $mod+Shift+l exec "gnome-screensaver-command -l"
@@ -267,7 +270,7 @@ exec --no-startup-id ~/Lab/dotfiles/config/i3/i3-battery-popup/i3-battery-popup 
 # I3 Gaps
 for_window [class="^.*"] border pixel 2
 for_window [class=".*"] title_format "  %title"
-gaps inner 10
+gaps inner 0
 smart_borders on
 smart_gaps on
 
