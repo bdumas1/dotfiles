@@ -40,16 +40,16 @@ padding-right = 3
 line-size = 3
 line-color = #f00
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
 font-0 = System San Francisco Display:size=10;1
 font-1 = FontAwesome:size=11;2
-font-2 = siji:size=10
+font-2 = Weather Icons:size=12;1
 
 modules-left = i3 music-title music-previous music-play music-pause music-next 
 modules-center = 
-modules-right = backlight pulseaudio cpu memory bluetooth wlan eth battery date notifications settings powermenu 
+modules-right = weather backlight pulseaudio bluetooth cpu memory wlan eth battery date notifications settings powermenu 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -67,8 +67,8 @@ tray-padding = 0
 
 [bar/left]
 inherit = bar/default
-monitor = HDMI-1
-#monitor = DP-1-3
+#monitor = HDMI-1
+monitor = DP-1-3
 tray-position =
 
 [module/xwindow]
@@ -155,6 +155,12 @@ exec = "echo "
 click-left = "dunstctl set-paused toggle"
 click-right = "dunstctl history-pop"
 
+[module/weather]
+type = custom/script
+exec = ~/Lab/github/polybar-scripts/polybar-scripts/openweathermap-fullfeatured/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 3
+
 [module/backlight]
 type = internal/backlight
 
@@ -194,8 +200,8 @@ use-ui-max = false
 [module/cpu]
 type = internal/cpu
 interval = 1
-format = "<label> <ramp-coreload>   |"
-label = "CPU  "  
+format = "<label> <ramp-coreload>"
+label = ""  
 ramp-coreload-spacing = 1
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -209,7 +215,7 @@ ramp-coreload-7 = █
 [module/memory]
 type = internal/memory
 interval = 1
-format = "RAM  <label>   |"
+format = "RAM  <label>"
 label = %gb_used%/%gb_total%
 
 [module/wlan]
@@ -217,9 +223,9 @@ type = internal/network
 interface = wlo1
 interval = 3.0
 format-connected = <ramp-signal> <label-connected>
-label-connected = "    %downspeed%    %upspeed%  "
+label-connected = "  %downspeed%    %upspeed%"
 label-disconnected = disconnected
-label-connected-background = ${colors.background-alt}
+#label-connected-background = ${colors.background-alt}
 format-disconnected =
 ramp-signal-0 =
 ramp-signal-1 =
@@ -233,9 +239,9 @@ interface = enx000ec6c1c432
 interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 ;label-connected = %essid%
-label-connected = "    %downspeed%    %upspeed%  "
+label-connected = "  %downspeed%    %upspeed%"
 label-disconnected = disconnected
-label-connected-background = ${colors.background-alt}
+#label-connected-background = ${colors.background-alt}
 format-disconnected =
 ramp-signal-0 =
 ramp-signal-1 =
@@ -248,10 +254,11 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 time-format = %H:%M
-full-at = 98
-label-discharging = "%percentage%% - %time% "
-format-charging = <label-charging>  
-format-discharging = <label-discharging> <ramp-capacity>
+full-at = 99
+label-discharging = "  %percentage%% "
+format-charging = "<label-charging>  "
+format-discharging = "<label-discharging> <ramp-capacity>  "
+format-discharging-background = ${colors.background-alt}
 format-full-suffix = "   "
 ramp-capacity-0 = " "
 ramp-capacity-0-foreground = #de0037
