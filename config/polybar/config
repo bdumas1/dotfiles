@@ -40,8 +40,7 @@ padding-right = 3
 line-size = 3
 line-color = #f00
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin = 2
 
 font-0 = System San Francisco Display:size=10;1
 font-1 = FontAwesome:size=11;2
@@ -303,6 +302,8 @@ menu-0-0-exec = reboot
 menu-0-1 = Éteindre
 menu-0-1-foreground = ${colors.foreground}
 menu-0-1-exec = poweroff
+format-background = ${colors.background-alt}
+format-padding = 3
 
 [module/settings]
 type = custom/script
