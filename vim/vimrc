@@ -239,6 +239,10 @@ au FileType go nmap gd <Plug>(go-def-tab)
 "inoremap <C-a> <esc>ggVG<CR>
 " }}}
 
+" Remap m to $ {{{
+nnoremap m $
+" }}}
+
 " }}}
 
 " Change cursor in Insert/Normal mode
