@@ -40,7 +40,7 @@ set_from_resource       $background-alt   background-alt
 set_from_resource       $foreground       foreground
 
 # class			            border	    backgr.   	    text            indicat   child_border
-client.focused          #42414d     $background-alt $active         #F8CD7A   $active
+client.focused          #42414d     $background-alt     $active         #F8CD7A   $active
 client.focused_inactive $background $background     $inactive       #5A638C   $inactive
 client.unfocused        $background #16161E         $inactive       #34384D   $inactive
 client.urgent           $active     $active    	    $background     #DB4B4B   $active

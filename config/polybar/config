@@ -46,9 +46,9 @@ font-0 = System San Francisco Display:size=10;1
 font-1 = FontAwesome:size=11;2
 font-2 = Weather Icons:size=12;1
 
-modules-left = i3 music-title music-previous music-play music-pause music-next 
+modules-left = i3 music-previous music-play music-pause music-next weather 
 modules-center = 
-modules-right = weather backlight pulseaudio bluetooth cpu memory wlan eth battery date notifications settings powermenu 
+modules-right = backlight pulseaudio bluetooth cpu memory wlan eth battery date notifications settings powermenu 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -66,8 +66,8 @@ tray-padding = 0
 
 [bar/left]
 inherit = bar/default
-#monitor = HDMI-1
-monitor = DP-1-3
+monitor = HDMI-1
+#monitor = DP-1-3
 tray-position =
 
 [module/xwindow]
@@ -79,7 +79,6 @@ type = custom/script
 interval = 1
 exec = "echo 1"
 format = <label>
-format-foreground = ${colors.secondary}
 
 [module/music-title]
 inherit = module/music
@@ -126,21 +125,19 @@ wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 format = <label-mode><label-state>
-label-focused = %name%  %icon%   
-label-unfocused = %name%  %icon%
-label-visible = %name%  %icon%
-label-urgent = %name%  %icon%
-label-focused-foreground = ${colors.active}
+label-focused = %icon%   
+label-unfocused = %icon%
+label-visible = %icon%
+label-urgent = %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.underline}
-label-visible-foreground = ${colors.active}
-label-unfocused-foreground = ${colors.secondary}
+label-visible-foreground = ${colors.foreground}
 label-urgent-foreground = ${colors.urgent}
-label-visible-padding = 2
-label-urgent-padding = 2
-label-unfocused-padding = 2
-label-focused-padding = 2
-label-mode-padding = 2
+label-visible-padding = 3
+label-urgent-padding = 3
+label-unfocused-padding = 3
+label-focused-padding = 3
+label-mode-padding = 3
 ws-icon-0= 1;
 ws-icon-1= 2;
 ws-icon-2= 3;
@@ -224,7 +221,6 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 label-connected = "  %downspeed%    %upspeed%"
 label-disconnected = disconnected
-#label-connected-background = ${colors.background-alt}
 format-disconnected =
 ramp-signal-0 =
 ramp-signal-1 =
@@ -240,7 +236,6 @@ format-connected = <ramp-signal> <label-connected>
 ;label-connected = %essid%
 label-connected = "  %downspeed%    %upspeed%"
 label-disconnected = disconnected
-#label-connected-background = ${colors.background-alt}
 format-disconnected =
 ramp-signal-0 =
 ramp-signal-1 =
@@ -254,12 +249,10 @@ battery = BAT0
 adapter = AC
 time-format = %H:%M
 full-at = 99
-label-discharging = "  %percentage%% "
-label-charging = "  %percentage%% "
-format-charging = "<label-charging>    "
-format-discharging = "<label-discharging> <ramp-capacity>  "
-format-charging-background = ${colors.background-alt}
-format-discharging-background = ${colors.background-alt}
+label-discharging = "%percentage%%"
+label-charging = "%percentage%%"
+format-charging = "<label-charging>  "
+format-discharging = "<label-discharging> <ramp-capacity>"
 format-full-suffix = "   "
 ramp-capacity-0 = " "
 ramp-capacity-0-foreground = #de0037
@@ -276,7 +269,7 @@ date-alt = "- %d %B %Y   "
 time = "   %H:%M"
 time-alt = "   %H:%M:%S"
 label = "%time% %date%"
-format-background = ${colors.background-alt}
+format-foreground = ${colors.active}
 
 [module/bluetooth]
 type = custom/script
@@ -297,10 +290,10 @@ label-close-foreground = ${colors.power}
 label-separator = - 
 label-separator-foreground = #fff
 menu-0-0 = Rédémarrer
-menu-0-0-foreground = ${colors.foreground}
+#menu-0-0-foreground = ${colors.foreground}
 menu-0-0-exec = reboot
 menu-0-1 = Éteindre
-menu-0-1-foreground = ${colors.foreground}
+#menu-0-1-foreground = ${colors.foreground}
 menu-0-1-exec = poweroff
 format-background = ${colors.background-alt}
 format-padding = 3
