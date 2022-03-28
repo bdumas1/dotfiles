@@ -264,18 +264,17 @@ ramp-capacity-4 = " "
 [module/date]
 type = internal/date
 interval = 1
-date = "- %d %B %Y   "
-date-alt = "- %d %B %Y   "
-time = "   %H:%M"
-time-alt = "   %H:%M:%S"
+date = "- %d %B %Y"
+date-alt = "- %d %B %Y"
+time = "%H:%M"
+time-alt = "%H:%M:%S"
 label = "%time% %date%"
-format-foreground = ${colors.active}
 
 [module/bluetooth]
 type = custom/script
 exec = "bluetoothctl paired-devices | cut -d' ' -f2 | xargs -i -n1 bash -c "bluetoothctl info {} | grep -q 'Connected: yes' && echo 1" | wc -l"
 exec-if = "[ $(bluetoothctl show | grep 'Powered: yes' | wc -l) -gt 0 ]"
-interval = 5
+interval = 1
 click-left = blueman-manager &
 format-prefix = " "
 
@@ -290,10 +289,8 @@ label-close-foreground = ${colors.power}
 label-separator = - 
 label-separator-foreground = #fff
 menu-0-0 = Rédémarrer
-#menu-0-0-foreground = ${colors.foreground}
 menu-0-0-exec = reboot
 menu-0-1 = Éteindre
-#menu-0-1-foreground = ${colors.foreground}
 menu-0-1-exec = poweroff
 format-background = ${colors.background-alt}
 format-padding = 3
