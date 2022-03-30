@@ -44,6 +44,7 @@ if ! ${SERVER}; then
   link_files config/Xresources ~/.Xresources
   link_files config/i3/config "${CONFIG_DIR}"/i3/config
   link_files config/polybar/config "${CONFIG_DIR}"/polybar/config
+  link_files config/polybar/openweathermap.sh "${CONFIG_DIR}"/polybar/openweathermap.sh
   link_files config/rofi/config "${CONFIG_DIR}"/rofi/config 
   link_files config/rofi/nord.rasi "${CONFIG_DIR}"/rofi/nord.rasi 
   link_files config/dunst/dunstrc "${CONFIG_DIR}"/dunst/dunstrc 

@@ -153,7 +153,7 @@ click-right = "dunstctl history-pop"
 
 [module/weather]
 type = custom/script
-exec = ~/Lab/github/polybar-scripts/polybar-scripts/openweathermap-fullfeatured/openweathermap-fullfeatured.sh
+exec = ~/.config/polybar/openweathermap.sh
 interval = 600
 label-font = 3
 
