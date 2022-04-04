@@ -2,10 +2,8 @@
 !   Couleurs
 ! ============
 *secondary:  #444B6A
-*active:     #C0CAF5
+*active:     #398F8D
 
-*.foreground:      #dfdfdf
-*.background:      #000000
-*.background-alt:  #2F3344
-*.urgent:          #DB4B4B
-*.underline:       #F8CD7A
+*.foreground:      #ffffff
+*.background:      #2E3440
+*.urgent:          #FF555
