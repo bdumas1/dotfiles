@@ -153,17 +153,10 @@ endfunction
 
 " Copy {{{
 vnoremap <C-c> "+y
-" }}}
-
-" Cut - disabled {{{
-"nnoremap <C-x> "+ddi
-"inoremap <C-x> <Esc>"+ddi
-"vnoremap <C-x> "+di
+nnoremap Y yg$
 " }}}
 
 " Paste {{{
-"nnoremap <C-v> "+p$i<Right>
-"inoremap <C-v> <esc>"+p$i<Right>
 vnoremap p pgvy
 " }}}
 
@@ -186,12 +179,6 @@ vnoremap <S-Right> l
 set backspace=indent,eol,start
 nnoremap <BS> i<BS><Esc>
 vnoremap <BS> <Del>i
-" }}}
-
-" Undo {{{
-"nnoremap <C-z> u
-"vnoremap <C-z> u
-"inoremap <C-z> <C-O>u
 " }}}
 
 " Find and replace {{{
@@ -234,13 +221,18 @@ vnoremap <C-w> :q<CR>
 au FileType go nmap gd <Plug>(go-def-tab)
 " }}}
 
-" Select all -- disabled {{{
-"nnoremap <C-a> <esc>ggVG<CR>
-"inoremap <C-a> <esc>ggVG<CR>
+" Other remap {{{
+nnoremap m $
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 " }}}
 
-" Remap m to $ {{{
-nnoremap m $
+" Undo {{{
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
 " }}}
 
 " }}}
