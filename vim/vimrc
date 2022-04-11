@@ -228,13 +228,6 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 " }}}
 
-" Undo {{{
-inoremap , ,<C-g>u
-inoremap . .<C-g>u
-inoremap ! !<C-g>u
-inoremap ? ?<C-g>u
-" }}}
-
 " }}}
 
 " Change cursor in Insert/Normal mode
