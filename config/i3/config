@@ -38,7 +38,7 @@ set_from_resource       $active            active
 set_from_resource       $secondary         secondary
 set_from_resource       $background        background
 set_from_resource       $foreground        foreground
-set_from_resource       $urgen             urgent
+set_from_resource       $urgent            urgent
 
 # class			            border	    backgr.   	    text            indicat
 client.focused          $active     $active         $background     $active
@@ -181,8 +181,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 set $monitorRight eDP-1
-#set $monitorLeft HDMI-1
-set $monitorLeft DP-1-3
+set $monitorLeft HDMI-1
+#set $monitorLeft DP-1-3
 
 # Workspaces associated to monitors
 workspace $ws1 output $monitorLeft
