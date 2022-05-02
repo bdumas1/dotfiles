@@ -146,8 +146,9 @@ ws-icon-default= 
 
 [module/notifications]
 type = custom/script
-exec = "echo "
-click-left = "dunstctl set-paused toggle"
+interval = 1
+exec = ~/.config/polybar/notifications.sh
+click-left = "~/.config/polybar/notifications.sh --toggle"
 click-right = "dunstctl history-pop"
 
 [module/weather]
