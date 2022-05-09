@@ -22,7 +22,6 @@ active = ${xrdb:active}
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
 urgent = ${xrdb:urgent}
-secondary = ${xrdb:secondary}
 power = ${xrdb:power-icon-foreground}
 
 [bar/default]
@@ -34,7 +33,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 padding-right = 2
-padding-left = 1
+padding-left = 0
 
 line-size = 0
 line-color = #fff
@@ -65,8 +64,8 @@ tray-padding = 0
 
 [bar/left]
 inherit = bar/default
-#monitor = HDMI-1
-monitor = DP-1-3
+monitor = HDMI-1
+#monitor = DP-1-3
 tray-position =
 
 [module/xwindow]
@@ -123,15 +122,17 @@ enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
+show-urgent = true
 format = <label-mode><label-state>
 label-focused = %icon%   
 label-unfocused = %icon%
 label-visible = %icon%
 label-urgent = %icon%
-label-focused-background = ${colors.background}
-label-focused-foreground =${colors.active}
+label-focused-background = ${colors.active}
+label-focused-foreground = ${colors.foreground}
 label-visible-foreground = ${colors.foreground}
-label-urgent-foreground = ${colors.urgent}
+label-urgent-background = ${colors.urgent}
+label-urgent-foreground = ${colors.foreground}
 label-visible-padding = 2
 label-urgent-padding = 2
 label-unfocused-padding = 2
