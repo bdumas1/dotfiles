@@ -245,10 +245,10 @@ exec --no-startup-id slack
 exec --no-startup-id nextcloud
 exec --no-startup-id 1Password
 #exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
-exec --no-startup-id sudo mkswap /swap && sudo swapon /swap
 
-# Redémarre polybar quand on redémarre i3
+# Scripts quand on redémarre i3
 exec_always --no-startup-id "killall polybar;polybar -r default & polybar -r left"
+exec_always --no-startup-id "pkill dunst && dunst&"
 
 # Set default keyboard layouts
 # exec_always --no-startup-id "setxkbmap -layout fr,us"
