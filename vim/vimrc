@@ -48,6 +48,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pechorin/any-jump.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+Plug 'kassio/neoterm'
 
 call plug#end()
 " }}}
@@ -212,9 +213,9 @@ nnoremap <CR> i<CR><Esc>
 " }}}
 
 " Quit {{{
-nnoremap <C-w> :q<CR>
-inoremap <C-w> <Esc>:q<CR>
-vnoremap <C-w> :q<CR>
+"nnoremap <C-w> :q<CR>
+"inoremap <C-w> <Esc>:q<CR>
+"vnoremap <C-w> :q<CR>
 "}}}
 
 " GoDef tab {{{
