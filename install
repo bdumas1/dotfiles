@@ -49,6 +49,7 @@ if ! ${SERVER}; then
   xrdb ~/.Xresources
 
   # terminal
+  mkdir -p ~/.config/termintator
   link_files config/terminator/config "${CONFIG_DIR}"/terminator/config
   link_files config/terminator/gtk.css "${CONFIG_DIR}"/gtk-3.0/gtk.css
 
