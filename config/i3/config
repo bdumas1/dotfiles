@@ -31,7 +31,7 @@ hide_edge_borders vertical
 
 # Fond d'écran
 #exec_always --no-startup-id feh --bg-fill https://source.unsplash.com/1920x1080/?nature
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 # Couleurs
 set_from_resource       $active            active
