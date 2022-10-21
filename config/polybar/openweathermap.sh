@@ -53,7 +53,7 @@ get_duration() {
 }
 
 KEY="f131d5449d5a1995d985d2d77b3a28d6"
-CITY="2968985"
+CITY=""
 UNITS="metric"
 SYMBOL="°C"
 
