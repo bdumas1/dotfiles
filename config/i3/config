@@ -15,19 +15,12 @@ focus_follows_mouse no
 # Font
 font pango:monospace 10
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are includned here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 # Hiding borders adjacent to the screen edges
-hide_edge_borders vertical
+hide_edge_borders both
+
+# Hide window title bar
+default_border pixel 1
+default_floating_border pixel 1
 
 # Fond d'écran
 #exec_always --no-startup-id feh --bg-fill https://source.unsplash.com/1920x1080/?nature
@@ -116,7 +109,7 @@ bindsym $mod+q exec --no-startup-id ~/.config/rofi/powermenu.sh
 bindsym $mod+e exec nautilus "Téléchargements"
 
 # i3lock
-bindsym $mod+Shift+l exec "gnome-screensaver-command -l"
+bindsym $mod+Shift+l exec "loginctl lock-session"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -271,13 +264,6 @@ exec --no-startup-id synclient VertScrollDelta=-70 HorizScrollDelta=-70
 #bar {
 #        status_command i3status
 #}
-
-# I3 Gaps
-for_window [class="^.*"] border pixel 2
-for_window [class=".*"] title_format "  %title"
-gaps inner 0
-smart_borders on
-smart_gaps on
 
 # Automatic back-and-forth when switching to the current workspace
 # workspace_auto_back_and_forth yes
