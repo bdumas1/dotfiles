@@ -5,6 +5,10 @@
 
 set $mod Mod4
 
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
 ###############################
 #          APPARENCE          #
 ###############################
@@ -24,7 +28,7 @@ default_floating_border pixel 1
 
 # Fond d'écran
 #exec_always --no-startup-id feh --bg-fill https://source.unsplash.com/1920x1080/?nature
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+#exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 # Couleurs
 set_from_resource       $active            active
@@ -57,8 +61,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)+6000)) | tee /sys/class/backlight/intel_backlight/brightness
-bindsym XF86MonBrightnessDown exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)-6000)) > /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessUp exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)+6000)) | sudo tee /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessDown exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)-6000)) | sudo tee /sys/class/backlight/intel_backlight/brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
