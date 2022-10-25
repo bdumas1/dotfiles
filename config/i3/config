@@ -61,8 +61,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)+6000)) | sudo tee /sys/class/backlight/intel_backlight/brightness
-bindsym XF86MonBrightnessDown exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)-6000)) | sudo tee /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessUp exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)+6000)) | tee /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessDown exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)-6000)) | tee /sys/class/backlight/intel_backlight/brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -259,6 +259,9 @@ exec --no-startup-id ~/Lab/github/dotfiles/config/i3/i3-battery-popup/i3-battery
 
 # Natural scrolling with touchpad
 exec --no-startup-id synclient VertScrollDelta=-70 HorizScrollDelta=-70
+
+# Synaptics Two-Finger Scrolling
+exec --no-startup-id xinput --set-prop 11 "Synaptics Two-Finger Scrolling" 1 1
 
 ###############################
 #            MISC             #
