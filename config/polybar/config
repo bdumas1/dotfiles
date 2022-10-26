@@ -275,7 +275,8 @@ type = custom/script
 exec = "bluetoothctl paired-devices | cut -d' ' -f2 | xargs -i -n1 bash -c "bluetoothctl info {} | grep -q 'Connected: yes' && echo 1" | wc -l"
 exec-if = "[ $(bluetoothctl show | grep 'Powered: yes' | wc -l) -gt 0 ]"
 interval = 1
-click-left = blueman-manager &
+click-left = blueman-manager
+click-right = gnome-control-center bluetooth
 format-prefix = " "
 
 [module/powermenu]
