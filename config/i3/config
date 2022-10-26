@@ -73,9 +73,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # start app launcher
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+a exec rofi -show drun
-bindsym $mod+d exec rofi -show run
-bindsym $mod+s exec rofi -show ssh
+bindsym $mod+a exec rofi -show-icons -show drun
+bindsym $mod+d exec rofi -show-icons -show run
+bindsym $mod+s exec rofi -show-icons -show ssh
+bindsym $mod+w exec rofi -show-icons -show window
 
 # change focus
 bindsym $mod+Left focus left
