@@ -5,5 +5,6 @@
 *active:     #5396e7
 
 *.foreground:      #ffffff
-*.background:      #2E3440
+*.background:      #000000
+*.background-tabs: #000000
 *.urgent:          #FF555

@@ -34,14 +34,15 @@ default_floating_border pixel 1
 set_from_resource       $active            active
 set_from_resource       $secondary         secondary
 set_from_resource       $background        background
+set_from_resource       $background-tabs   background-tabs
 set_from_resource       $foreground        foreground
 set_from_resource       $urgent            urgent
 
-# class			            border	    backgr.   	    text            indicat
-client.focused          $active     $active         $foreground     $active
-client.focused_inactive $active     $active         $background     $active
-client.unfocused        $background $background     $foreground     $background
-client.urgent           $urgent     $urgent    	    $background     $urgent
+# class			            border	         backgr.   	      text             indicat
+client.focused              $active          $active          $foreground      $active
+client.focused_inactive     $active          $active          $background-tabs $active
+client.unfocused            $background-tabs $background-tabs $foreground      $background-tabs
+client.urgent               $urgent          $urgent    	  $background-tabs $urgent
 
 ###############################
 #         KEYBINDING          #
