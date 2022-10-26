@@ -19,7 +19,7 @@ choice=$(echo -e "$options" | rofi -dmenu -i -no-show-icons -lines 4 -width 20 -
 
 case $choice in
 	$option1)
-		gnome-screensaver-command -l ;;
+		loginctl lock-session ;;
 	$option2)
 		i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
 		;;
