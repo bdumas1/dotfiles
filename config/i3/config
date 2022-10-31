@@ -263,7 +263,7 @@ exec --no-startup-id ~/Lab/github/dotfiles/config/i3/i3-battery-popup/i3-battery
 exec --no-startup-id synclient VertScrollDelta=-70 HorizScrollDelta=-70
 
 # Synaptics Two-Finger Scrolling
-exec --no-startup-id xinput --set-prop 11 "Synaptics Two-Finger Scrolling" 1 1
+exec --no-startup-id xinput --set-prop $(xinput --list | grep Touchpad | awk '{print $5}' | cut -d'=' -f2) "Synaptics Two-Finger Scrolling" 1 1
 
 # Disable touchpad while typing
 exec --no-startup-id syndaemon -i 0.8 -K -t -d
