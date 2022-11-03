@@ -259,6 +259,10 @@ exec --no-startup-id "xset s off && xset -dpms"
 # Check battery low
 exec --no-startup-id ~/Lab/github/dotfiles/config/i3/i3-battery-popup/i3-battery-popup -n
 
+# --------
+# TOUCHPAD
+# --------
+
 # Natural scrolling with touchpad
 #exec --no-startup-id synclient VertScrollDelta=-70 HorizScrollDelta=-70
 
@@ -266,7 +270,10 @@ exec --no-startup-id ~/Lab/github/dotfiles/config/i3/i3-battery-popup/i3-battery
 #exec --no-startup-id xinput --set-prop $(xinput --list | grep Touchpad | awk '{print $5}' | cut -d'=' -f2) "Synaptics Two-Finger Scrolling" 1 1
 
 # Disable touchpad while typing
-exec --no-startup-id syndaemon -i 0.8 -K -t -d
+#exec --no-startup-id syndaemon -i 0.8 -K -t -d
+
+# Touchpad speed
+exec --no-startup-id xinput --set-prop $(xinput --list | grep Touchpad | awk '{print $5}' | cut -d'=' -f2) "Device Accel Constant Deceleration" 2
 
 ###############################
 #            MISC             #
