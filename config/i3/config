@@ -270,7 +270,7 @@ exec --no-startup-id synclient VertScrollDelta=-70 HorizScrollDelta=-70
 exec --no-startup-id xinput --set-prop $(xinput --list | grep Touchpad | awk '{print $5}' | cut -d'=' -f2) "Synaptics Two-Finger Scrolling" 1 1
 
 # Disable touchpad while typing
-#exec --no-startup-id syndaemon -i 0.8 -K -t -d
+exec --no-startup-id syndaemon -i 0.5 -K -t -d
 
 # Touchpad speed
 exec --no-startup-id xinput --set-prop $(xinput --list | grep Touchpad | awk '{print $5}' | cut -d'=' -f2) "Device Accel Constant Deceleration" 2
