@@ -234,6 +234,7 @@ for_window [class="Eog|Gnome-calculator|Cheese|Gnome-control-center|Nautilus"] f
 for_window [class="Nautilus"] floating enable resize set 1200 800, move position center
 for_window [class="X-terminal-emulator"] floating disable
 for_window [class = "Slack|discord|zoom|microsoft teams - preview"] layout tabbed
+for_window [urgent="latest"] focus
 
 # Floating windows size
 floating_minimum_size 75 x 75
