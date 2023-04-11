@@ -155,6 +155,7 @@ endfunction
 " Copy {{{
 vnoremap <C-c> "+y
 nnoremap Y yg$
+vmap y y`>
 " }}}
 
 " Paste {{{
