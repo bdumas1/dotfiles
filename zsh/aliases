@@ -18,6 +18,7 @@ alias grep='grep --color=auto'
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias defaultkb="setxkbmap -layout fr,us"
+alias naturalscroll="synclient VertScrollDelta=-70 HorizScrollDelta=70"
 alias publicip='curl ifconfig.me'
 alias makeswap='sudo mkswap /swap && sudo swapon /swap'
 alias r="ranger"
