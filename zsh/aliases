@@ -26,6 +26,7 @@ alias update="sudo apt update && apt list --upgradable"
 alias port="netstat -ntpl | grep $1"
 alias dc="docker-compose $1"
 alias docker-compose="docker compose"
+alias wip='gaa && gcmsg "wip"'
 
 alias dotfiles='cd ~/Lab/github/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
