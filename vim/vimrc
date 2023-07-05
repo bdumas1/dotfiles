@@ -49,6 +49,7 @@ Plug 'pechorin/any-jump.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'kassio/neoterm'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 " }}}
@@ -116,6 +117,7 @@ set noswapfile          " Use an SCM instead of swap files
 
 " Other {{{
 set autoindent
+set visualbell
 "set idearefactormode=keep
 " }}}
 
