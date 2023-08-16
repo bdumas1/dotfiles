@@ -49,7 +49,7 @@ Plug 'pechorin/any-jump.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'kassio/neoterm'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 " }}}
