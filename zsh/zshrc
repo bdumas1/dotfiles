@@ -139,3 +139,23 @@ stty stop ""
 # NVM
 initnvm
 nvm use stable
+
+#
+# --- EnergyPool ---
+#
+
+# load a new profile
+function awsp {
+        awsunset
+        export AWS_PROFILE=$1
+        echo $(printenv | grep AWS)
+}
+# know wich profile is loaded
+function awswhich {
+        echo $(printenv | grep AWS)
+}
+# unset every AWS env variables
+function awsunset {
+        unset AWS_PROFILE
+        unset AWS_DEFAULT_PROFILE
+}
