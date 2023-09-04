@@ -40,4 +40,5 @@ function initnvm {
 }
 
 # EP
+alias ep="cd ~/Lab/Sogilis/Clients/EnergyPool/everest"
 alias ptml='cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons; ./gradlew pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angular; ./gradlew pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angularjs; ./gradlew pTML; cd -;'
