@@ -18,13 +18,13 @@ alias grep='grep --color=auto'
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias defaultkb="setxkbmap -layout fr,us"
-alias naturalscroll="synclient VertScrollDelta=-70 HorizScrollDelta=70 HorizTwoFingerScroll=1"
+alias naturalscroll="synclient VertScrollDelta=-70 HorizScrollDelta=70 HorizTwoFingerScroll=1 HorizScrollDelta=-111"
 alias publicip='curl ifconfig.me'
 alias makeswap='sudo mkswap /swap && sudo swapon /swap'
 alias r="ranger"
 alias update="sudo apt update && apt list --upgradable"
 alias port="netstat -ntpl | grep $1"
-alias dc="docker-compose $1"
+alias dc="docker compose $1"
 alias docker-compose="docker compose"
 alias wip='gaa && gcmsg "wip"'
 
