@@ -49,10 +49,13 @@ Plug 'pechorin/any-jump.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'kassio/neoterm'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'andymass/vim-matchup'
 
 call plug#end()
 " }}}
+
+packadd matchit
 
 " Colors {{{
 let g:tokyonight_style = 'night' " available: night, storm
