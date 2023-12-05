@@ -51,11 +51,13 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-surround'
 Plug 'andymass/vim-matchup'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 " }}}
 
 packadd matchit
+let g:VM_mouse_mappings = 1
 
 " Colors {{{
 let g:tokyonight_style = 'night' " available: night, storm
@@ -200,12 +202,12 @@ vnoremap <C-d> y'>p
 " }}}
 
 " Move lines {{{
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+"nnoremap <A-j> :m .+1<CR>==
+"nnoremap <A-k> :m .-2<CR>==
+"inoremap <A-j> <Esc>:m .+1<CR>==gi
+"inoremap <A-k> <Esc>:m .-2<CR>==gi
+"vnoremap <A-j> :m '>+1<CR>gv=gv
+"vnoremap <A-k> :m '<-2<CR>gv=gv
 "}}}
 
 " Save {{{
