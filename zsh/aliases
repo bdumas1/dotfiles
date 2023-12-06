@@ -42,5 +42,5 @@ function initnvm {
 # EP
 alias everest="cd ~/Lab/Sogilis/Clients/EnergyPool/everest"
 alias pm="cd ~/Lab/Sogilis/Clients/EnergyPool/everest/mocs/policy-makers"
-alias ptml='cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons; ./gradlew pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angular; ./gradlew pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angularjs; ./gradlew pTML; cd -;'
+alias ptml='cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons; ./gradlew clean pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angular; ./gradlew clean pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angularjs; ./gradlew clean pTML; cd -;'
 alias cleanjs='rm -rf node_modules/;npm install;ng cache clean'
