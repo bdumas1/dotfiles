@@ -20,17 +20,16 @@ alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keyco
 alias defaultkb="setxkbmap -layout fr,us"
 alias naturalscroll="synclient VertScrollDelta=-70 HorizScrollDelta=70 HorizTwoFingerScroll=1 HorizScrollDelta=-111"
 alias publicip='curl ifconfig.me'
-alias makeswap='sudo mkswap /swap && sudo swapon /swap'
+alias makeswap='sudo mkswap /swapfile && sudo swapon /swapfile'
 alias r="ranger"
 alias update="sudo apt update && apt list --upgradable"
-alias port="netstat -ntpl | grep $1"
-alias dc="docker compose $1"
-alias docker-compose="docker compose"
+alias port="netstat -ntpl | grep $@"
+alias docker-compose="docker compose $@"
 alias wip='gaa && gcmsg "wip"'
 
 alias dotfiles='cd ~/Lab/github/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
-alias sqsc='cd ~/Lab/SquareScale'
+alias sogilis-clients='cd ~/Lab/Sogilis/Clients'
 alias planbot='cd ~/Lab/Sogilis/planbot'
 
 function initnvm {
