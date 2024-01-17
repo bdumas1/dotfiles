@@ -19,6 +19,7 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
 alias defaultkb="setxkbmap -layout fr,us"
 alias naturalscroll="synclient VertScrollDelta=-70 HorizScrollDelta=70 HorizTwoFingerScroll=1 HorizScrollDelta=-111"
+alias disableredtrackpoint="xinput set-prop "Elan TrackPoint" "Device Enabled" 0"
 alias publicip='curl ifconfig.me'
 alias makeswap='sudo mkswap /swapfile && sudo swapon /swapfile'
 alias r="ranger"
