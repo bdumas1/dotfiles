@@ -17,8 +17,8 @@ local searchFile = function ()
 end
 
 -- File navigation
-vim.keymap.set('n', '<leader>ff', findFile, {desc = 'Find files'})
-vim.keymap.set('n', '<leader>fs', searchFile, {desc = 'Search'})
+vim.keymap.set('n', '<C-p>', findFile, {desc = 'Find files'})
+vim.keymap.set('n', '<C-S-F>', searchFile, {desc = 'Search'})
 vim.keymap.set('n', '<leader>fr', builtin.buffers, {desc = 'Find buffer'})
 vim.keymap.set('n', '<C-b>', ":Neotree toggle=true reveal<CR>", {desc = 'File explorer'})
 vim.keymap.set('n', '<leader>b', ":Neotree reveal<CR>", {desc = 'File explorer reveal'})
