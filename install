@@ -53,7 +53,11 @@ if ! ${SERVER}; then
   link_files config/terminator/config "${CONFIG_DIR}"/terminator/config
   link_files config/terminator/gtk.css "${CONFIG_DIR}"/gtk-3.0/gtk.css
 
-  # vim
+  # Kitty
+  mkdir -p "${CONFIG_DIR}"/kitty
+  link_files config/kitty/config "${CONFIG_DIR}"/kitty/kitty.conf
+
+  # ideavim
   link_files vim/vimrc ~/.ideavimrc
 fi
 
