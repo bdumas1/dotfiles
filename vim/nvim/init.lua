@@ -47,11 +47,6 @@ require('onedark').setup {
 }
 require('onedark').load()
 
--- Toggle Neotree on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-  command = "set nornu nonu | Neotree toggle",
-})
-
 -- -- Highlight on yank
 -- -- https://neovim.io/doc/user/lua.html#vim.highlight
 -- -- See `:help vim.highlight.on_yank()`
