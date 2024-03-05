@@ -141,9 +141,17 @@ stty stop ""
 initnvm
 nvm use stable
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 #
 # --- EnergyPool ---
 #
+export NEXUS_AUTH_TOKEN="YmR1bWFzLmV4dDo5OS1HUkFORFMtbnVhZ2Vz"
 
 # load a new profile
 function awsp {
@@ -162,9 +170,3 @@ function awsunset {
 }
 
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
