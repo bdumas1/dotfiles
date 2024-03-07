@@ -26,6 +26,7 @@ vim.o.termguicolors = true -- NOTE: You should make sure your terminal supports 
 
 vim.o.number = true
 vim.o.cursorlineopt = "number"
+vim.o.cursorline = true -- highlight the current line
 
 -- Tabs / Space
 vim.o.shiftround = true -- Round indent (when increment / decrement)
