@@ -7,7 +7,7 @@ local excludedFiles = {
 'node_modules/.*',
 '%.git/.*',
 }
-local telescopeOpts = {hidden = true, follow = true, file_ignore_patterns = excludedFiles}
+local telescopeOpts = {hidden = true, follow = true, file_ignore_patterns = excludedFiles, path_display = { "truncate" }}
 
 local findFile = function ()
     builtin.find_files(require('telescope.themes').get_dropdown(telescopeOpts))
