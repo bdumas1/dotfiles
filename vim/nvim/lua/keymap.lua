@@ -11,22 +11,16 @@ local telescopeOpts = {
     hidden = true,
     follow = true,
     file_ignore_patterns = excludedFiles,
-    path_display = {
-        shorten = {
-            len = 20,
-            exclude = { 1, -1 }
-        },
-        truncate = true
-    }
+    path_display = { "shorten" }
 }
 
 local findFile = function ()
-    --builtin.find_files(require('telescope.themes').get_dropdown(telescopeOpts))
-    builtin.find_files(telescopeOpts)
+    builtin.find_files(require('telescope.themes').get_dropdown(telescopeOpts))
+    --builtin.find_files(telescopeOpts)
 end
 local searchFile = function ()
-    --builtin.live_grep(require('telescope.themes').get_dropdown(telescopeOpts))
-    builtin.live_grep(telescopeOpts)
+    builtin.live_grep(require('telescope.themes').get_dropdown(telescopeOpts))
+    --builtin.live_grep(telescopeOpts)
 end
 
 -- File navigation
