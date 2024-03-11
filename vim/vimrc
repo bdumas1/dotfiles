@@ -123,7 +123,7 @@ set noswapfile          " Use an SCM instead of swap files
 " Other {{{
 set autoindent
 set visualbell
-set scrolloff=999
+"set scrolloff=999
 "set idearefactormode=keep
 " }}}
 
