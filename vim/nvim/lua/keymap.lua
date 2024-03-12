@@ -11,7 +11,7 @@ local telescopeOpts = {
     hidden = true,
     follow = true,
     file_ignore_patterns = excludedFiles,
-    path_display = { "shorten" }
+    path_display = { "truncate" }
 }
 
 local findFile = function ()
