@@ -23,12 +23,14 @@ vim.o.ignorecase = true -- Enable auto write
 vim.o.breakindent = true -- Enable break indent
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
 vim.o.termguicolors = true -- NOTE: You should make sure your terminal supports this
-
+vim.o.backup = false
+vim.o.swapfile = false -- Disable swap file
+vim.o.writebackup = false -- Disable backup file
+vim.o.expandtab = true -- Use spaces instead of tabs
 vim.o.number = true
 vim.o.cursorlineopt = "number"
 vim.o.cursorline = true -- highlight the current line
-
--- Tabs / Space
+vim.o.tabstop = 4
 vim.o.shiftround = true -- Round indent (when increment / decrement)
 vim.o.shiftwidth = 2 -- Size of an indent
 vim.o.smartindent = true -- Insert indents automatically
