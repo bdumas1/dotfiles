@@ -31,7 +31,7 @@ vim.keymap.set('n', '<C-b>', ":Neotree toggle=true reveal<CR>", {desc = 'File ex
 vim.keymap.set('n', '<leader>b', ":Neotree reveal<CR>", {desc = 'File explorer reveal'})
 
 -- Editor action
-vim.keymap.set('n', '<leader>rn', ':IncRename ', {desc = 'Rename'})
+vim.keymap.set('n', '<leader>r', ':IncRename ', {desc = 'Rename'})
 
 -- Clipboard system
 vim.keymap.set('v', '<leader>y',  '"+y')
