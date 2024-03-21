@@ -18,5 +18,25 @@ return {
         end,
       },
     },
+    opts = {
+      defaults = {
+        sorting_strategy = "ascending", -- display results top->bottom
+        layout_config = {
+          prompt_position = "top",
+          horizontal = {
+              preview_cutoff = 100,
+              preview_width = 0.5,
+          },
+          vertical = {
+              preview_cutoff = 0.4,
+          },
+          flex = {
+              flip_columns = 110,
+          },
+          height = 0.94,
+          width = 0.86,
+        },
+      },
+    },
   },
 }
