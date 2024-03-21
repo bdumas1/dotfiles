@@ -58,7 +58,7 @@ if ! ${SERVER}; then
   link_files config/kitty/config "${CONFIG_DIR}"/kitty/kitty.conf
 
   # ideavim
-  link_files vim/vimrc ~/.ideavimrc
+  link_files vim/ideavimrc ~/.ideavimrc
 fi
 
 # ranger
