@@ -39,9 +39,22 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
 vnoremap <C-b> :NERDTreeToggle<CR>
 
-vnoremap <C-c> "+y
-nnoremap Y yg$
-vmap y y`>
+vnoremap y y`>
+nnoremap Y yg_
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>yy "+yy
+
+vnoremap p pgvy
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+nnoremap <C-s> :w<CR>
+vnoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <C-o>:w<CR><Esc>
 
 " Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
 map <leader>i ~hi
