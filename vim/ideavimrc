@@ -25,6 +25,7 @@ set nu
 """ Idea specific settings ------------------
 set ideajoin
 set ideastatusicon=gray
+set visualbell
 
 """ My Mappings -----------------------------
 map <leader>r <Action>(RenameElement)
