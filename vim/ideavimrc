@@ -39,15 +39,17 @@ map <leader>o <Action>(FileStructurePopup)
 nnoremap <leader>fe :NERDTreeToggle<CR>
 vnoremap <leader>fe :NERDTreeToggle<CR>
 
-vnoremap y "+y
-nnoremap y "+y
-nnoremap Y "+yg_
-nnoremap yy "+yy
+vnoremap y y`>
+nnoremap Y yg_
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>yy "+yy
 
-nnoremap p "+p
-nnoremap P "+P
-vnoremap p "+p
-vnoremap P "+P
+vnoremap p pgvy
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
