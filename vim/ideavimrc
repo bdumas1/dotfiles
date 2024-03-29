@@ -53,6 +53,8 @@ nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <C-o>:w<CR><Esc>
 
+nnoremap <leader>bd :bd<CR>
+
 " Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
 map <leader>i ~hi
 
