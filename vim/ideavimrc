@@ -29,12 +29,13 @@ set visualbell
 
 """ My Mappings -----------------------------
 map <leader>r <Action>(RenameElement)
+map <leader>iv <Action>(IntroduceVariable)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>b <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
 map <leader>o <Action>(FileStructurePopup)
+map <S-Space> <Action>(GotoNextError)
 
 nnoremap <leader>fe :NERDTreeToggle<CR>
 vnoremap <leader>fe :NERDTreeToggle<CR>
