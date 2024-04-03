@@ -78,7 +78,7 @@ link_files zsh/pure ~/.zsh/pure
 # vim
 link_files vim ~/.vim
 link_files vim/vimrc ~/.vimrc
-link_files vim/nvim ~/.config/nvim
+link_files vim/nvim_lazyvim ~/.config/nvim
 
 # git
 link_files git/gitconfig ~/.gitconfig

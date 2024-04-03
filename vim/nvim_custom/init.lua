@@ -1,17 +1,17 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Install LazyVim (plugin manager)
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
-    lazypath,
-  }
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -21,7 +21,7 @@ require("lazy").setup("plugins", {})
 
 vim.o.ignorecase = true -- Enable auto write
 vim.o.breakindent = true -- Enable break indent
-vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
+vim.o.completeopt = "menuone,noselect" -- Set completeopt to have a better completion experience
 vim.o.termguicolors = true -- NOTE: You should make sure your terminal supports this
 vim.o.backup = false
 vim.o.swapfile = false -- Disable swap file
@@ -45,21 +45,21 @@ vim.o.wildmode = "longest:full,full" -- Command-line completion mode
 vim.o.winminwidth = 5 -- Minimum window width
 
 -- Design
-require('onedark').setup {
-    style = 'warmer'
-}
-require('onedark').load()
+require("onedark").setup({
+	style = "warmer",
+})
+require("onedark").load()
 
 -- -- Highlight on yank
 -- -- https://neovim.io/doc/user/lua.html#vim.highlight
 -- -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
 })
 
 -- keymap
