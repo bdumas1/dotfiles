@@ -35,6 +35,7 @@ map <leader>b <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
+map <leader>ww <C-w>w
 map <S-Space> <Action>(GotoNextError)
 
 nnoremap <leader>fe :NERDTreeToggle<CR>
