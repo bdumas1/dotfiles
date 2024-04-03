@@ -36,6 +36,8 @@ map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
 map <leader>ww <C-w>w
+map <leader>gcw <Action>(Git.CompareWithBranch)
+
 map <S-Space> <Action>(GotoNextError)
 
 nnoremap <leader>fe :NERDTreeToggle<CR>
