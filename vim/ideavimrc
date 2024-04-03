@@ -39,6 +39,7 @@ map <leader>o <Action>(FileStructurePopup)
 map <leader>ww <C-w>w
 map <leader>gcwb <Action>(Git.CompareWithBranch)
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
+map <leader>g <Action>(Generate)
 
 map <S-Space> <Action>(GotoNextError)
 
