@@ -30,6 +30,7 @@ set visualbell
 """ My Mappings -----------------------------
 map <leader>r <Action>(RenameElement)
 map <leader>iv <Action>(IntroduceVariable)
+map <leader>in <Action>(Inline)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>b <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
@@ -62,7 +63,3 @@ inoremap <C-s> <C-o>:w<CR><Esc>
 map <leader>s :w<CR>
 
 nnoremap <leader>bd :bd<CR>
-
-" Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
-map <leader>i ~hi
-
