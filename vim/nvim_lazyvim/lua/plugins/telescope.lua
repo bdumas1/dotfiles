@@ -1,3 +1,16 @@
+local excludedFiles = {
+  "yarn%.lock",
+  "package%-lock%.json",
+  "node_modules/.*",
+  "%.git/.*",
+}
+local telescopeOpts = {
+  hidden = true,
+  follow = true,
+  file_ignore_patterns = excludedFiles,
+  path_display = { "truncate" },
+}
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
@@ -19,13 +32,15 @@ return {
     -- stylua: ignore
     {
       "<C-p>",
-      function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
+      function()
+        require("telescope.builtin").find_files(telescopeOpts)
+      end,
       desc = "Find file",
     },
     {
       "<C-S-F>",
       function()
-        require("telescope.builtin").live_grep({ cwd = require("lazy.core.config").options.root })
+        require("telescope.builtin").live_grep(telescopeOpts)
       end,
       desc = "Search in files",
     },
