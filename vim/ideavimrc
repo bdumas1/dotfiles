@@ -63,4 +63,7 @@ vnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <C-o>:w<CR><Esc>
 map <leader>s :w<CR>
 
+vnoremap < <gv
+vnoremap > >gv
+
 nnoremap <leader>bd :bd<CR>
