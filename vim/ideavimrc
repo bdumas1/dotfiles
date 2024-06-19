@@ -34,13 +34,16 @@ map <leader>in <Action>(Inline)
 map <leader>em <Action>(ExtractMethod)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>b <Action>(SelectInProjectView)
-map <leader>a <Action>(Annotate)
+map <leader>a ggVG
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
 map <leader>ww <C-w>w
 map <leader>gcwb <Action>(Git.CompareWithBranch)
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
-map <leader>g <Action>(Generate)
+map <leader>ge <Action>(Generate)
+
+map <leader>gb <Action>(Git.Branches)
+map <leader>gf <Action>(Git.Fetch)
 
 map <S-Space> <Action>(GotoNextError)
 
