@@ -1,6 +1,6 @@
 [user]
 	email = benoit@sogilis.com
-	name = Benoit DUMAS
+	name = Benoit Dumas
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
