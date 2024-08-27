@@ -169,4 +169,9 @@ function awsunset {
         unset AWS_DEFAULT_PROFILE
 }
 
+export AWS_PROFILE=prod2-dev
+export AWS_REGION=eu-west-1
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
