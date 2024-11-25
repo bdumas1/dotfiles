@@ -63,7 +63,7 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-nnoremap yyp <Esc>mayyp`a<Down>
+"nnoremap yyp <Esc>mayyp`a<Down>
 
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
