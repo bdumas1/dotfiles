@@ -41,6 +41,7 @@ map <leader>o <Action>(FileStructurePopup)
 map <leader>ww <C-w>w
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
 map <leader>ge <Action>(Generate)
+map <leader>p <Action>(PasteMultiple)
 
 map <leader>gcwb <Action>(Git.CompareWithBranch)
 map <leader>gb <Action>(Git.Branches)
@@ -51,6 +52,7 @@ map <S-Space> <Action>(GotoNextError)
 nnoremap <leader>fe :NERDTreeToggle<CR>
 vnoremap <leader>fe :NERDTreeToggle<CR>
 
+lazyvim: update
 vnoremap y y`>
 nnoremap Y yg_
 vnoremap <leader>y "+y
@@ -58,10 +60,6 @@ nnoremap <leader>Y "+yg_
 nnoremap <leader>yy "+yy
 
 vnoremap p pgvy
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
 
 "nnoremap yyp <Esc>mayyp`a<Down>
 
