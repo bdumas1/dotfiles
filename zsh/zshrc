@@ -141,6 +141,9 @@ stty stop ""
 initnvm
 nvm use stable
 
+# RVM
+source /etc/profile.d/rvm.sh
+
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
