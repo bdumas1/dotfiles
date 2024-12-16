@@ -53,11 +53,9 @@ nnoremap <leader>fe :NERDTreeToggle<CR>
 vnoremap <leader>fe :NERDTreeToggle<CR>
 
 lazyvim: update
-vnoremap y y`>
-nnoremap Y yg_
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+yg_
-nnoremap <leader>yy "+yy
+vnoremap y "+y`>
+nnoremap Y "+yg_
+nnoremap yy "+yy
 
 vnoremap p pgvy
 
