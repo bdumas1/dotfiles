@@ -75,3 +75,4 @@ vim.o.undolevels = 10000
 vim.o.updatetime = 200 -- Save swap file and trigger CursorHoldis no text in visual block mode
 vim.o.wildmode = "longest:full,full" -- Command-line completion mode
 vim.o.winminwidth = 5 -- Minimum window width
+vim.o.clipboard = "unnamedplus"
