@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-SERVER=false
-
 success () {
     printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
 }
@@ -15,54 +13,17 @@ link_files() {
     success "linked $1 to $2"
 }
 
-while [[ $# -gt 0 ]]; do
-  key="$1"
-
-  case $key in
-    -s|--server)
-    SERVER=true
-    ;;
-
-    *)
-    ;;
-  esac
-  shift
-done
-
-if ${SERVER}; then
-  success "SERVER mode enabled!"
-  echo ''
-fi
-
 git submodule update --init
 
 CONFIG_DIR=~/.config
 mkdir -p "${CONFIG_DIR}"
 
-if ! ${SERVER}; then
-  # i3
-#  link_files config/Xresources ~/.Xresources
-#  link_files config/i3 "${CONFIG_DIR}"/i3
-#  link_files config/polybar "${CONFIG_DIR}"/polybar
-#  link_files config/rofi "${CONFIG_DIR}"/rofi
-#  link_files config/dunst/dunstrc "${CONFIG_DIR}"/dunst/dunstrc
-#  xrdb ~/.Xresources
+# Kitty
+mkdir -p "${CONFIG_DIR}"/kitty
+link_files kitty/config "${CONFIG_DIR}"/kitty/kitty.conf
 
-  # Terminator
-  mkdir -p "${CONFIG_DIR}"/terminator
-  link_files config/terminator/config "${CONFIG_DIR}"/terminator/config
-  link_files config/terminator/gtk.css "${CONFIG_DIR}"/gtk-3.0/gtk.css
-
-  # Kitty
-  mkdir -p "${CONFIG_DIR}"/kitty
-  link_files config/kitty/config "${CONFIG_DIR}"/kitty/kitty.conf
-
-  # ideavim
-  link_files vim/ideavimrc ~/.ideavimrc
-fi
-
-# ranger
-link_files config/ranger "${CONFIG_DIR}"/ranger
+# ideavim
+link_files vim/ideavimrc ~/.ideavimrc
 
 # Oh My Zsh
 [ ! -d "$HOME/.oh-my-zsh" ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -85,7 +46,7 @@ link_files git/gitconfig ~/.gitconfig
 link_files git/gitignore_global ~/.gitignore_global
 
 # tmux
-link_files tmux.conf ~/.tmux.conf
+link_files tmux/tmux.conf ~/.tmux.conf
 
 echo ''
 success 'All installed!'

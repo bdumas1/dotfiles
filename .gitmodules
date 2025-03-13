@@ -8,8 +8,5 @@
 	path = zsh/pure
 	url = https://github.com/sindresorhus/pure.git
 [submodule "vim/pack/base/start/solarized8"]
-	path = vim/pack/base/start/solarized8
-	url = https://github.com/lifepillar/vim-solarized8.git
-[submodule "config/i3/i3-battery-popup"]
-	path = config/i3/i3-battery-popup
-	url = https://github.com/rjekker/i3-battery-popup.git
+    path = vim/pack/base/start/solarized8
+    url = https://github.com/lifepillar/vim-solarized8.git

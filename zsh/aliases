@@ -24,7 +24,9 @@ alias publicip='curl ifconfig.me'
 alias makeswap='sudo mkswap /swapfile && sudo swapon /swapfile'
 alias r="ranger"
 alias update="sudo apt update && apt list --upgradable"
+alias upgrade="sudo apt upgrade"
 alias port="netstat -ntpl | grep $@"
+alias killport="sudo lsof -i :$1 | awk '{print \$2}' | awk 'FNR == 2 {print}' | sudo xargs kill -9"
 alias docker-compose="docker compose $@"
 alias wip='gaa && gcmsg "wip"'
 
