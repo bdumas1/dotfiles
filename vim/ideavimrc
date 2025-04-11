@@ -29,6 +29,7 @@ set visualbell
 
 """ My Mappings -----------------------------
 map <leader>r <Action>(RenameElement)
+map <leader>fr <Action>(Replace)
 map <leader>iv <Action>(IntroduceVariable)
 map <leader>ip <Action>(IntroduceParameter)
 map <leader>in <Action>(Inline)
