@@ -35,10 +35,8 @@ map <leader>in <Action>(Inline)
 map <leader>em <Action>(ExtractMethod)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>b <Action>(SelectInProjectView)
-map <leader>a ggVG
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
-map <leader>ww <C-w>w
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
 map <leader>ge <Action>(Generate)
 map <leader>p <Action>(PasteMultiple)
@@ -48,6 +46,10 @@ map <leader>gb <Action>(Git.Branches)
 map <leader>gf <Action>(Git.Fetch)
 
 map <S-Space> <Action>(GotoNextError)
+
+map <leader>ww <C-w>w
+map <leader>a ggVG
+map <leader>q :q<CR>
 
 nnoremap <leader>fe :NERDTreeToggle<CR>
 vnoremap <leader>fe :NERDTreeToggle<CR>
@@ -68,5 +70,3 @@ map <leader>s :w<CR>
 
 vnoremap < <gv
 vnoremap > >gv
-
-nnoremap <leader>bd :bd<CR>
