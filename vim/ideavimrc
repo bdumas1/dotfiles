@@ -38,9 +38,10 @@ map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>b <Action>(SelectInProjectView)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
-map <leader>vs :vsplit<CR><C-w>w:q<CR>
 map <leader>ge <Action>(Generate)
 map <leader>p <Action>(PasteMultiple)
+map <leader>ee <Action>(EvaluateExpression)
+map <leader>vs :vsplit<CR><C-w>w:q<CR>
 
 map <leader>gcwb <Action>(Git.CompareWithBranch)
 map <leader>gb <Action>(Git.Branches)
