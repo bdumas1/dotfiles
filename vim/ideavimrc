@@ -41,6 +41,7 @@ map <leader>o <Action>(FileStructurePopup)
 map <leader>ge <Action>(Generate)
 map <leader>p <Action>(PasteMultiple)
 map <leader>ee <Action>(EvaluateExpression)
+map <leader>t <Action>(ContextRun)
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
 
 map <leader>gcwb <Action>(Git.CompareWithBranch)
@@ -55,6 +56,8 @@ map <leader>q :q<CR>
 
 nnoremap <leader>fe :NERDTreeToggle<CR>
 vnoremap <leader>fe :NERDTreeToggle<CR>
+
+map <C-e> :action RecentFiles<CR>
 
 lazyvim: update
 vnoremap y "+y`>
