@@ -48,5 +48,8 @@ link_files git/gitignore_global ~/.gitignore_global
 # tmux
 link_files tmux/tmux.conf ~/.tmux.conf
 
+# dconf gnome
+dconf load /org/gnome/desktop/wm/keybindings/ < ./dconf-gnome/wm-keybindings-backup.conf
+
 echo ''
 success 'All installed!'
