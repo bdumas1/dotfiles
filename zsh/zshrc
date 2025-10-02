@@ -138,6 +138,3 @@ stty stop ""
 initnvm
 nvm use stable
 
-# RVM
-source /etc/profile.d/rvm.sh
-
