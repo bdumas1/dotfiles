@@ -94,8 +94,7 @@ export PATH="$PATH:./node_modules/.bin"
 # ------------
 # - Bindkeys -
 # ------------
-## fzf - ^R - Search
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 bindkey -v
 bindkey "[D" backward-word
@@ -137,4 +136,3 @@ stty stop ""
 # NVM
 initnvm
 nvm use stable
-
