@@ -59,7 +59,6 @@ vnoremap <leader>fe :NERDTreeToggle<CR>
 
 map <C-e> :action RecentFiles<CR>
 
-lazyvim: update
 vnoremap y "+y`>
 nnoremap Y "+yg_
 nnoremap yy "+yy

@@ -25,6 +25,9 @@ link_files kitty/config "${CONFIG_DIR}"/kitty/kitty.conf
 # ideavim
 link_files vim/ideavimrc ~/.ideavimrc
 
+# vscodevimrc
+link_files vim/vscodevimrc ~/.vscodevimrc
+
 # Oh My Zsh
 [ ! -d "$HOME/.oh-my-zsh" ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 

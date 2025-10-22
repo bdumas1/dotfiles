@@ -1,0 +1,25 @@
+let mapleader=" "
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" My Mappings -----------------------------
+map <leader>ww <C-w>w
+map <leader>a ggVG
+map <leader>q :q<CR>
+
+vnoremap y "+y`>
+nnoremap Y "+yg_
+nnoremap yy "+yy
+
+vnoremap p pgvy
+
+nnoremap <C-s> :w<CR>
+vnoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <C-o>:w<CR><Esc>
+
+vnoremap < <gv
+vnoremap > >gv
