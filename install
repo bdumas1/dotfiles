@@ -18,16 +18,6 @@ git submodule update --init
 CONFIG_DIR=~/.config
 mkdir -p "${CONFIG_DIR}"
 
-# Kitty
-mkdir -p "${CONFIG_DIR}"/kitty
-link_files kitty/config "${CONFIG_DIR}"/kitty/kitty.conf
-
-# ideavim
-link_files vim/ideavimrc ~/.ideavimrc
-
-# vscodevimrc
-link_files vim/vscodevimrc ~/.vscodevimrc
-
 # Oh My Zsh
 [ ! -d "$HOME/.oh-my-zsh" ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -40,9 +30,11 @@ link_files zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 link_files zsh/pure ~/.zsh/pure
 
 # vim
-link_files vim ~/.vim
+#link_files vim ~/.vim
 link_files vim/vimrc ~/.vimrc
-link_files vim/nvim_lazyvim ~/.config/nvim
+#link_files vim/nvim_lazyvim ~/.config/nvim
+link_files vim/ideavimrc ~/.ideavimrc
+link_files vim/vscodevimrc ~/.vscodevimrc
 
 # git
 link_files git/gitconfig ~/.gitconfig
@@ -52,7 +44,10 @@ link_files git/gitignore_global ~/.gitignore_global
 link_files tmux/tmux.conf ~/.tmux.conf
 
 # dconf gnome
-dconf load /org/gnome/desktop/wm/keybindings/ < ./dconf-gnome/wm-keybindings-backup.conf
+#dconf load /org/gnome/desktop/wm/keybindings/ < ./dconf-gnome/wm-keybindings-backup.conf
+
+# Hyprland
+link_files hypr/custom ~/.config/hypr/custom
 
 echo ''
 success 'All installed!'
