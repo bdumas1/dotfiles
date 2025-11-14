@@ -70,12 +70,9 @@ vnoremap p pgvy
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <C-o>:w<CR><Esc>
-map <leader>s :w<CR>
 
 vnoremap < <gv
 vnoremap > >gv
-
-map <leader>q :q<CR>
 
 nnoremap <CR> :noh<CR>
 
