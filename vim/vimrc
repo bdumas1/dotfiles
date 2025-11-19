@@ -1,8 +1,6 @@
 syntax enable
 set mouse=a
 
-" True color support {{{
-
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -20,9 +18,6 @@ set mouse=a
   endif
 "endif
 
-" }}}
-
-" Plugins {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -40,26 +35,22 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'joshdick/onedark.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'fabi1cazenave/termopen.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pechorin/any-jump.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'kassio/neoterm'
-Plug 'tpope/vim-surround'
 Plug 'andymass/vim-matchup'
+Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
-" }}}
 
 packadd matchit
 let g:VM_mouse_mappings = 1
 
-" Colors {{{
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
@@ -76,15 +67,12 @@ let g:airline#extensions#tabline#show_splits = 0       " disables the buffer nam
 let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
 let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab
 
-" }}}
+let mapleader=" "       " leader is space
 
-" Spaces & Tabs {{{
 set tabstop=2           " number of visual spaces per TAB
 set softtabstop=2       " number of spaces in tab when editing
 set expandtab           " tabs are spaces
-" }}}
 
-" UI Config {{{
 set number              " show line numbers
 set cursorline          " highlight current line
 filetype indent on      " load filetype-specific indent files
@@ -93,162 +81,58 @@ set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 set splitbelow          " split to bottom
 "set splitright         " split to right
-" }}}
 
-" Searching {{{
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-" }}}
 
-" Folding {{{
-set foldenable          " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10      " 10 nested fold max
-set foldmethod=indent   " fold based on indent level
-"nnoremap za za     " space open/closes folds
-" }}}
-
-" Leader shortcuts {{{
-let mapleader=" "       " leader is space
-"inoremap ze <esc>       " ze is escape
-"vnoremap ze <esc>       " ze is escape
-" }}}
-
-" Backups {{{
 set nobackup            " Don't make a backup before overwriting a file
 set nowritebackup       " And again
 set noswapfile          " Use an SCM instead of swap files
-" }}}
 
-" Other {{{
 set autoindent
 set visualbell
-"set scrolloff=999
-"set idearefactormode=keep
-" }}}
 
-" Key bindings {{{
-
-" Term Open {{{
-  nmap <Leader>r :call TermOpenRanger('ranger', 't')<CR>
-" }}}
-
-" FZF {{{
 nnoremap <C-p> :Files<CR>
-inoremap <C-p> <Esc>:Files<CR>
-nnoremap <C-f> :BLines<CR>
-inoremap <C-f> <Esc>:BLines<CR>
-nnoremap <Leader>f :Rg<CR>
 
 let g:fzf_buffers_jump = 1
 let g:fzf_action = {
 \ 'ctrl-t': 'tab split',
 \ 'ctrl-x': 'split',
 \ 'ctrl-v': 'vsplit' }
-" }}}
 
-" Nerdtree {{{
-nnoremap <C-b> :NERDTreeToggle<CR>
-inoremap <C-b> <Esc>:NERDTreeToggle<CR>i
-vnoremap <C-b> :NERDTreeToggle<CR>
-map <leader>b :NERDTreeFind<CR>
+nnoremap <leader>fe :NERDTreeToggle<CR>
+nnoremap <leader>b :NERDTreeFind<CR>
+map <leader>ww <C-w>w
+map <leader>a ggVG
+map <leader>vs :vsplit<CR><C-w>w:q<CR>
 
-" Open in new tab when double clicking on file in Nerdtree
-autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "FileNode", 'callback': "OpenInTab", 'override':1 })
-function! OpenInTab(node)
-    call a:node.activate({'reuse': 'all', 'where': 't'})
-endfunction
-" }}}
+vnoremap y "+y`>
+nnoremap Y "+yg_
+nnoremap yy "+yy
 
-" Copy {{{
-vnoremap <C-c> "+y
-nnoremap Y yg$
-vmap y y`>
-" }}}
-
-" Paste {{{
 vnoremap p pgvy
-" }}}
 
-" Text selection {{{
-nnoremap <S-Up> v<UP>
-nnoremap <S-Down> v<DOWN>
-nnoremap <S-Left> v<LEFT>
-nnoremap <S-Right> v<RIGHT>
-inoremap <S-Up> <Esc>v<UP>
-inoremap <S-Down> <Esc>v<DOWN>
-inoremap <S-Left> <Esc>v<LEFT>
-inoremap <S-Right> <Esc>v<RIGHT>
-vnoremap <S-Up> k
-vnoremap <S-Down> j
-vnoremap <S-Left> h
-vnoremap <S-Right> l
-" }}}
-
-" Backspace {{{
-set backspace=indent,eol,start
-nnoremap <BS> i<BS><Esc>
-vnoremap <BS> <Del>i
-" }}}
-
-" Find and replace {{{
-nnoremap <C-h> <esc>:%s///g
-inoremap <C-h> <esc>:%s///g
-" }}}
-
-" Duplicate line {{{ 
-nnoremap <C-d> <Esc>mayyp`a<Down>
-inoremap <C-d> <Esc>mayyp`a<Down>i<Right>
-vnoremap <C-d> y'>p
-" }}}
-
-" Move lines {{{
-"nnoremap <A-j> :m .+1<CR>==
-"nnoremap <A-k> :m .-2<CR>==
-"inoremap <A-j> <Esc>:m .+1<CR>==gi
-"inoremap <A-k> <Esc>:m .-2<CR>==gi
-"vnoremap <A-j> :m '>+1<CR>gv=gv
-"vnoremap <A-k> :m '<-2<CR>gv=gv
-"}}}
-
-" Save {{{
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <C-o>:w<CR><Esc>
-" }}} 
 
-" Enter {{{
-nnoremap <CR> i<CR><Esc>
-" }}}
+vnoremap < <gv
+vnoremap > >gv
 
-" Quit {{{
-"nnoremap <C-w> :q<CR>
-"inoremap <C-w> <Esc>:q<CR>
-"vnoremap <C-w> :q<CR>
-"}}}
+nnoremap <CR> :noh<CR>
 
-" GoDef tab {{{
 au FileType go nmap gd <Plug>(go-def-tab)
-" }}}
-
-" Other remap {{{
-nnoremap m $
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-" }}}
-
-" }}}
 
 " Change cursor in Insert/Normal mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-" Hide ~
-"set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
-let &fcs='eob: '
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
 
 set modeline
 set modelines=1
-" vim:foldmethod=marker:foldlevel=0
 

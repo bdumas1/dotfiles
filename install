@@ -30,9 +30,9 @@ link_files zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 link_files zsh/pure ~/.zsh/pure
 
 # vim
-#link_files vim ~/.vim
+mkdir -p "${CONFIG_DIR}/nvim"
 link_files vim/vimrc ~/.vimrc
-#link_files vim/nvim_lazyvim ~/.config/nvim
+link_files vim/vimrc ~/.config/nvim/init.vim
 link_files vim/ideavimrc ~/.ideavimrc
 link_files vim/vscodevimrc ~/.vscodevimrc
 

@@ -20,8 +20,8 @@ let g:argtextobj_pairs="[:],(:),<:>"
 """ Common settings -------------------------
 set showmode
 set so=5
-set incsearch
 set nu
+set incsearch
 set hlsearch
 
 """ Idea specific settings ------------------
@@ -54,10 +54,8 @@ map <S-Space> <Action>(GotoNextError)
 
 map <leader>ww <C-w>w
 map <leader>a ggVG
-map <leader>q :q<CR>
 
 nnoremap <leader>fe :NERDTreeToggle<CR>
-vnoremap <leader>fe :NERDTreeToggle<CR>
 
 map <C-e> :action RecentFiles<CR>
 
