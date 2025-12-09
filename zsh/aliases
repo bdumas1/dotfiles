@@ -15,24 +15,18 @@ alias open='xdg-open'
 alias cd..="cd .."
 alias ..="cd .."
 alias grep='grep --color=auto'
+alias pbcopy='wl-copy'
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy"
-alias mackb="setxkbmap fr mac && xmodmap -e 'keycode 94=at numbersign' -e 'keycode 49=less greater less greater less greater'"
-alias defaultkb="setxkbmap -layout fr,us"
-alias naturalscroll="synclient VertScrollDelta=-70 HorizScrollDelta=70 HorizTwoFingerScroll=1 HorizScrollDelta=-111"
-alias disableredtrackpoint="xinput set-prop "Elan TrackPoint" "Device Enabled" 0"
 alias publicip='curl ifconfig.me'
-alias makeswap='sudo mkswap /swapfile && sudo swapon /swapfile'
 alias r="ranger"
 alias update="sudo apt update && apt list --upgradable"
 alias upgrade="sudo apt upgrade"
 alias port="netstat -ntpl | grep $@"
 alias killport="sudo lsof -i :$1 | awk '{print \$2}' | awk 'FNR == 2 {print}' | sudo xargs kill -9"
-alias docker-compose="docker compose $@"
 alias wip='gaa && gcmsg "wip"'
 
 alias dotfiles='cd ~/Lab/github/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
-alias sogilis-clients='cd ~/Lab/Sogilis/Clients'
 alias planbot='cd ~/Lab/Sogilis/planbot'
 
 function initnvm {
@@ -41,10 +35,3 @@ function initnvm {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 }
 
-# EP
-alias everest="cd ~/Lab/Sogilis/Clients/EnergyPool/everest"
-alias pm="cd ~/Lab/Sogilis/Clients/EnergyPool/policy-makers"
-alias qf="cd ~/Lab/Sogilis/Clients/EnergyPool/quickflex"
-alias ptml='cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons; ./gradlew clean pTML; cd -; ./gradlew clean pTML; cd -;cd ~/Lab/Sogilis/Clients/EnergyPool/everest/commons-angularjs; ./gradlew clean pTML; cd -;'
-alias cleanjs='rm -rf node_modules/;npm install;ng cache clean'
-alias epvpn='sudo openfortivpn -c /etc/openfortivpn/config'
