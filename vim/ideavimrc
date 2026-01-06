@@ -45,6 +45,7 @@ map <leader>p <Action>(PasteMultiple)
 map <leader>ee <Action>(EvaluateExpression)
 map <leader>t <Action>(ContextRun)
 map <leader>s <Action>(SaveAll)
+map <leader>q <Action>(CloseContent)
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
 
 map <leader>gcwb <Action>(Git.CompareWithBranch)
