@@ -9,7 +9,7 @@ link_files() {
         rm -f "$2"
     fi
 
-    ln -s "$(pwd)/$1" "$2"
+    sudo ln -s "$(pwd)/$1" "$2"
     success "linked $1 to $2"
 }
 
@@ -43,11 +43,13 @@ link_files git/gitignore_global ~/.gitignore_global
 # tmux
 link_files tmux/tmux.conf ~/.tmux.conf
 
-# dconf gnome
-#dconf load /org/gnome/desktop/wm/keybindings/ < ./dconf-gnome/wm-keybindings-backup.conf
-
 # Hyprland
 link_files hypr/custom ~/.config/hypr/custom
+
+# udevmon
+# On ArchLinux, run pacman -S interception-caps2esc
+link_files udevmon/caps2esc.yaml /etc/interception/udevmon.d/caps2esc.yaml
+sudo systemctl enable --now udevmon.service
 
 echo ''
 success 'All installed!'
