@@ -46,10 +46,10 @@ link_files tmux/tmux.conf ~/.tmux.conf
 # Hyprland
 link_files hypr/custom ~/.config/hypr/custom
 
-# udevmon
-# On ArchLinux, run pacman -S interception-caps2esc
-link_files udevmon/caps2esc.yaml /etc/interception/udevmon.d/caps2esc.yaml
-sudo systemctl enable --now udevmon.service
+# keyd
+# On ArchLinux, run pacman -S keyd
+link_files keyd/default.conf /etc/keyd/default.conf
+sudo systemctl enable --now keyd
 
 echo ''
 success 'All installed!'
