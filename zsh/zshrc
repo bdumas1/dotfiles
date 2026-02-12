@@ -90,6 +90,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # ------------
 # - Bindkeys -
@@ -134,3 +135,5 @@ stty stop ""
 # NVM
 initnvm
 nvm use stable
+
+# opencode
