@@ -49,6 +49,7 @@ map <leader>dt <Action>(ContextDebug)
 map <leader>df <Action>(DebugClass)
 map <leader>s <Action>(SaveAll)
 map <leader>q <Action>(CloseContent)
+map <leader>cs <Action>(ChangeSignature)
 map <leader>vs :vsplit<CR><C-w>w:q<CR>
 
 map <leader>gcwb <Action>(Git.CompareWithBranch)
