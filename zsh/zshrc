@@ -96,7 +96,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # ------------
 # - Bindkeys -
 # ------------
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh || source <(fzf --zsh)
 
 bindkey -v
 bindkey "[D" backward-word
