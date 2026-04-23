@@ -22,7 +22,7 @@ exec_always nwg-displays -v
 include ~/.config/sway/outputs
 include ~/.config/sway/workspaces
 
-#exec_always kanshi
+default_border none
 
 ### Output configuration
 #
@@ -245,6 +245,9 @@ bar {
 input "type:keyboard" {
     xkb_layout fr
     xkb_variant azerty
+
+    repeat_delay 300
+    repeat_rate 50
 }
 
 include /etc/sway/config.d/*
