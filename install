@@ -49,6 +49,7 @@ link_files hypr/custom "${CONFIG_DIR}/hypr/custom"
 
 # Sway
 link_files sway "${CONFIG_DIR}/sway"
+link_files nwg-panel "${CONFIG_DIR}/nwg-panel"
 
 # keyd
 # On ArchLinux, run pacman -S keyd
