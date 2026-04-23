@@ -5,24 +5,29 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
 set $term kitty
-# Your preferred application launcher
 set $menu fuzzel
 
 exec_always nwg-displays -v
 include ~/.config/sway/outputs
 include ~/.config/sway/workspaces
 
-default_border none
+gaps inner 0
+gaps outer 0
+default_border pixel 1
+default_floating_border pixel 1
+focus_follows_mouse yes
+
+### Couleurs des bordures
+# Format: class             border  backgr. text    indicator child_border
+client.focused              #313136 #C7BFFF #FFFFFF #C7BFFF   #C7BFFF
+client.focused_inactive     #313136 #313136 #FFFFFF #313136   #313136
+client.unfocused            #313136 #313136 #888888 #313136   #313136
 
 ### Output configuration
 #
