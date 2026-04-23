@@ -17,6 +17,9 @@ exec_always nwg-displays -v
 include ~/.config/sway/outputs
 include ~/.config/sway/workspaces
 
+exec_always swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 gaps inner 0
 gaps outer 0
 default_border pixel 1
