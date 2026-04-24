@@ -32,7 +32,7 @@ gaps inner 0
 gaps outer 0
 default_border pixel 1
 default_floating_border pixel 1
-focus_follows_mouse yes
+focus_follows_mouse no
 
 ### Colors
 # Format: class             border  backgr. text    indicator child_border
@@ -172,6 +172,12 @@ for_window [app_id="jetbrains-idea"] move to workspace 1
 for_window [app_id="firefox"] move to workspace 2
 for_window [app_id="slack"] move to workspace 3, layout tabbed
 for_window [app_id="teams-for-linux"] move to workspace 3, layout tabbed
+
+for_window [app_id="nwg-processes"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="nwg-displays"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="pavucontrol"] floating enable, resize set 800 px 600 px, move position center
 
 workspace 3 layout tabbed
 
