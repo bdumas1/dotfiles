@@ -20,7 +20,7 @@
       "playerctl"
     ],
     "modules-center": [
-      "sway-workspaces",
+      "sway-taskbar",
       "clock"
     ],
     "modules-right": [
@@ -31,7 +31,8 @@
       "components": [
         "brightness",
         "volume",
-        "battery"
+        "battery",
+        "processes"
       ],
       "commands": {
         "battery": ""
@@ -129,13 +130,13 @@
       "workspaces-spacing": 0,
       "task-padding": 0,
       "show-app-icon": true,
-      "show-app-name": true,
-      "show-layout": true,
-      "workspace-buttons": false,
+      "show-app-name": false,
+      "show-layout": false,
+      "workspace-buttons": true,
       "all-workspaces": true,
       "mark-autotiling": true,
       "mark-xwayland": true,
-      "all-outputs": true,
+      "all-outputs": false,
       "angle": 0.0
     },
     "sway-workspaces": {
@@ -162,7 +163,7 @@
       "angle": 0.0
     },
     "clock": {
-      "format": "%a, %d. %b  %H:%M:%S",
+      "format": "%H:%M - %a, %d/%m ",
       "tooltip-text": "",
       "on-left-click": "",
       "on-middle-click": "",
@@ -170,7 +171,18 @@
       "on-scroll-up": "",
       "on-scroll-down": "",
       "css-name": "clock",
-      "interval": 1
+      "interval": 1,
+      "tooltip-date-format": false,
+      "root-css-name": "root-clock",
+      "angle": 0.0,
+      "calendar-path": "",
+      "calendar-css-name": "calendar-window",
+      "calendar-placement": "top",
+      "calendar-margin-horizontal": 16,
+      "calendar-margin-vertical": 0,
+      "calendar-icon-size": 24,
+      "calendar-interval": 60,
+      "calendar-on": false
     },
     "playerctl": {
       "buttons-position": "left",
@@ -232,7 +244,11 @@
       "show-volume": true
     },
     "brightness-slider": {},
-    "dwl-tags": {},
+    "dwl-tags": {
+      "tag-names": "1 \uf269 3 4 5 6 7 8 9",
+      "title-limit": 55,
+      "angle": 0.0
+    },
     "hyprland-taskbar": {},
     "hyprland-workspaces": {},
     "monitor": "",
