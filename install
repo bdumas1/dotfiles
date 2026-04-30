@@ -43,6 +43,9 @@ link_files git/gitignore_global ~/.gitignore_global
 # tmux
 link_files tmux/tmux.conf ~/.tmux.conf
 
+# yazi
+link_files yazi "${CONFIG_DIR}/yazi"
+
 # Hyprland
 mkdir -p "${CONFIG_DIR}/hypr/custom"
 link_files hypr/custom "${CONFIG_DIR}/hypr/custom"
