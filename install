@@ -54,6 +54,9 @@ link_files hypr/custom "${CONFIG_DIR}/hypr/custom"
 link_files sway "${CONFIG_DIR}/sway"
 link_files nwg-panel "${CONFIG_DIR}/nwg-panel"
 
+# Waybar
+link_files waybar "${CONFIG_DIR}/waybar"
+
 # keyd
 # On ArchLinux, run pacman -S keyd
 link_files keyd/default.conf /etc/keyd/default.conf
