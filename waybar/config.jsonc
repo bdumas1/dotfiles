@@ -19,8 +19,6 @@
     "battery",
     "pulseaudio",
     "tray",
-    "network",
-    "bluetooth",
     "custom/power"
   ],
   // Modules configuration
@@ -68,9 +66,9 @@
   },
   "pulseaudio": {
     "format": "{icon}    {volume}%  -  {format_source}",
-    "format-bluetooth": "{icon}  {volume}%  -   {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth": "<span  size='110%'>{icon}</span>   {volume}%  -  {format_source}",
+    "format-bluetooth-muted": "<span  size='110%'>{icon}</span>   <span size='140%' rise='-2000'>󰝟</span>   -  {format_source}",
+    "format-muted": "<span size='140%' rise='-2000'>󰝟</span>   -  {format_source}",
     "format-source": "  {volume}%",
     "format-source-muted": "",
     "format-icons": {
@@ -84,29 +82,27 @@
     },
     "on-click": "pavucontrol"
   },
-  "network": {
-    "format-wifi": "\uF1EB",
-    "format-ethernet": "{ipaddr}/{cidr}",
-    "tooltip-format": "{ifname}: {ipaddr}\n{essid} ({signalStrength}%)",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
-    "on-click": "kitty -e nmtui"
-  },
-  "bluetooth": {
-    "format": "󰂯",
-    "format-connected": "󰂱",
-    "format-off": "󰂲",
-    "tooltip-format": "{num_connections} connecté(s)",
-    "tooltip-format-connected": "{num_connections} connecté(s)\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
-    "on-click": "blueman-manager"
-  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
     }
   },
   "custom/media": {

@@ -23,9 +23,11 @@ exec_always swaync
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
 # Panel bar (instead of swaybar or waybar)
-exec_always nwg-panel
-exec_always nm-applet --indicator
-exec_always blueman-applet
+#exec_always nwg-panel
+#exec_always nm-applet --indicator
+#exec_always blueman-applet
+
+exec_always pkill waybar; waybar
 
 # Styling
 gaps inner 0
@@ -177,7 +179,7 @@ for_window [app_id="nwg-processes"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="nwg-displays"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
-for_window [app_id="pavucontrol"] floating enable, resize set 800 px 600 px, move position center
+for_window [app_id="pavucontrol"] floating enable, resize set 1000 px 600 px, move position center
 
 workspace 3 layout tabbed
 
