@@ -183,6 +183,8 @@ for_window [app_id="pavucontrol"] floating enable, resize set 1000 px 600 px, mo
 
 workspace 3 layout tabbed
 
+bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Images/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+
 #
 # Layout stuff:
 #

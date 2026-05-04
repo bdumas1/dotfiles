@@ -5,9 +5,6 @@
   "height": 30,
   // "width": 1280, // Waybar width
   "modules-left": [
-    "cpu",
-    "memory",
-    "custom/media"
   ],
   "modules-center": [
     "hyprland/workspaces",
@@ -38,19 +35,38 @@
   //         "default": ""
   //     }
   // },
-  "tray": {
-    "icon-size": 20,
-    "spacing": 14
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    }
   },
   "clock": {
     "timezone": "Europe/Paris",
     "format": "{:%H:%M - %a, %d/%m}"
   },
-  "cpu": {
-    "format": "\uF2DB  {usage}%"
-  },
-  "memory": {
-    "format": "\uF0C9  {}%"
+  "custom/screenshot": {
+    "format": "screenshot_region",
+    "tooltip": false,
+    "on-click": "grim -g \"$(slurp)\" ~/Images/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png",
+    "on-click-right": "grim ~/Images/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
   },
   "battery": {
     "tooltip-format": "Temps pour charger complètement : {timeTo}\nEn charge : {power}W\nHealth : {health}%",
@@ -82,40 +98,9 @@
     },
     "on-click": "pavucontrol"
   },
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    }
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": [],
-    }
-  },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  "tray": {
+    "icon-size": 20,
+    "spacing": 14
   },
   "custom/power": {
     "format" : "⏻",
@@ -127,11 +112,5 @@
       "reboot": "reboot",
       "suspend": "systemctl suspend"
     }
-  },
-  "custom/screenshot": {
-    "format": "screenshot_region",
-    "tooltip": false,
-    "on-click": "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png",
-    "on-click-right": "grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
   }
 }
