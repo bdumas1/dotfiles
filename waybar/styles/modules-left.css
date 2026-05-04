@@ -1,0 +1,28 @@
+#clock {
+    color: #c4c1c3;
+    font-size: 15px;
+    margin-right: 100px;
+}
+
+#custom-screenshot {
+    font-family: "Material Symbols Rounded", sans-serif;
+    font-size: 18px;
+    color: #e6e0ec;
+}
+
+#battery {
+    background-color: #e6e0ec;
+    padding: 0 8px;
+    margin: 6px 100px 6px 16px;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 12px;
+}
+
+#pulseaudio {
+    margin-right: 16px;
+}
+
+#tray {
+    margin-right: 100px;
+}

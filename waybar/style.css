@@ -1,106 +1,10 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Google Sans Flex", Rubik, Geist, sans-serif;
-    font-size: 13px;
 }
 
-window#waybar {
+#waybar {
     background-color: #16151A;
     color: #ffffff;
-}
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces {
-    padding: 0 6px;
-    margin: 5px 0;
-}
-
-#workspaces button {
-    border-radius: 50%;
-    padding: 0 5px;
-    color: #514d50;
-    transition: background-color .2s;
-}
-
-#workspaces button.focused, #workspaces button.active {
-    background-color: #cbc3d5;
-    color: #322e3c;
-}
-
-#workspaces button:hover {
-    box-shadow: none;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#clock,
-#battery,
-#pulseaudio,
-#tray,
-#custom-power {
-    padding: 0 10px;
-    color: #c4c1c3;
-    font-size: 15px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#clock {
-    color: #c4c1c3;
-    font-size: 15px;
-    margin-right: 80px;
-}
-
-#custom-screenshot {
-    font-family: "Material Symbols Rounded", sans-serif;
-    font-size: 18px;
-    color: #e6e0ec;
-}
-
-#battery {
-    background-color: #e6e0ec;
-    padding: 0 8px;
-    margin: 6px 100px 6px 16px;
-    border-radius: 20px;
-    color: #000000;
-    font-size: 12px;
-}
-
-#custom-power {
-    font-size: 24px;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 
 tooltip {
@@ -113,3 +17,11 @@ tooltip label {
     color: #c9c5c7;
     font-size: 14px;
 }
+
+@import "styles/modules-right.css";
+@import "styles/modules-center.css";
+@import "styles/modules-left.css";
+
+
+
+
