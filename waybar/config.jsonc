@@ -1,9 +1,5 @@
-// -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 30,
-  // "width": 1280, // Waybar width
   "modules-left": [
     "mpris"
   ],
@@ -18,34 +14,15 @@
     "tray",
     "pulseaudio"
   ],
-  // Modules configuration
-  // "sway/workspaces": {
-  //     "disable-scroll": true,
-  //     "all-outputs": true,
-  //     "warp-on-scroll": false,
-  //     "format": "{name}: {icon}",
-  //     "format-icons": {
-  //         "1": "",
-  //         "2": "",
-  //         "3": "",
-  //         "4": "",
-  //         "5": "",
-  //         "urgent": "",
-  //         "focused": "",
-  //         "default": ""
-  //     }
-  // },
   "mpris": {
-    "format": "{status_icon} {title} - {artist}",
-    "format-paused": "{player_icon} {title} - {artist}",
-    "tooltip-format": "Playing: {title} - {artist}",
-    "tooltip-format-paused": "Paused: {title} - {artist}",
-    "player-icons": {
-      "default": "󰐊"
-    },
+    "format": "{status_icon}",
+    "format-paused": "{status_icon}",
     "status-icons": {
-      "paused": "󰏤"
+      "playing": "󰏤",
+      "paused": "󰐊"
     },
+    "tooltip-format": "En cours de lecture : {title} - {artist}",
+    "tooltip-format-paused": "En pause : {title} - {artist}",
     "max-length": 1000
   },
   "hyprland/workspaces": {
