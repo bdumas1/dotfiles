@@ -40,15 +40,17 @@ exec_always pkill waybar; waybar
 
 gaps inner 0
 gaps outer 0
+smart_borders on
 default_border pixel 1
 default_floating_border pixel 1
 focus_follows_mouse no
+font pango:Google Sans Flex 10
 
 ### Colors
 # Format: class             border  backgr. text    indicator child_border
-client.focused              #313136 #C7BFFF #000000 #C7BFFF   #C7BFFF
+client.focused              #C7BFFF #C7BFFF #000000 #C7BFFF   #C7BFFF
 client.focused_inactive     #313136 #313136 #FFFFFF #313136   #313136
-client.unfocused            #313136 #313136 #888888 #313136   #313136
+client.unfocused            #16151A #16151A #888888 #16151A   #16151A
 
 #
 # Wallpaper
