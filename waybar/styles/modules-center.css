@@ -21,4 +21,6 @@
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+    color: #510706;
+    font-weight: bold;
 }

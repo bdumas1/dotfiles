@@ -133,16 +133,16 @@ bindcode $mod+17 workspace number 8
 bindcode $mod+18 workspace number 9
 bindcode $mod+19 workspace number 10
 
-bindcode $mod+Shift+10 move container to workspace number 1
-bindcode $mod+Shift+11 move container to workspace number 2
-bindcode $mod+Shift+12 move container to workspace number 3
-bindcode $mod+Shift+13 move container to workspace number 4
-bindcode $mod+Shift+14 move container to workspace number 5
-bindcode $mod+Shift+15 move container to workspace number 6
-bindcode $mod+Shift+16 move container to workspace number 7
-bindcode $mod+Shift+17 move container to workspace number 8
-bindcode $mod+Shift+18 move container to workspace number 9
-bindcode $mod+Shift+19 move container to workspace number 10
+bindcode $mod+Shift+10 move container to workspace number 1; workspace number 1
+bindcode $mod+Shift+11 move container to workspace number 2; workspace number 2
+bindcode $mod+Shift+12 move container to workspace number 3; workspace number 3
+bindcode $mod+Shift+13 move container to workspace number 4; workspace number 4
+bindcode $mod+Shift+14 move container to workspace number 5; workspace number 5
+bindcode $mod+Shift+15 move container to workspace number 6; workspace number 6
+bindcode $mod+Shift+16 move container to workspace number 7; workspace number 7
+bindcode $mod+Shift+17 move container to workspace number 8; workspace number 8
+bindcode $mod+Shift+18 move container to workspace number 9; workspace number 9
+bindcode $mod+Shift+19 move container to workspace number 10; workspace number 10
 
 for_window [app_id="jetbrains-idea"] move to workspace 1
 for_window [app_id="firefox"] move to workspace 2
