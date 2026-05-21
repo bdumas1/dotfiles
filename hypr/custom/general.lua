@@ -48,7 +48,8 @@ hl.config({
     input = {
         kb_layout = "fr",
         -- kb_options = "caps:escape_shifted_capslock",
-        follow_mouse = 2
+        follow_mouse = 2,
+        float_switch_override_focus = 0
     },
 
     -- =============================================================================
