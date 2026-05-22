@@ -32,7 +32,7 @@ return {
       desc = "Find file",
     },
     {
-      "<C-S-F>",
+      "<F13>", -- because kitty conf has: map ctrl+shift+f send_text all \x1b[1;2P
       function()
         Snacks.picker.grep()
       end,
