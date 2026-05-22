@@ -137,3 +137,5 @@ stty stop ""
 initnvm
 nvm use stable
 
+# Zoxide
+eval "$(zoxide init --cmd cd zsh)"
