@@ -30,39 +30,64 @@ set ideastatusicon=gray
 set visualbell
 
 """ My Mappings -----------------------------
-map <leader>r <Action>(RenameElement)
-map <leader>fr <Action>(Replace)
+
+" ======================
+" Search
+" ======================
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(FindInPath)
+
+" ======================
+" Code
+" ======================
+map <leader>gd <Action>(GotoDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gt <Action>(GotoTypeDeclaration)
 map <leader>iv <Action>(IntroduceVariable)
 map <leader>ip <Action>(IntroduceParameter)
 map <leader>in <Action>(Inline)
 map <leader>em <Action>(ExtractMethod)
-map <leader>z <Action>(ToggleDistractionFreeMode)
-map <leader>b <Action>(SelectInProjectView)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <leader>o <Action>(FileStructurePopup)
-map <leader>ge <Action>(Generate)
-map <leader>p <Action>(PasteMultiple)
-map <leader>ee <Action>(EvaluateExpression)
-map <leader>rt <Action>(ContextRun)
-map <leader>rf <Action>(RunClass)
-map <leader>dt <Action>(ContextDebug)
-map <leader>df <Action>(DebugClass)
-map <leader>s <Action>(SaveAll)
-map <leader>q <Action>(CloseContent)
-map <leader>cs <Action>(ChangeSignature)
-map <leader>vs :vsplit<CR><C-w>w:q<CR>
 
+" ======================
+" Debug
+" ======================
+map <leader>ee <Action>(EvaluateExpression)
+
+" ======================
+" Refactoring
+" ======================
+map <leader>rn <Action>(RenameElement)
+map <leader>cs <Action>(ChangeSignature)
+
+" ======================
+" Git
+" ======================
+map <leader>gf <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>gcwb <Action>(Git.CompareWithBranch)
 map <leader>gb <Action>(Git.Branches)
-map <leader>gf <Action>(Git.Fetch)
 
+" ======================
+" Windows
+" ======================
+map <leader>sv <Action>(SplitVertically)
+map <leader>sh <Action>(SplitHorizontally)
+map <leader>bd <Action>(CloseContent)
+map <leader>b  <Action>(SelectInProjectView)
+
+" ======================
+" Terminal
+" ======================
+map <leader>tt <Action>(ActivateTerminalToolWindow)
+
+" ======================
+" Others
+" ======================
+map <leader>s <Action>(SaveAll)
+map <leader>p <Action>(PasteMultiple)
 map <S-Space> <Action>(GotoNextError)
-
 map <leader>ww <C-w>w
 map <leader>a ggVG
-
 nnoremap <leader>fe :NERDTreeToggle<CR>
-
 map <C-e> :action RecentFiles<CR>
 
 vnoremap y "+y`>
