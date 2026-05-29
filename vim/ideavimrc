@@ -43,10 +43,6 @@ map <leader>fg <Action>(FindInPath)
 map <leader>gd <Action>(GotoDeclaration)
 map <leader>gi <Action>(GotoImplementation)
 map <leader>gt <Action>(GotoTypeDeclaration)
-map <leader>iv <Action>(IntroduceVariable)
-map <leader>ip <Action>(IntroduceParameter)
-map <leader>in <Action>(Inline)
-map <leader>em <Action>(ExtractMethod)
 
 " ======================
 " Debug
@@ -56,6 +52,10 @@ map <leader>ee <Action>(EvaluateExpression)
 " ======================
 " Refactoring
 " ======================
+map <leader>iv <Action>(IntroduceVariable)
+map <leader>ip <Action>(IntroduceParameter)
+map <leader>in <Action>(Inline)
+map <leader>em <Action>(ExtractMethod)
 map <leader>rn <Action>(RenameElement)
 map <leader>cs <Action>(ChangeSignature)
 
