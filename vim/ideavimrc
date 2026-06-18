@@ -35,7 +35,6 @@ set visualbell
 " Search
 " ======================
 map <leader>ff <Action>(GotoFile)
-map <leader><space> <Action>(GotoFile)
 map <leader>sg <Action>(FindInPath)
 
 " ======================
