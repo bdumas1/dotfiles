@@ -23,6 +23,7 @@ hl.config({
 			inactive_border = "rgba(313136FF)",
 		},
 		resize_on_border = true,
+		extend_border_grab_area = 15,
 		no_focus_fallback = true,
 		allow_tearing = true,
 		snap = {
