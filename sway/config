@@ -56,7 +56,7 @@ client.unfocused            #16151A #16151A #888888 #16151A   #16151A
 # Wallpaper
 #
 
-output * bg ~/Lab/github/dotfiles/wallpapers/dailydev.webp fill
+output * bg ~/Lab/github/dotfiles/wallpapers/nasa-artemis2.jpg fill
 
 ### Idle configuration
 #
