@@ -8,6 +8,20 @@
 hl.bind("SUPER + F1", hl.dsp.global("quickshell:cheatsheetToggle"), { description = "Toggle cheatsheet" })
 hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close(), { description = "Window: Close" })
 hl.bind("ALT + SHIFT + E", hl.dsp.global("quickshell:overviewEmojiToggle"), { description = "Emoji >> clipboard" })
+-- Remplace le bind par défaut (hyprland/keybinds.lua) qui fait un simple float toggle
+hl.unbind("SUPER + ALT + Space")
+hl.bind("SUPER + ALT + Space", function()
+    local win = hl.get_active_window()
+    if not win then return end
+    local was_floating = win.floating
+
+    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+
+    if not was_floating then
+        hl.dispatch(hl.dsp.window.resize({ x = 1300, y = 800, relative = false }))
+        hl.dispatch(hl.dsp.window.center())
+    end
+end, { description = "Window: Float (1300x800 centré)/Tile" })
 
 for i = 1, 10 do
     local numberkey = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }

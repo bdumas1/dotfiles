@@ -1,17 +1,3 @@
--- =============================================================================
--- WINDOW RULES
--- =============================================================================
-
-hl.window_rule({ match = { class = "^(code)$" }, workspace = "1" })
-hl.window_rule({ match = { class = "^(jetbrains-idea)$" }, workspace = "1" })
-hl.window_rule({ match = { class = "^(firefox)$" }, workspace = "2" })
-hl.window_rule({ match = { class = "^(slack)$" }, workspace = "3", group = "set" })
-hl.window_rule({ match = { class = "^(teams-for-linux)$" }, workspace = "3", group = "set" })
-
--- =============================================================================
--- GENERAL
--- =============================================================================
-
 hl.config({
 	general = {
 		gaps_in = 0,
@@ -108,4 +94,3 @@ hl.config({
 		},
 	},
 })
-
