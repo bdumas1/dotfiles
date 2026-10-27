@@ -1,3 +1,7 @@
+let mapleader = ""
+nmap <Space> <Nop>
+vmap <Space> <Nop>
+
 let mapleader=" "
 
 """ Plugins  --------------------------------
@@ -35,6 +39,10 @@ set visualbell
 " Search
 " ======================
 map <leader>ff <Action>(GotoFile)
+<<<<<<< Updated upstream
+=======
+"map <leader><space> <Action>(GotoFile)
+>>>>>>> Stashed changes
 map <leader>sg <Action>(FindInPath)
 
 " ======================
