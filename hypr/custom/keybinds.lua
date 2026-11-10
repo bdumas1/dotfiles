@@ -11,36 +11,46 @@ hl.bind("ALT + SHIFT + E", hl.dsp.global("quickshell:overviewEmojiToggle"), { de
 -- Remplace le bind par défaut (hyprland/keybinds.lua) qui fait un simple float toggle
 hl.unbind("SUPER + ALT + Space")
 hl.bind("SUPER + ALT + Space", function()
-    local win = hl.get_active_window()
-    if not win then return end
-    local was_floating = win.floating
+	local win = hl.get_active_window()
+	if not win then
+		return
+	end
+	local was_floating = win.floating
 
-    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+	hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
 
-    if not was_floating then
-        hl.dispatch(hl.dsp.window.resize({ x = 1300, y = 800, relative = false }))
-        hl.dispatch(hl.dsp.window.center())
-    end
+	if not was_floating then
+		hl.dispatch(hl.dsp.window.resize({ x = 1300, y = 800, relative = false }))
+		hl.dispatch(hl.dsp.window.center())
+	end
 end, { description = "Window: Float (1300x800 centré)/Tile" })
 
 for i = 1, 10 do
-    local numberkey = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }
-    hl.bind("SUPER + SHIFT + code:" .. numberkey[i], function()
-        hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i), follow = true }))
-    end)
+	local numberkey = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }
+	hl.bind("SUPER + SHIFT + code:" .. numberkey[i], function()
+		hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i), follow = true }))
+	end)
 end
 
 -- ##! Group
 hl.bind("SUPER + SHIFT + G", hl.dsp.group.toggle(), { description = "Toggle group" })
-hl.bind("SUPER + SHIFT + I", hl.dsp.group.lock_active({ action = "toggle" }), { description = "Lock active group" })
+hl.bind("SUPER + SHIFT + I", hl.dsp.group.lock({ action = "toggle" }), { description = "Lock active group" })
 
-hl.bind("SUPER + Left",  hl.dsp.group.prev(), { description = "Previous window in group" })
+hl.bind("SUPER + Left", hl.dsp.group.prev(), { description = "Previous window in group" })
 hl.bind("SUPER + Right", hl.dsp.group.next(), { description = "Next window in group" })
 
-hl.bind("SUPER + SHIFT + Left",  hl.dsp.group.move_window({ forward = false }), { description = "Move window left in group" })
-hl.bind("SUPER + SHIFT + Right", hl.dsp.group.move_window({ forward = true }), { description = "Move window right in group" })
+hl.bind(
+	"SUPER + SHIFT + Left",
+	hl.dsp.group.move_window({ forward = false }),
+	{ description = "Move window left in group" }
+)
+hl.bind(
+	"SUPER + SHIFT + Right",
+	hl.dsp.group.move_window({ forward = true }),
+	{ description = "Move window right in group" }
+)
 
-hl.bind("SUPER + ALT + Left",  hl.dsp.window.move({ into_group = "l" }))
+hl.bind("SUPER + ALT + Left", hl.dsp.window.move({ into_group = "l" }))
 hl.bind("SUPER + ALT + Right", hl.dsp.window.move({ into_group = "r" }))
-hl.bind("SUPER + ALT + Up",    hl.dsp.window.move({ into_group = "u" }))
-hl.bind("SUPER + ALT + Down",  hl.dsp.window.move({ into_group = "d" }))
+hl.bind("SUPER + ALT + Up", hl.dsp.window.move({ into_group = "u" }))
+hl.bind("SUPER + ALT + Down", hl.dsp.window.move({ into_group = "d" }))
