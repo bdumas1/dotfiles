@@ -24,6 +24,7 @@ alias upgrade="sudo apt upgrade"
 alias port="netstat -ntpl | grep $@"
 alias killport="sudo lsof -i :$1 | awk '{print \$2}' | awk 'FNR == 2 {print}' | sudo xargs kill -9"
 alias wip='gaa && gcmsg "wip"'
+alias chmod-hidraw='sudo chmod 666 /dev/hidraw2 && sudo chmod 666 /dev/hidraw3'
 
 alias dotfiles='cd ~/Lab/github/dotfiles'
 alias sogilis='cd ~/Lab/Sogilis'
@@ -34,4 +35,3 @@ function initnvm {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                    # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 }
-
