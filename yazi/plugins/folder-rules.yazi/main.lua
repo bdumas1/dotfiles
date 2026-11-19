@@ -4,7 +4,7 @@ local function setup()
 		if cwd:ends_with("Téléchargements") then
 			opt.by, opt.reverse, opt.dir_first = "mtime", true, true
 		else
-			opt.by, opt.reverse, opt.dir_first = "mtime", true, true
+			opt.by, opt.reverse, opt.dir_first = "natural", false, true
 		end
 		return opt
 	end)
